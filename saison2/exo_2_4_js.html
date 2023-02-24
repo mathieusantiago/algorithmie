@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<?php include '../commun/head.html';?>
+
+<body>
+
+    <!-- --------------btn menu nav------------------------------- -->
+    <?php include '../commun/resp-nav.html';?>
+
+    <!-- --------------btn pause and play backgroung-------------- -->
+    <?php include '../commun/bg-video.html';?>
+
+    <!-- --------------all page------------------------------- -->
+    <div class="allpage">
+
+        <!-- --------------header------------------------------- -->
+        <?php include '../commun/header.html';?>
+
+
+        <!-- ----------------------nav aside left---------------------- -->
+        <div class="display">
+            <?php include '../commun/aside.html';?>
+
+            <!-- -------------------------content page enoncé-------------------- -->
+
+            <article>
+
+                <div class="content-top">
+                    <section class="language-markup">
+                        <pre><code class="language-javascript"><xmp>
+if(a === "enonce" & b === "de l'exercise"){
+alert('aller au travail');
+}
+</xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax enoncé--------------------- -->
+
+                <section class="color-code pl-5 pt-3 text-left enonce language-markup">
+                    <p>Quel résultat produit le programme suivant ?</p>
+                </section>
+
+                <!-- ----------------------------color syntax pseudo-code--------------------- -->
+
+                <section class="color-code language-markup">
+                    <pre class="line-numbers"><code><xmp>
+// ALGORITHME Exo_2_4
+function Exo_2_4()
+// DEBUT
+{
+  // VARIABLE iCalc en NUMERIQUE 
+  String1←" belle marquise "; 
+  String2←" vos beaux yeux me ";
+  String3←" font mourir d’amour "; 
+  Ecrire String1 & ‘ ‘& String2 & ‘ ‘ & String3 ;
+//FIN
+}
+          </xmp></code></pre>
+                </section>
+
+                <!-- ----------------------------btn select language--------------------- -->
+
+                <div>
+                    <a href="#traductJS" class="btn btn-md btn-dark mt-4 btn-js"
+                        onclick="showcode('executjs', 'resultjs')"><img src="../css/img/icon-js.png"
+                            alt="javascript logo">JavaScript</a>
+                    <a href="#traductJS" class="btn btn-md btn-dark mt-4 btn-js"
+                        onclick="showcode('executprompt', 'resultprompt')"><img src="../css/img/icon-js.png"
+                            alt="javascript logo">Js Prompt</a>
+                    <a href="#traductJQ" class="btn btn-md btn-dark mt-4 btn-jq"
+                        onclick="showcode('executjq', 'resultjq')"><img src="../css/img/icon-jquery.png"
+                            alt="javascript logo">Jquery</a>
+                    <a href="#traductPhP" class="btn btn-md btn-dark mt-4 pr-4 btn-php"
+                        onclick="showcode('executphp', 'resultphp')"><img src="../css/img/icon-php.png"
+                            alt="javascript logo ">PhP</a>
+                </div>
+
+                <!-- ----------------------------color syntax JavaScript--------------------- -->
+
+                <div id="executjs" class="result">
+                    <section class="color-code language-markup ">
+                        <pre class="line-numbers"><code class="language-javascript"><xmp>
+// ALGORITHME Exo_2_4
+function Exo_2_4_js()
+// DEBUT
+{
+    // VARIABLE sString1, sString2, sString3, sString, sMessage en STRING
+
+        /* ------je crée mes variable ---------- */
+        var sString1 = " belle marquise "; 
+        var sString2 = " vos beaux yeux me ";
+        var sString3 = " font mourir d’amour "; 
+        var sString = sString1 + sString2 + sString3;
+        /* -------------------je crée mon html----------------------- */
+        sMessage= "";
+        sMessage += '<section class="color-code"><div class="color-result"><p>';
+        sMessage +=  sString;
+        sMessage += '</p></div></section>';
+        sSelector.innerHTML = sMessage;
+    
+//FIN
+}   
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax JavaScript prompt--------------------- -->
+
+                <div id="executprompt" class="result">
+                    <section class="color-code language-markup ">
+                        <pre class="line-numbers"><code class="language-javascript"><xmp>
+// ALGORITHME Exo_2_4
+function Exo_2_4_jsprompt()
+// DEBUT
+{
+  // VARIABLE sString1, sString2, sString3, sString en STRING
+  /* ------je crée mes variable ---------- */
+  var sString1 = " belle marquise "; 
+  var sString2 = " vos beaux yeux me ";
+  var sString3 = " font mourir d’amour "; 
+  var sString = sString1 + sString2 + sString3;
+  /* -------je crée mon Prompt---------------- */
+  alert(sString);
+//FIN
+}
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax Jquery--------------------- -->
+
+                <div id="executjq" class="result">
+                    <section class="color-code language-markup">
+                        <pre class="line-numbers"><code class="language-javascript"><xmp>
+// ALGORITHME Exo_2_4
+function Exo_2_4_jquery() 
+// DEBUT
+{
+  // VARIABLE sString1, sString2, sString3, sString, sMessage en STRING
+  /* ------je crée mes variable ---------- */
+  var sString1 = " belle marquise ";
+  var sString2 = " vos beaux yeux me ";
+  var sString3 = " font mourir d’amour ";
+  var sStringA = sString1 + sString2 + sString3;
+  var sStringB = sString2 + sString1 + sString3;
+  var sStringC = sString3 + sString2 + sString1;
+  var sStringD = sString3 + sString1 + sString2;
+  /* -------------------je crée mon 
+  /* -------------------je crée mon html----------------------- */
+  sMessage = "";
+  sMessage += sStringA +"<br>"+ sStringB +"<br>"+ sStringC +"<br>"+ sStringD;
+  $('#execut').html("<section class='color-code'><div class='color-result'><p>" + sMessage + "</p></div></section>");
+  
+//FIN
+}
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax php--------------------- -->
+
+                <div id="executphp" class="result">
+                    <section class="color-code language-markup">
+                        <pre class="line-numbers"><code class="language-php"><xmp>
+// ALGORITHME Exo_2_4
+function Exo_2_4_php() 
+// DEBUT
+{
+  // VARIABLE sString1, sString2, sString3, sString, sStart, sEnd en STRING
+  // je crée mes variable 
+  $sString1 = " belle marquise ";
+  $sString2 = " vos beaux yeux me ";
+  $sString3 = " font mourir d’amour ";
+  // je crée mes string  
+  $sStringA = $sString1. $sString2. $sString3;
+  $sStringB = $sString2. $sString1. $sString3;
+  $sStringC = $sString3. $sString2. $sString1;
+  $sStringD = $sString3. $sString1. $sString2;
+  // je crée ma structure html 
+  $sStart = '<section class="color-code"><div class="color-result"><p>';
+  $sEnd = '</p></div></section>';
+  echo($sStart. "<br>" . $sStringA . "<br>" . $sStringB . "<br>" . $sStringC . "<br>" . $sStringD . "<br>" . $sEnd);
+  
+//FIN
+}   
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------Form execute script---------------------- -->
+
+                <div id="form"  class="heidden mt-4 ml-5 mr-5">
+                    <form method="POST">
+                        <div id="form" class="form-group heidden">
+                            
+                        </div>
+
+                        <!-- ----------------------------btn execute script------------------------- -->
+                        <div class="display btn-display">
+                            <div id="resultjs" class="btnExecut " onclick="Exo_2_4_js()">
+                                <p>JavaScript</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </div>
+                            <div id="resultprompt" class="btnExecut " onclick="Exo_2_4_jsPrompt()">
+                                <p>Js prompt</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </div>
+                            <div id="resultjq" class="btnExecut " onclick="Exo_2_4_jquery()">
+                                <p>Jquery</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </div>
+
+
+                            <button id="resultphp" class="btnExecut" type="submit" value="ExecutPhp" name="ExecutPhp">
+                                <p>PhP</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </button>
+                    </form>
+                </div>
+
+        </div>
+
+        <!-- -------------------------------result script--------------------------- -->
+
+
+        <div id="execut" class="result pb-5">
+            <?php include './exo_2_4_php.php';?>
+
+        </div>
+    </div>
+
+
+    </article>
+
+
+    </div>
+    </div>
+    <!-- ---------------------plugin lin Numbers-------------- -->
+
+    <script src="./exo_2_4_js.js"></script>
+    <?php include '../commun/footer.html';?>
+</body>
+
+
+</html>

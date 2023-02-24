@@ -1,0 +1,424 @@
+/* -----------------------------all-page------------------------------- */
+html, body, .allpage{
+  font-family: 'Raleway', sans-serif;
+  font-size: 18px;
+  color: rgb(255, 255, 255);
+  margin: auto;
+  cursor: url("../css/img/cursor.png"), pointer;
+  
+}
+body{
+  background-color: black !important;
+}
+
+/* -----------------Bg video------------------ */
+#myVideo {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  min-width: 100%; 
+  min-height: 100%;
+  z-index: -1;
+}
+#myVideo2 {
+  position: absolute;
+  right: 0;
+  top: 0;
+  min-width: 100%; 
+  min-height: 100%;
+  z-index: -200;
+}
+
+.content a {
+  border-radius: 10%;
+  border: 2px solid white;
+  padding:5px;
+  cursor: pointer;
+}
+
+video{
+  background-color: black;
+}
+
+.content {
+  position: absolute;
+  top: 0;
+  color: #f1f1f1;
+  top: 5px;
+  left: 6px;
+}
+
+/* --------Display aside and article---------- */
+.display{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+/* -------------------------------header---------------------------- */
+.headerImg img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 20px;
+  margin-top: 8%;
+  max-width: 730px;
+  width: 100%;
+  min-width: 481px;
+}
+
+/* -----------------display code header------------------ */
+.header-code{
+  margin-left: auto;
+  margin-right:  auto;
+  width: 1099px;
+  margin-top: 20px;
+ 
+}
+
+.header-code pre[class*="language-"] {
+  overflow: hidden !important;
+}
+
+.header-txt  pre code xmp{
+  font-size: 20px;
+  padding: 0px !important;
+  margin: 0px !important;
+  text-align: center;
+}
+.headerContent{
+  display: block;
+  text-align: center;
+}
+
+h1,h2 {
+  font-weight: 200;
+  margin: 0.4em 0;
+}
+h1 { font-size: 3.5em; }
+h2 {
+  color: rgb(255, 255, 255);
+  font-size: 2em;
+}
+
+h2 xmp{
+  margin-right: 200px;
+}
+
+/* --------------------------aside------------------------------ */
+aside{
+  z-index: 10;
+  width: 350px;
+  background-color: rgb(0, 0, 0);
+  border-radius: 5px;
+  border: 2px solid rgb(255, 255, 255);
+  margin-right: 2%;
+}
+
+/* -----------------Burger Nav------------------ */
+.burger i {
+  z-index: 100;
+  position: absolute;
+  top: 1%;
+  right: 2%;
+  color: #fff;
+  font-size: 30px;
+}
+.burger{
+  display: none;
+}
+
+.active{
+  display: block !important;
+}
+
+.dropright:hover>.dropdown-menu {
+  display: block;
+}
+
+.dropright .dropdown-menu {
+  top: 0;
+  right: auto;
+  left: 87%;
+  margin-top: 0;
+  margin-left: .125rem;
+}
+
+aside xmp{
+  margin: 0!important;
+}
+
+.dropdown-item:hover{
+  background-color: grey;
+}
+
+.dropdown-menu a{
+  color: white;
+}
+
+.dropright .dropdown-menu {
+  top: 1px !important;
+  right: auto;
+  left: 94% !important;
+  margin-top: 0;
+  margin-left: .125rem;
+  background-color: black;
+  border: 2px solid white;
+}
+
+.dropright button{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  
+}
+
+/* -----------------content------------------- */
+
+article {
+  margin-right: 2%;
+  width: 100%;
+  background-color: black;
+  color: #ffffff;
+  border: 2px solid white;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.content-top pre {
+  text-align: center !important;
+  font-size: 25px !important;
+}
+.color-code{
+  margin-left: 77px;
+  margin-right: 77px;
+  margin-top: 20px;
+  background-color: #2d2d2d;
+  border: 2px solid white;
+ 
+}
+
+
+
+.enonce{
+  margin-bottom: 30px;
+}
+
+.titleCode{
+  color: white;
+ 
+}
+
+article code pre{
+  background: #000000 !important;
+}
+
+.grid{
+  margin-top: 30px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+
+  padding: 10px;
+}
+.grid-item {
+  background-color: rgba(0, 0, 0, 0.8);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  margin-left: 5px;
+  margin-right: 5px;
+  font-size: 15px;
+  text-align: center;
+}
+
+
+.btn-js img{
+  width: 43px;
+}
+.btn-jq img{
+  width: 79px;
+}
+.btn-php img{
+  width: 57px;
+}
+.btn-js:hover{
+  background-color: white !important;
+  color: black !important;
+  border: 2px solid grey !important;
+}
+.btn-jq:hover{
+  background-color: white !important;
+  color: black !important;
+  border: 2px solid grey !important;
+}
+.btn-php:hover{
+  background-color: white !important;
+  color: black !important;
+  border: 2px solid grey !important;
+}
+
+.btnExecut{
+  margin: 10px;
+}
+
+.btnExecut img {
+  width: 150px;
+}
+
+
+
+.btnExecut img:active {
+  width: 145px;
+}
+
+.result  {
+  display: none;
+}
+
+.btnExecut{
+  display: none;
+}
+
+.showResult{
+  display: block;
+}
+
+.form-group{
+  width: 400px;
+  margin: auto;
+}
+
+.code-cul img{
+  margin-top: 10px;
+}
+
+
+.color-result{
+  color: white !important;
+}
+
+.resultshowResult{
+  margin-bottom: 20px;
+}
+.heidden{
+  display: none;
+}
+.heidden2{
+  visibility: hidden;
+}
+
+.btn-display button{
+  background-color: black;
+  border: none;
+  color: #fff;
+}
+
+
+div {
+  margin-bottom: 10px;
+}
+
+input:invalid+span:after {
+  content: '✖';
+  padding-left: 5px;
+}
+
+input:valid+span:after {
+  content: '✓';
+  padding-left: 5px;
+}
+.form-group span{
+  position: relative;
+  left: 220px;
+  bottom: 34px;
+}
+
+
+
+
+/* -----------------footer-------------------- */
+
+
+
+
+
+
+/* Tablettes 'n' Mobiles */
+@media only screen and (max-width: 1080px) {
+  .header-code{
+    display: none;
+  }
+ 
+}
+@media only screen and (max-width: 1024px) {
+
+}
+
+@media only screen and (max-width: 1010px) {
+
+}
+
+@media only screen and (max-width: 940px) {
+  .display aside{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0px;
+  }
+  .dropright .dropdown-menu {
+    width: 100%;
+    left: 0 !important;
+  }
+  .burger{
+    display: block;
+  }
+  aside {
+    width: 100%;
+  }
+}
+
+
+
+@media only screen and (max-width: 680px) {
+ .content-top pre code {
+   font-size: 20px;
+ }
+
+  .color-code {
+    margin-left: 0; 
+  margin-right: 0; 
+  margin-top: 20px;
+  background-color: #2d2d2d;
+  border: 2px solid white;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .content-top pre code {
+    font-size: 18px;
+  }
+
+ 
+}
+
+@media only screen and (max-width: 380px) {
+ 
+}
+
+
+@media only screen and (max-width: 375px) {
+ 
+}
+
+/* IE10+ CSS */
+@media all and (-ms-high-contrast: none), (-ms-high-contrast: active)	{
+}
+
+/* IE Edge 12+ CSS */ 
+@supports (-ms-accelerator:true) {
+}
+
+
+
+
+

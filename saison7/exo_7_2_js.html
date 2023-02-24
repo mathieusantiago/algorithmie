@@ -1,0 +1,285 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+   
+<?php include '../commun/head.html';?>
+
+<body>
+
+    <!-- --------------btn menu nav------------------------------- -->
+    <?php include '../commun/resp-nav.html';?>
+
+    <!-- --------------btn pause and play backgroung-------------- -->
+    <?php include '../commun/bg-video.html';?>
+
+    <!-- --------------all page------------------------------- -->
+    <div class="allpage">
+
+        <!-- --------------header------------------------------- -->
+        <?php include '../commun/header.html';?>
+
+
+        <!-- ----------------------nav aside left---------------------- -->
+        <div class="display">
+            <?php include '../commun/aside.html';?>
+
+            <!-- -------------------------content page enoncé-------------------- -->
+
+            <article>
+
+                <div class="content-top">
+                    <section class="language-markup">
+                        <pre><code class="language-javascript"><xmp>
+if(a === "enonce" & b === "de l'exercise"){
+alert('aller au travail');
+}
+</xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax enoncé--------------------- -->
+
+                <section class="color-code pl-5 pt-3 text-left enonce language-markup">
+                    <p>
+                        Ecrivez un algorithme qui trie un tableau dans l’ordre décroissant. <br>
+                        Vous écrirez bien entendu deux versions de cet algorithme, l'une employant le tri par insertion, l'autre le tri à bulles.
+                    </p>
+                </section>
+
+                <!-- ----------------------------color syntax pseudo-code--------------------- -->
+
+                <section class="color-code language-markup">
+                    <pre class="line-numbers"><code><xmp>
+// ALGORITHME Exo_7_2.
+function Exo_7_2_js() {
+    // Tableau aTableau (15,34,58,42,20)
+    // Variables iIndex = 0, iLong, iLong2, iVarTemp EN NUMERIQUE
+    // DEBUT
+    // ECRIRE "Tableau non trié : " + aTableau
+    // POUR iLong2 de 0 à 3
+        // POUR iLong de 0 à 3
+            // SI aTableau(iIndex) > aTableau(iIndex + 1) ALORS
+                // iIndex = iIndex + 1
+            // SINON iVarTemp = aTableau(iIndex)
+                // aTableau(iIndex) = aTableau(iIndex + 1)
+                // aTableau(iIndex + 1) = iVarTemp
+                // iIndex = 0
+                // FINSI
+            // finSi
+        //finPour
+    // ECRIRE "Tableau trié : " + aTableau
+}
+          </xmp></code></pre>
+                </section>
+                <!-- ----------------------------btn select language--------------------- -->
+                <div>
+                    <a href="#traductJS" class="btn btn-md btn-dark mt-4 btn-js"
+                        onclick="showcode('executjs', 'resultjs',)"><img src="../css/img/icon-js.png"
+                            alt="javascript logo">JavaScript</a>
+              
+                    <a href="#traductJQ" class="btn btn-md btn-dark mt-4 btn-jq"
+                        onclick="showcode('executjq', 'resultjq')"><img src="../css/img/icon-jquery.png"
+                            alt="javascript logo">Jquery</a>
+                    <a href="#traductPhP" class="btn btn-md btn-dark mt-4 pr-4 btn-php"
+                        onclick="showcode('executphp', 'resultphp')"><img src="../css/img/icon-php.png"
+                            alt="javascript logo ">PhP</a>
+                </div>
+                <!-- ----------------------------color syntax JavaScript--------------------- -->
+                <div id="executjs" class="result">
+                    <section class="color-code language-markup ">
+                        <pre class="line-numbers"><code class="language-javascript"><xmp>
+// ALGORITHME Exo_7_2.
+function Exo_7_2_js(){
+    // Tableau aTableau (15,34,58,42,20)
+    // Variables iIndex = 0, iLong, iLong2, iVarTemp EN NUMERIQUE
+    var aTableau = [15, 34, 58, 42, 20];
+    var iIndex = 0;
+    var iLong;
+    var iLong2;
+    var iVarTemp;
+    // DEBUT
+    // ECRIRE "Tableau non trié : " + aTableau
+    document.getElementById("execut").innerHTML += "Tri par insertion" + "<br>";
+    document.getElementById("execut").innerHTML += "Tableau non trié : " + aTableau + "<br>";
+    // POUR iLong2 de 0 à 3
+    for (iLong2 = 0; iLong2 <= 3; iLong2++) {
+        // POUR iLong de 0 à 3
+        for (iLong = 0; iLong <= 3; iLong++) {
+            // SI aTableau(iIndex) > aTableau(iIndex + 1) ALORS
+            if (aTableau[iIndex] > aTableau[iIndex + 1]) {
+                // iIndex = iIndex + 1
+                iIndex++;
+            }
+            // SINON iVarTemp = aTableau(iIndex)
+            else {
+                iVarTemp = aTableau[iIndex];
+                // aTableau(iIndex) = aTableau(iIndex + 1)
+                aTableau[iIndex] = aTableau[iIndex + 1];
+                // aTableau(iIndex + 1) = iVarTemp
+                aTableau[iIndex + 1] = iVarTemp;
+                // iIndex = 0
+                iIndex = 0;
+                // FINSI
+            }
+            // finSi
+        }
+        //finPour
+    }
+    // ECRIRE "Tableau trié : " + aTableau
+    document.getElementById("execut").innerHTML += "Tableau trié : " + aTableau + "<br><br>";                 
+}
+
+
+
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax JavaScript prompt--------------------- -->
+
+                <div id="executprompt" class="result">
+                    <section class="color-code language-markup ">
+                        <pre class="line-numbers"><code class="language-javascript"><xmp>
+
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax Jquery--------------------- -->
+
+                <div id="executjq" class="result">
+                    <section class="color-code language-markup">
+                        <pre class="line-numbers"><code class="language-javascript"><xmp>
+// ALGORITHME Exo_7_2
+function Exo_7_2_jquery() {
+    var aTableau = [15, 34, 58, 42, 20];
+    var iIndex = 0;
+    var iLong;
+    var iLong2;
+    var iVarTemp;
+
+    $("#execut").append("Tri à bulle" + "<br>");
+    $("#execut").append("Tableau non trié : " + aTableau + "<br>");
+    for (iLong2 = 0; iLong2 <= 3; iLong2++) {
+        for (iLong = 0; iLong <= 3; iLong++) {
+            if (aTableau[iIndex] > aTableau[iIndex + 1]) {
+                iIndex++;
+            }
+            else {
+                iVarTemp = aTableau[iIndex];
+                aTableau[iIndex] = aTableau[iIndex + 1];
+                aTableau[iIndex + 1] = iVarTemp;
+                iIndex = 0;
+            }
+        }
+    }
+    $("#execut").append("Tableau trié : " + aTableau + "<br>");                                  
+}
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax php--------------------- -->
+
+                <div id="executphp" class="result">
+                    <section class="color-code language-markup">
+                        <pre class="line-numbers"><code class="language-php"><xmp>
+// ALGORITHME Exo_7_2
+function Exo_7_2_php() {
+    if (isset($_POST['submit'])) {
+        $aTableau = [15,34,58,42,20];
+        $iNbValPHP;
+        $iIndex = 0;
+        $iLong;
+        $iLong2;
+        $iVarTemp;
+        $iVal;
+        $iVal2;
+        $iResult = "";
+        $iResult2 = "";
+        
+        foreach ($aTableau as $iVal) {
+            $iResult .= $iVal ." ";
+        }
+        $sMessage .= "Tableau non trié : " .$iResult ."<br>";
+        
+        for ($iLong2 = 0; $iLong2 <= 3; $iLong2++) {
+            for ($iLong = 0; $iLong <= 3; $iLong++) {
+                if ($aTableau[$iIndex] > $aTableau[$iIndex + 1]) {
+                    $iIndex++;
+                }  
+                else {
+                        $iVarTemp = $aTableau[$iIndex];
+                        $aTableau[$iIndex] = $aTableau[$iIndex + 1];
+                        $aTableau[$iIndex + 1] = $iVarTemp;
+                        $iIndex = 0;
+                }
+            }
+        }
+        foreach ($aTableau as $iVal2) {
+            $iResult2 .= $iVal2 ." ";
+        }
+        $sMessage .= "Tableau trié : " .$iResult2;       
+    }
+}   
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------Form execute script---------------------- -->
+
+                <div id="form"  class="heidden mt-4 ml-5 mr-5">
+                    <form method="POST" action="exo_7_2_js.php">
+                        <div class="form-group" id="form-group">
+                          
+                        </div>
+                        <div class="form-group" id="form-rand">
+                            
+                        </div>
+
+                        <!-- ----------------------------btn execute script------------------------- -->
+                      
+                        <div class="display btn-display">
+                            <div id="resultjs" class="btnExecut " onclick="Exo_7_2_js()">
+                                <p>JavaScript</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </div>
+                            <div id="resultprompt" class="btnExecut " onclick="Exo_7_2_jsPrompt()">
+                                <p>Js prompt</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </div>
+                            <div id="resultjq" class="btnExecut " onclick="Exo_7_2_jquery()">
+                                <p>Jquery</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </div>
+
+                            <button id="resultphp" class="btnExecut" type="submit" name="submit">
+                                <p>PhP</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </button>
+                    </form>
+                </div>
+        </div>
+        <!-- -------------------------------result script--------------------------- -->
+       
+        <div id="execut" class="result pb-5">
+            <?= $sMessage;?>
+        </div>
+    </div>
+
+
+    </article>
+
+
+    </div>
+    </div>
+    <!-- ---------------------plugin lin Numbers-------------- -->
+
+    <script src="./exo_7_2_js.js"></script>
+
+    <?php include '../commun/footer.html';?>
+
+</body>
+
+
+</html>

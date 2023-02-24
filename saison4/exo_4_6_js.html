@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<?php include '../commun/head.html';?>
+
+<body>
+
+    <!-- --------------btn menu nav------------------------------- -->
+    <?php include '../commun/resp-nav.html';?>
+
+    <!-- --------------btn pause and play backgroung-------------- -->
+    <?php include '../commun/bg-video.html';?>
+
+    <!-- --------------all page------------------------------- -->
+    <div class="allpage">
+
+        <!-- --------------header------------------------------- -->
+        <?php include '../commun/header.html';?>
+
+
+        <!-- ----------------------nav aside left---------------------- -->
+        <div class="display">
+            <?php include '../commun/aside.html';?>
+
+            <!-- -------------------------content page enoncé-------------------- -->
+
+            <article>
+
+                <div class="content-top">
+                    <section class="language-markup">
+                        <pre><code class="language-javascript"><xmp>
+if(a === "enonce" & b === "de l'exercise"){
+alert('aller au travail');
+}
+</xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax enoncé--------------------- -->
+
+                <section class="color-code pl-5 pt-3 text-left enonce language-markup">
+                    <p>
+                        Les élections législatives, en Toonerie Nationale, obéissent à la règle suivante : <br>
+                        lorsque l'un des candidats obtient plus de 50% des suffrages, il est élu dès le premier tour.<br>
+                        en cas de deuxième tour, peuvent participer uniquement les candidats ayant obtenu au moins 12,5%<br>
+                        des voix au premier tour.<br>
+                        Vous devez écrire un algorithme qui permette la saisie des scores de quatre candidats au premier tour. Cet<br>
+                        algorithme traitera ensuite le candidat numéro 1 (et uniquement lui) : il dira s'il est élu, battu, s'il se trouve en<br>
+                        ballottage favorable (il participe au second tour en étant arrivé en tête à l'issue du premier tour) ou défavorable (il<br>
+                        participe au second tour sans avoir été en tête au premier tour).
+                    </p>
+                </section>
+
+                <!-- ----------------------------color syntax pseudo-code--------------------- -->
+
+                <section class="color-code language-markup">
+                    <pre class="line-numbers"><code><xmp>
+// ALGORITHME Exo_4_6
+function Exo_4_6(){
+// DEBUT
+    VARIABLE iScore1, iScore2, iScore3, iScore4 en NUMERIQUE
+        Ecrire 'entré le score candida 1'
+    Lire iScore1
+        Ecrire 'entré le score candida 2'
+    Lire iScore2
+        Ecrire 'entré le score candida 3'
+    Lire iScore3
+        Ecrire 'entré le score candida 4'
+    Lire iScore4
+
+    Si iScore1 > 50 Alors
+        Ecrire 'le candidat 1 a gagner'
+    SiNonSi iScore1 < 12.5 Alors
+        Ecrire 'perdu'
+    SiNonSi iScore1 > iScore2 && iScore1 > iScore3 && iScore1 > iScore4 Alors
+        Ecrire 'balotage +'
+    SiNon 
+        Ecrire 'balotage -'
+//FIN
+}
+          </xmp></code></pre>
+                </section>
+
+                <!-- ----------------------------btn select language--------------------- -->
+
+                <div>
+                    <a href="#traductJS" class="btn btn-md btn-dark mt-4 btn-js"
+                        onclick="showcode('executjs', 'resultjs')"><img src="../css/img/icon-js.png"
+                            alt="javascript logo">JavaScript</a>
+              
+                    <a href="#traductJQ" class="btn btn-md btn-dark mt-4 btn-jq"
+                        onclick="showcode('executjq', 'resultjq')"><img src="../css/img/icon-jquery.png"
+                            alt="javascript logo">Jquery</a>
+                    <a href="#traductPhP" class="btn btn-md btn-dark mt-4 pr-4 btn-php"
+                        onclick="showcode('executphp', 'resultphp')"><img src="../css/img/icon-php.png"
+                            alt="javascript logo ">PhP</a>
+                </div>
+
+                <!-- ----------------------------color syntax JavaScript--------------------- -->
+
+                <div id="executjs" class="result">
+                    <section class="color-code language-markup ">
+                        <pre class="line-numbers"><code class="language-javascript"><xmp>
+// ALGORITHME Exo_4_6
+function Exo_4_6_js(){
+// DEBUT
+VARIABLE iScore1, iScore2, iScore3, iScore4 en NUMERIQUE
+    //je declar mes variable
+    var iScore1, iScore2, iScore3, iScore4
+    iScore1 = document.getElementById('candidat1').value;
+    iScore2 = document.getElementById('candidat2').value;
+    iScore3 = document.getElementById('candidat3').value;
+    iScore4 = document.getElementById('candidat4').value;
+    var select = document.getElementById('execut');
+    if (iScore1 > 50) {
+        select.innerHTML = 'le candidat n°1 a Gagné les éléctions';
+    }else if (iScore1 < 12.5) {
+        select.innerHTML = 'le candidat n°1 a perdu les éléctions';
+    }else if (iScore1 > iScore2 && iScore1 > iScore3 && iScore1 > iScore4) {
+        select.innerHTML = 'le candidat n°1 est ballotage favorable';
+    }else{
+        select.innerHTML = 'le candidat n°1 est ballotage défavorable';
+    }
+//FIN
+}    
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax JavaScript prompt--------------------- -->
+
+                <div id="executprompt" class="result">
+                    <section class="color-code language-markup ">
+                        <pre class="line-numbers"><code class="language-javascript"><xmp>
+// ALGORITHME Exo_4_6
+function Exo_4_6_jsprompt(){
+// DEBUT
+VARIABLE iScore1, iScore2, iScore3, iScore4 en NUMERIQUE
+
+
+//FIN
+}
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax Jquery--------------------- -->
+
+                <div id="executjq" class="result">
+                    <section class="color-code language-markup">
+                        <pre class="line-numbers"><code class="language-javascript"><xmp>
+// ALGORITHME Exo_4_6
+function Exo_4_6_jquery() {
+// DEBUT
+VARIABLE iScore1, iScore2, iScore3, iScore4 en NUMERIQUE
+
+    //je declar mes variable
+    var iScore1, iScore2, iScore3, iScore4
+    iScore1 = $('#candidat1').val();
+    iScore2 = $('#candidat2').val();
+    iScore3 = $('#candidat3').val();
+    iScore4 = $('#candidat4').val();
+    var select = $('#execut');
+    //je crée ma condition 
+   if (iScore1 > 50) {
+       select.html('le candidat n°1 a Gagné les éléctions');
+   }else if (iScore1 < 12.5) {
+       select.html('le candidat n°1 a perdu les éléctions');
+   }else if (iScore1 > iScore2 && iScore1 > iScore3 && iScore1 > iScore4) {
+     select.html('le candidat n°1 est ballotage favorable');
+   }else{
+     select.html('le candidat n°1 est ballotage défavorable');
+   }
+//FIN
+}
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax php--------------------- -->
+
+                <div id="executphp" class="result">
+                    <section class="color-code language-markup">
+                        <pre class="line-numbers"><code class="language-php"><xmp>
+// ALGORITHME Exo_4_6
+function Exo_4_6_php() {
+// DEBUT
+VARIABLE iScore1, iScore2, iScore3, iScore4 en NUMERIQUE
+
+// si la formulaire a êtes posté 
+if (isset($_POST['ExecutPhp'])) {
+    // si la formulaire a êtes rempli 
+    if (isset($_POST['candidat1']) && isset($_POST['candidat2']) && isset($_POST['candidat3'])  && isset($_POST['candidat4'])) {
+        // je declare mes variable   
+        $iCandidat1 = $_POST['candidat1'];
+        $iCandidat2 = $_POST['candidat2'];
+        $iCandidat3 = $_POST['candidat3'];
+        $iCandidat4 = $_POST['candidat4'];
+        // je crée la structure html
+        $sStart = '<section class="color-code"><div class="color-result"><p>';
+        $sEnd = '</p></div></section>';
+        // je crée la condition
+        if ($iCandidat1 > 50) {
+            // je ecrie le resultat 
+          echo $sStart .  'le candidat n°1 a Gagné les éléctions' .$sEnd;
+        }elseif ($iCandidat1 < 12.5) {
+            // je ecrie le resultat 
+          echo $sStart .  'le candidat n°1 a perdu les éléctions' .$sEnd;
+        }elseif ($iCandidat1 > $iCandidat2 && $iCandidat1 > $iCandidat3 && $iCandidat1 > $iCandidat4) {
+            // je ecrie le resultat 
+          echo $sStart . 'le candidat n°1 est ballotage favorable' .$sEnd;
+        }else{
+            // je ecrie le resultat 
+          echo $sStart . 'le candidat n°1 est ballotage défavorable' .$sEnd;
+        } 
+    }
+}
+//FIN
+}   
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------Form execute script---------------------- -->
+
+                <div id="form"  class="heidden mt-4 ml-5 mr-5">
+                    <form method="POST" action="exo_4_6_php.php">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Entrez le score du candidat 1</label>
+                            <input type="number" class="form-control" name="candidat1" id="candidat1"
+                            min="1" max="100" aria-describedby="candidat1" placeholder="Score candidat 1 en %">
+                            <label for="exampleInputEmail1">Entrez le score du candidat 2</label>
+                            <input type="number" class="form-control" name="candidat2" id="candidat2"
+                            min="1" max="100" aria-describedby="candidat2" placeholder="Score candidat 2 en %">
+                            <label for="exampleInputEmail1">Entrez le score du candidat 3</label>
+                            <input type="number" class="form-control" name="candidat3" id="candidat3"
+                            min="1" max="100" aria-describedby="candidat3" placeholder="Score candidat 3 en %">
+                            <label for="exampleInputEmail1">Entrez le score du candidat 4</label>
+                            <input type="number" class="form-control" name="candidat4" id="candidat4"
+                            min="1" max="100" aria-describedby="candidat4" placeholder="Score candidat 4 en %">
+                        </div>
+
+                        <!-- ----------------------------btn execute script------------------------- -->
+                        <div class="display btn-display">
+                            <div id="resultjs" class="btnExecut " onclick="Exo_4_6_js()">
+                                <p>JavaScript</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </div>
+                            <div id="resultprompt" class="btnExecut " onclick="Exo_4_6_jsPrompt()">
+                                <p>Js prompt</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </div>
+                            <div id="resultjq" class="btnExecut " onclick="Exo_4_6_jquery()">
+                                <p>Jquery</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </div>
+
+                            <button id="resultphp" class="btnExecut" type="submit">
+                                <p>PhP</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </button>
+                    </form>
+                </div>
+        </div>
+
+        <!-- -------------------------------result script--------------------------- -->
+        <div id="execut" class="result pb-5">
+            <?php echo $sMessage;?>
+        </div>
+    </div>
+
+
+    </article>
+
+
+    </div>
+    </div>
+    <!-- ---------------------plugin lin Numbers-------------- -->
+
+    <script src="./exo_4_6_js.js"></script>
+
+    <?php include '../commun/footer.html';?>
+
+</body>
+
+
+</html>

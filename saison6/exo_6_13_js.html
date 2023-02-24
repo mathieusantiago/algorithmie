@@ -1,0 +1,254 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<?php include '../commun/head.html';?>
+
+<body>
+
+    <!-- --------------btn menu nav------------------------------- -->
+    <?php include '../commun/resp-nav.html';?>
+
+    <!-- --------------btn pause and play backgroung-------------- -->
+    <?php include '../commun/bg-video.html';?>
+
+    <!-- --------------all page------------------------------- -->
+    <div class="allpage">
+
+        <!-- --------------header------------------------------- -->
+        <?php include '../commun/header.html';?>
+
+
+        <!-- ----------------------nav aside left---------------------- -->
+        <div class="display">
+            <?php include '../commun/aside.html';?>
+
+            <!-- -------------------------content page enoncé-------------------- -->
+
+            <article>
+
+                <div class="content-top">
+                    <section class="language-markup">
+                        <pre><code class="language-javascript"><xmp>
+if(a === "enonce" & b === "de l'exercise"){
+alert('aller au travail');
+}
+</xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax enoncé--------------------- -->
+
+                <section class="color-code pl-5 pt-3 text-left enonce language-markup">
+                    <p>
+                        Ecrivez un algorithme permettant, toujours sur le même principe, à l’utilisateur de saisir un nombre déterminé de <br>
+                        valeurs. Le programme, une fois la saisie terminée, renvoie la plus grande valeur en précisant quelle position elle<br>
+                        occupe dans le tableau. On prendra soin d’effectuer la saisie dans un premier temps, et la recherche de la plus<br>
+                        grande valeur du tableau dans un second temps.
+                    </p>
+                </section>  
+
+                <!-- ----------------------------color syntax pseudo-code--------------------- -->
+
+                <section class="color-code language-markup">
+                    <pre class="line-numbers"><code><xmp>
+// ALGORITHME Exo_6_13.
+function Exo_6_13_js() {
+    Algorithme 6.13
+    Tableau aTableau
+    Variables iVal, iPlusGrand = 1, iPosition = 0 en numerique
+DEBUT
+    ECRIRE "Combien de valeurs souhaitez-vous saisir ?"
+    LIRE iNbVal
+    POUR i = 1 à iNbVal
+        LIRE iVal
+        SI (iVal > iPlusGrand) ALORS
+            iPlusGrand = iVal
+            iPosition = i
+        FINSI
+        aTableau(i) = iVal
+    i SUIVANT
+    ECRIRE "Plus grand = " + iPlusGrand
+    ECRIRE "Position = " + iPosition
+FIN
+           
+Fin
+}
+          </xmp></code></pre>
+                </section>
+                <!-- ----------------------------btn select language--------------------- -->
+                <div>
+                    <a href="#traductJS" class="btn btn-md btn-dark mt-4 btn-js"
+                        onclick="showcode('executjs', 'resultjs',)"><img src="../css/img/icon-js.png"
+                            alt="javascript logo">JavaScript</a>
+              
+                    <a href="#traductJQ" class="btn btn-md btn-dark mt-4 btn-jq"
+                        onclick="showcode('executjq', 'resultjq')"><img src="../css/img/icon-jquery.png"
+                            alt="javascript logo">Jquery</a>
+                    <a href="#traductPhP" class="btn btn-md btn-dark mt-4 pr-4 btn-php"
+                        onclick="showcode('executphp', 'resultphp')"><img src="../css/img/icon-php.png"
+                            alt="javascript logo ">PhP</a>
+                </div>
+                <!-- ----------------------------color syntax JavaScript--------------------- -->
+                <div id="executjs" class="result">
+                    <section class="color-code language-markup ">
+                        <pre class="line-numbers"><code class="language-javascript"><xmp>
+// ALGORITHME Exo_6_13.
+function Exo_6_13_js(){
+    // Algorithme 6.13
+    // Tableau aTableau
+    // Variables iVal, iNbPlusGrand = 1, iPosition = 0 en numerique
+    var iTabl= [], iNbPlusGrand = 0, iPosition = 0;
+    result = document.getElementById('execut');
+    result_form = document.getElementById('iValRand').value;
+    // POUR i = 1 à result_form
+    for(i=1; i<result_form; i++){
+    //     ECRIRE "Combien de valeurs souhaitez-vous saisir ?"
+    // LIRE iNbVal
+        iVal = +document.getElementById('iVal' + i).value;
+        // SI (iVal > iNbPlusGrand) ALORS
+        if (iVal>iNbPlusGrand){
+            // iNbPlusGrand = iVal
+            iNbPlusGrand = iVal;
+            // iPosition = i
+            iPosition = i;
+        //FINSI
+        }
+        // aTableau(i) = iVal
+        iTabl[i] = iNbPlusGrand;
+    }
+    // ECRIRE "Plus grand = " + iPlusGrand
+    // ECRIRE "Position = " + iPosition
+    result.innerHTML = 'Le nombre le plus grand est = ' + iNbPlusGrand + "<br>" +  'Position ' + iPosition;                    
+}
+
+
+
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax JavaScript prompt--------------------- -->
+
+                <div id="executprompt" class="result">
+                    <section class="color-code language-markup ">
+                        <pre class="line-numbers"><code class="language-javascript"><xmp>
+
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax Jquery--------------------- -->
+
+                <div id="executjq" class="result">
+                    <section class="color-code language-markup">
+                        <pre class="line-numbers"><code class="language-javascript"><xmp>
+// ALGORITHME Exo_6_13
+function Exo_6_13_jquery() {
+    function Exo_6_13_jquery() {
+        var iTabl= [], iNbPlusGrand = 0, iPosition = 0;
+        result = $('#execut');
+        result_form = $('#iValRand').val();
+    
+        for(i=1; i<result_form; i++){
+            iVal = +$('#iVal' + i).val();
+            if (iVal>iNbPlusGrand){
+                iNbPlusGrand = iVal;
+                iPosition = i;
+            }
+            iTabl[i] = iNbPlusGrand;
+        }
+        result.html('Le nombre le plus grand est = ' + iNbPlusGrand + "<br>" +  'Position ' + iPosition);                               
+    }                                    
+}
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax php--------------------- -->
+
+                <div id="executphp" class="result">
+                    <section class="color-code language-markup">
+                        <pre class="line-numbers"><code class="language-php"><xmp>
+// ALGORITHME Exo_6_13
+function Exo_6_13_php() {
+    if (isset($_POST['iValRand'])) {
+        $iTabl= [];
+        $iNbPlusGrand = 0;
+        $iPosition = 0;
+        $result_form = $_POST['iValRand'];
+    
+        for($i=1; $i<$result_form; $i++){
+            $iVal = +$_POST['iVal' . $i];
+            if ($iVal>$iNbPlusGrand){
+                $iNbPlusGrand = $iVal;
+                $iPosition = $i;
+            }
+            $iTabl[$i] = $iNbPlusGrand;
+        }
+        $sMessage = 'Le nombre le plus grand est = ' . $iNbPlusGrand . "<br>" .  'Position ' . $iPosition;                    
+    }
+}   
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------Form execute script---------------------- -->
+
+                <div id="form"  class="heidden mt-4 ml-5 mr-5">
+                    <form method="POST" action="exo_6_13_js.php">
+                        <div class="form-group" id="form-group">
+                            <label for="exampleInputEmail1">Entrez une Note</label>
+                            <input type="number" class="form-control" name="iValRand" id="iValRand"
+                             aria-describedby="iVal" placeholder="Entre une note" value="10">
+                        </div>
+                        <div class="form-group" id="form-rand">
+                            
+                        </div>
+
+                        <!-- ----------------------------btn execute script------------------------- -->
+                        <div class='btn btn-lg btn-info' onclick="InputMax()">afficher les formulaire</div>
+                        <div class="display btn-display">
+                            <div id="resultjs" class="btnExecut " onclick="Exo_6_13_js()">
+                                <p>JavaScript</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </div>
+                            <div id="resultprompt" class="btnExecut " onclick="Exo_6_13_jsPrompt()">
+                                <p>Js prompt</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </div>
+                            <div id="resultjq" class="btnExecut " onclick="Exo_6_13_jquery()">
+                                <p>Jquery</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </div>
+
+                            <button id="resultphp" class="btnExecut" type="submit" name="submit">
+                                <p>PhP</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </button>
+                    </form>
+                </div>
+        </div>
+        <!-- -------------------------------result script--------------------------- -->
+       
+        <div id="execut" class="result pb-5">
+            <?= $sMessage;?>
+        </div>
+    </div>
+
+
+    </article>
+
+
+    </div>
+    </div>
+    <!-- ---------------------plugin lin Numbers-------------- -->
+
+    <script src="./exo_6_13_js.js"></script>
+
+    <?php include '../commun/footer.html';?>
+
+</body>
+
+
+</html>

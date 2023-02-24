@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<?php include '../commun/head.html';?>
+
+<body>
+
+    <!-- --------------btn menu nav------------------------------- -->
+    <?php include '../commun/resp-nav.html';?>
+
+    <!-- --------------btn pause and play backgroung-------------- -->
+    <?php include '../commun/bg-video.html';?>
+
+    <!-- --------------all page------------------------------- -->
+    <div class="allpage">
+
+        <!-- --------------header------------------------------- -->
+        <?php include '../commun/header.html';?>
+
+
+        <!-- ----------------------nav aside left---------------------- -->
+        <div class="display">
+            <?php include '../commun/aside.html';?>
+
+            <!-- -------------------------content page enoncé-------------------- -->
+
+            <article>
+
+                <div class="content-top">
+                    <section class="language-markup">
+                        <pre><code class="language-javascript"><xmp>
+if(a === "enonce" & b === "de l'exercise"){
+alert('aller au travail');
+}
+</xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax enoncé--------------------- -->
+
+                <section class="color-code pl-5 pt-3 text-left enonce language-markup">
+                    <p>
+                        Ecrire un algorithme qui demande un nombre de départ, et qui calcule la somme des entiers jusqu’à ce nombre. Par<br>
+                        exemple, si l’on entre 5, le programme doit calculer :<br>
+                        NB : on souhaite afficher uniquement le résultat, pas la décomposition du calcul.
+                    </p>
+                </section>
+
+                <!-- ----------------------------color syntax pseudo-code--------------------- -->
+
+                <section class="color-code language-markup">
+                    <pre class="line-numbers"><code><xmp>
+// ALGORITHME Exo_5_6
+function Exo_5_6(){
+    //VARIABLE iNb, iSomme, i, bClac
+    //Ecrire 'Entrez un nombre'
+    //lire iNb
+    //iSomme = 0
+    Pour i = 1, i <= iNb, i++
+        //bClac = +(i) + i
+        //iSomme = iSomme + bClac / 2
+    FinPour
+    Ecrire 'iSomme'
+Fin       
+}
+          </xmp></code></pre>
+                </section>
+
+                <!-- ----------------------------btn select language--------------------- -->
+
+                <div>
+                    <a href="#traductJS" class="btn btn-md btn-dark mt-4 btn-js"
+                        onclick="showcode('executjs', 'resultjs')"><img src="../css/img/icon-js.png"
+                            alt="javascript logo">JavaScript</a>
+              
+                    <a href="#traductJQ" class="btn btn-md btn-dark mt-4 btn-jq"
+                        onclick="showcode('executjq', 'resultjq')"><img src="../css/img/icon-jquery.png"
+                            alt="javascript logo">Jquery</a>
+                    <a href="#traductPhP" class="btn btn-md btn-dark mt-4 pr-4 btn-php"
+                        onclick="showcode('executphp', 'resultphp')"><img src="../css/img/icon-php.png"
+                            alt="javascript logo ">PhP</a>
+                </div>
+
+                <!-- ----------------------------color syntax JavaScript--------------------- -->
+
+                <div id="executjs" class="result">
+                    <section class="color-code language-markup ">
+                        <pre class="line-numbers"><code class="language-javascript"><xmp>
+// ALGORITHME Exo_5_6
+function Exo_5_6_js(){
+    //VARIABLE iNb, iSomme, i, bClac
+    var iNb, iSomme, i, bCalc;
+    //Ecrire 'Entrez un nombre'
+    //lire iNb
+    iNb = document.getElementById('Nb').value;
+    //iSomme = 0
+    iSomme = 0 ;
+    //Pour i = 1, i <= iNb, i++
+    for(i = 1; i <= iNb; i++){
+        //bClac = +(i) + i
+        bCalc = +(i) + i;
+        //iSomme = iSomme + bClac / 2
+        iSomme = iSomme + bCalc / 2;
+    }    
+    //FinPour
+    //Ecrire 'iSomme'
+    document.getElementById('execut').innerHTML = ' la somme des entiers jusqu’à ce nombre et: '+ iSomme;
+//Fin  
+}    
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax JavaScript prompt--------------------- -->
+
+                <div id="executprompt" class="result">
+                    <section class="color-code language-markup ">
+                        <pre class="line-numbers"><code class="language-javascript"><xmp>
+
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax Jquery--------------------- -->
+
+                <div id="executjq" class="result">
+                    <section class="color-code language-markup">
+                        <pre class="line-numbers"><code class="language-javascript"><xmp>
+// ALGORITHME Exo_5_6
+function Exo_5_6_jquery(){
+    //VARIABLE iNb, iSomme, i, bClac
+    var iNb, iSomme, i, bCalc;
+    //Ecrire 'Entrez un nombre'
+    //lire iNb
+    iNb = $('#Nb').val();
+    //iSomme = 0
+    iSomme = 0 ;
+    //Pour i = 1, i <= iNb, i++
+    for(i = 1; i <= iNb; i++){
+        //bClac = +(i) + i
+        bCalc = +(i) + i;
+        //iSomme = iSomme + bClac / 2
+        iSomme = iSomme + bCalc / 2;
+    }    
+    //FinPour
+    //Ecrire 'iSomme'
+    $('#execut').html(' la somme des entiers jusqu’à ce nombre et: '+ iSomme);
+//Fin 
+}
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax php--------------------- -->
+
+                <div id="executphp" class="result">
+                    <section class="color-code language-markup">
+                        <pre class="line-numbers"><code class="language-php"><xmp>
+// ALGORITHME Exo_5_6
+function Exo_5_6_php() {
+    //VARIABLE iNb, iSomme, i, bClac
+    //Ecrire 'Entrez un nombre'
+    //lire iNb
+    $iNb = $_POST['Nb'];
+    //iSomme = 0
+    $iSomme = 0 ;
+    //Pour i = 1, i <= iNb, i++
+    for($i = 1; $i <= $iNb; $i++){
+        //bClac = +(i) + i
+        $bCalc = +($i) + $i;
+        //iSomme = iSomme + bClac / 2
+        $iSomme = $iSomme + $bCalc / 2;
+    }    
+    //FinPour
+    //Ecrire 'iSomme'
+    $sMessage = 'la somme des entiers jusqu’à ce nombre et:' . $iSomme;
+//Fin
+}   
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------Form execute script---------------------- -->
+
+                <div id="form"  class="heidden mt-4 ml-5 mr-5">
+                    <form method="POST" action="exo_5_6_js.php">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Entrez un nombre</label>
+                            <input type="number" class="form-control" name="Nb" id="Nb"
+                             aria-describedby="Nb" placeholder="Entre 1 et 3">
+                        </div>
+
+                        <!-- ----------------------------btn execute script------------------------- -->
+                        <div class="display btn-display">
+                            <div id="resultjs" class="btnExecut " onclick="Exo_5_6_js()">
+                                <p>JavaScript</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </div>
+                            <div id="resultprompt" class="btnExecut " onclick="Exo_5_6_jsPrompt()">
+                                <p>Js prompt</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </div>
+                            <div id="resultjq" class="btnExecut " onclick="Exo_5_6_jquery()">
+                                <p>Jquery</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </div>
+
+                            <button id="resultphp" class="btnExecut" type="submit" name="submit">
+                                <p>PhP</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </button>
+                    </form>
+                </div>
+        </div>
+        <!-- -------------------------------result script--------------------------- -->
+        <div id="execut" class="result pb-5">
+            <?php echo $sMessage; ?>
+        </div>
+    </div>
+
+
+    </article>
+
+
+    </div>
+    </div>
+    <!-- ---------------------plugin lin Numbers-------------- -->
+
+    <script src="./exo_5_6_js.js"></script>
+
+    <?php include '../commun/footer.html';?>
+
+</body>
+
+
+</html>

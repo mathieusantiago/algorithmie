@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<?php include '../commun/head.html';?>
+
+<body>
+
+    <!-- --------------btn menu nav------------------------------- -->
+    <?php include '../commun/resp-nav.html';?>
+
+    <!-- --------------btn pause and play backgroung-------------- -->
+    <?php include '../commun/bg-video.html';?>
+
+    <!-- --------------all page------------------------------- -->
+    <div class="allpage">
+
+        <!-- --------------header------------------------------- -->
+        <?php include '../commun/header.html';?>
+
+
+        <!-- ----------------------nav aside left---------------------- -->
+        <div class="display">
+            <?php include '../commun/aside.html';?>
+
+            <!-- -------------------------content page enoncé-------------------- -->
+
+            <article>
+
+                <div class="content-top">
+                    <section class="language-markup">
+                        <pre><code class="language-javascript"><xmp>
+if(a === "enonce" & b === "de l'exercise"){
+alert('aller au travail');
+}
+</xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax enoncé--------------------- -->
+
+                <section class="color-code pl-5 pt-3 text-left enonce language-markup">
+                    <p>
+                        b) Ecrire un algorithme qui choisit un nombre au hasard compris entre 1 et 100. <br>
+                        Pour ceci, on utilise la fonction :<br>
+                        iNombreHasard <- random[1..100]<br>
+                        Demander à l'utilisateur de trouver le nombre. On fera apparaître un message : « Plus petit ! », et inversement,<br>
+                        « Plus grand ! » jusqu’à ce que l'utilisateur ait trouvé et afficher en combien de coups.<br>
+                    </p>
+                </section>
+
+                <!-- ----------------------------color syntax pseudo-code--------------------- -->
+
+                <section class="color-code language-markup">
+                    <pre class="line-numbers"><code><xmp>
+// ALGORITHME Exo_5_2b
+iNombreRandom = Math.floor(Math.random(1) * 100);
+function Exo_5_2b(){
+// DEBUT
+VARIABLE iNb en NUMERIQUE
+DEBUT 
+Ecrire 'Entrez un numero entre 1 et 100'
+Lire iNb
+Si iNb < iNombreRandom
+    Ecrire "Trop petit"
+SiNonSi iNb > iNombreRandom
+    Ecrire "Trop grand"
+SiNonSi 
+    Ecrire "Bravo"            
+//FIN
+}
+          </xmp></code></pre>
+                </section>
+
+                <!-- ----------------------------btn select language--------------------- -->
+
+                <div>
+                    <a href="#traductJS" class="btn btn-md btn-dark mt-4 btn-js"
+                        onclick="showcode('executjs', 'resultjs')"><img src="../css/img/icon-js.png"
+                            alt="javascript logo">JavaScript</a>
+              
+                    <a href="#traductJQ" class="btn btn-md btn-dark mt-4 btn-jq"
+                        onclick="showcode('executjq', 'resultjq')"><img src="../css/img/icon-jquery.png"
+                            alt="javascript logo">Jquery</a>
+                    <a href="#traductPhP" class="btn btn-md btn-dark mt-4 pr-4 btn-php"
+                        onclick="showcode('executphp', 'resultphp')"><img src="../css/img/icon-php.png"
+                            alt="javascript logo ">PhP</a>
+                </div>
+
+                <!-- ----------------------------color syntax JavaScript--------------------- -->
+
+                <div id="executjs" class="result">
+                    <section class="color-code language-markup ">
+                        <pre class="line-numbers"><code class="language-javascript"><xmp>
+// ALGORITHME Exo_5_2b
+var iNombreRandom = Math.floor(Math.random(1) * 100);
+var NbTest = "";
+function Exo_5_2b_js(){
+// DEBUT
+// VARIABLE iNb en NUMERIQUE
+//je declar mes variable
+var iNb;
+iNb = parseInt(document.getElementById("Nb").value);
+//je declar mes condition
+if (iNb < iNombreRandom) {
+    NbTest++
+    document.getElementById("execut").innerHTML = "Trop petit !!!";
+} else if (iNb > iNombreRandom) {
+    NbTest++
+    document.getElementById("execut").innerHTML = "Trop grand !!!";
+} else {
+    document.getElementById("execut").innerHTML = "Bravo vous avez réussi ! en " + NbTest + " essai";
+}
+//FIN
+}    
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax JavaScript prompt--------------------- -->
+
+                <div id="executprompt" class="result">
+                    <section class="color-code language-markup ">
+                        <pre class="line-numbers"><code class="language-javascript"><xmp>
+
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax Jquery--------------------- -->
+
+                <div id="executjq" class="result">
+                    <section class="color-code language-markup">
+                        <pre class="line-numbers"><code class="language-javascript"><xmp>
+// ALGORITHME Exo_5_2b
+iNombreRandom = Math.floor(Math.random(1) * 100);
+function Exo_5_2b_jquery() {
+// DEBUT
+// VARIABLE iNb en NUMERIQUE
+//je declar mes variable
+var iNb;
+iNb = parseInt(document.getElementById("Nb").value);
+//je declar mes condition
+if (iNb < iNombreRandom) {
+    $("#execut").html("Trop petit !!!");
+} else if (iNb > iNombreRandom) {
+    $("#execut").html("Trop grand !!!");
+} else {
+    $("#execut").html("Bravo vous avez réussi !" + NbTest + " essai");
+}
+//FIN
+}
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax php--------------------- -->
+
+                <div id="executphp" class="result">
+                    <section class="color-code language-markup">
+                        <pre class="line-numbers"><code class="language-php"><xmp>
+// ALGORITHME Exo_5_2b
+
+
+function Exo_5_2b_php() {
+// DEBUT
+// VARIABLE iNb en NUMERIQUE
+if ($iNb != $iNombreRandom) {
+    //je declar mes variable
+    
+    $iNb = $_POST['Nb'];
+    
+    //je declar mes condition
+    if ($iNb < $iNombreRandom) {
+        $NbTest++;
+        $sMessage = "Trop petit !!!";
+    } else if ($iNb > $iNombreRandom) {
+        $NbTest++;
+        $sMessage = "Trop grand !!!";
+    } else {
+        $sMessage = "Bravo vous avez réussi ! en " + $NbTest + " essai";
+    }
+}  
+//FIN
+}   
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------Form execute script---------------------- -->
+
+                <div id="form"  class="heidden mt-4 ml-5 mr-5">
+                    <form method="POST" action="exo_5_2b_js.php">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Entrez un nombre entre 10 et 20</label>
+                            <input type="number" class="form-control" name="Nb" id="Nb"
+                             aria-describedby="Nb" placeholder="Entre 1 et 3">
+                             <input type="number" class="form-control heidden2" name="rand" id="rand"
+                             aria-describedby="Nb" value="<?php echo $iNombreRandom; ?>" placeholder="Entre 1 et 3">
+                             <input type="number" class="form-control heidden2" name="iCont" id="iCont"
+                             aria-describedby="Nb" value="<?php echo $iCont; ?>" placeholder="Entre 1 et 3">
+                        </div>
+
+                        <!-- ----------------------------btn execute script------------------------- -->
+                        <div class="display btn-display">
+                            <div id="resultjs" class="btnExecut " onclick="Exo_5_2b_js()">
+                                <p>JavaScript</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </div>
+                            <div id="resultprompt" class="btnExecut " onclick="Exo_5_2b_jsPrompt()">
+                                <p>Js prompt</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </div>
+                            <div id="resultjq" class="btnExecut " onclick="Exo_5_2b_jquery()">
+                                <p>Jquery</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </div>
+
+                            <button id="resultphp" class="btnExecut" type="submit" name="submit">
+                                <p>PhP</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </button>
+                    </form>
+                </div>
+        </div>
+        <!-- -------------------------------result script--------------------------- -->
+        <div id="execut" class="result pb-5">
+            <?php echo $sMessage; ?>
+        </div>
+    </div>
+
+
+    </article>
+
+
+    </div>
+    </div>
+    <!-- ---------------------plugin lin Numbers-------------- -->
+
+    <script src="./exo_5_2b_js.js"></script>
+
+    <?php include '../commun/footer.html';?>
+
+</body>
+
+
+</html>

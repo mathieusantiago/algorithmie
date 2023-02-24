@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<?php include '../commun/head.html';?>
+
+<body>
+
+    <!-- --------------btn menu nav------------------------------- -->
+    <?php include '../commun/resp-nav.html';?>
+
+    <!-- --------------btn pause and play backgroung-------------- -->
+    <?php include '../commun/bg-video.html';?>
+
+    <!-- --------------all page------------------------------- -->
+    <div class="allpage">
+
+        <!-- --------------header------------------------------- -->
+        <?php include '../commun/header.html';?>
+
+
+        <!-- ----------------------nav aside left---------------------- -->
+        <div class="display">
+            <?php include '../commun/aside.html';?>
+
+            <!-- -------------------------content page enoncé-------------------- -->
+
+            <article>
+
+                <div class="content-top">
+                    <section class="language-markup">
+                        <pre><code class="language-javascript"><xmp>
+if(a === "enonce" & b === "de l'exercise"){
+alert('aller au travail');
+}
+</xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax enoncé--------------------- -->
+
+                <section class="color-code pl-5 pt-3 text-left enonce language-markup">
+                    <p>
+                        Ecrire un algorithme qui demande trois noms à l’utilisateur et l’informe ensuite s’ils sont
+                        rangés ou non dans l’ordre alphabétique.
+                    </p>
+                </section>
+
+                <!-- ----------------------------color syntax pseudo-code--------------------- -->
+
+                <section class="color-code language-markup">
+                    <pre class="line-numbers"><code><xmp>
+// ALGORITHME Exo_3_2
+function Exo_3_2(){
+// DEBUT
+  // VARIABLE sName1, sName2, sName3 en NUMERIQUE 
+    Ecrire "entrez 3 nom"
+    Lire sName1, sName2,sName3
+    Si (a < b && b < c){
+        Ecrire "ces noms son classés par ordre alphabetique"
+    }SiNon{
+        Ecrire "ces noms ne son pas classés par ordre alphabetique"
+    }
+    
+//FIN
+}
+          </xmp></code></pre>
+                </section>
+
+                <!-- ----------------------------btn select language--------------------- -->
+
+                <div>
+                    <a href="#traductJS" class="btn btn-md btn-dark mt-4 btn-js"
+                        onclick="showcode('executjs', 'resultjs')"><img src="../css/img/icon-js.png"
+                            alt="javascript logo">JavaScript</a>
+                    <a href="#traductJS" class="btn btn-md btn-dark mt-4 btn-js"
+                        onclick="showcode('executprompt', 'resultprompt')"><img src="../css/img/icon-js.png"
+                            alt="javascript logo">Js Prompt</a>
+                    <a href="#traductJQ" class="btn btn-md btn-dark mt-4 btn-jq"
+                        onclick="showcode('executjq', 'resultjq')"><img src="../css/img/icon-jquery.png"
+                            alt="javascript logo">Jquery</a>
+                    <a href="#traductPhP" class="btn btn-md btn-dark mt-4 pr-4 btn-php"
+                        onclick="showcode('executphp', 'resultphp')"><img src="../css/img/icon-php.png"
+                            alt="javascript logo ">PhP</a>
+                </div>
+
+                <!-- ----------------------------color syntax JavaScript--------------------- -->
+
+                <div id="executjs" class="result">
+                    <section class="color-code language-markup ">
+                        <pre class="line-numbers"><code class="language-javascript"><xmp>
+// ALGORITHME Exo_3_2
+function Exo_3_2_js(){
+// DEBUT
+// VARIABLE sName1, sName2, sName3, sSelect, sStart, sEnd, sPositif, sNegatif en NUMERIQUE et STRING 
+    //je declar mes variable
+    var sName1 = document.getElementById('Name1').value;
+    var sName2 = document.getElementById('Name2').value;
+    var sName3 = document.getElementById('Name3').value;
+    var select = document.getElementById('execut');
+    //je crée ma structure html
+    var sStart = '<section class="color-code"><div class="color-result"><p>';
+    var sEnd = '</p></div></section>';
+    var sOrder = sStart  + 'Ces noms son classés par ordre alphabetique' + sEnd
+    var sNoOrder = sStart  + 'Ces noms ne son pas classés par ordre alphabetique' + sEnd;
+    //je crée ma condition
+    if (sName1 < sName2 && sName2 < sName3){
+    select.innerHTML = sOrder;  
+    } else {
+    select.innerHTML = sNoOrder;  
+    }
+//FIN
+}    
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax JavaScript prompt--------------------- -->
+
+                <div id="executprompt" class="result">
+                    <section class="color-code language-markup ">
+                        <pre class="line-numbers"><code class="language-javascript"><xmp>
+// ALGORITHME Exo_3_2
+function Exo_3_2_jsprompt(){
+// DEBUT
+// VARIABLE sName1, sName2, sName3, sSelect, sStart, sEnd, sPositif, sNegatif en NUMERIQUE et STRING 
+    //je declare mes variable
+    var sName1 = prompt('Entrez un nom');
+    var sName2 = prompt('Entrez un nom');
+    var sName3 = prompt('Entrez un nom');
+
+    //je crée ma structure html
+    var sOrder = ' Ces noms son classés par ordre alphabetique';
+    var sNoOrder = ' Ces noms ne son pas classés par ordre alphabetique';
+    if (sName1 < sName2 && sName2 < sName3) {
+    alert(sOrder);
+    } else {
+    alert(sNoOrder);
+    }
+//FIN
+}
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax Jquery--------------------- -->
+
+                <div id="executjq" class="result">
+                    <section class="color-code language-markup">
+                        <pre class="line-numbers"><code class="language-javascript"><xmp>
+// ALGORITHME Exo_3_2
+function Exo_3_2_jquery() {
+// DEBUT
+// VARIABLE sName1, sName2, sName3, sSelect, sStart, sEnd, sPositif, sNegatif en NUMERIQUE et STRING 
+    //je declare mes variable
+    var sName1 = $('#Name1').val();
+    var sName2 = $('#Name2').val();
+    var sName3 = $('#Name3').val();
+    //je crée ma structure html
+    var sStart = '<section class="color-code"><div class="color-result"><p>';
+    var sEnd = '</p></div></section>';
+    var sOrder = sStart +'Ces noms son classés par ordre alphabetique' + sEnd;
+    var sNoOrder = sStart +' Ces noms ne son pas classés par ordre alphabetique' + sEnd;
+    //je crée ma condition
+    if  (sName1 < sName2 && sName2 < sName3) {
+    $('#execut').html(sOrder);
+    } else {
+    $('#execut').html(sNoOrder);
+    }
+//FIN
+}
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax php--------------------- -->
+
+                <div id="executphp" class="result">
+                    <section class="color-code language-markup">
+                        <pre class="line-numbers"><code class="language-php"><xmp>
+// ALGORITHME Exo_3_2
+function Exo_3_2_php() {
+// DEBUT
+// VARIABLE sName1, sName2, sName3, sSelect, sStart, sEnd, sPositif, sNegatif en NUMERIQUE et STRING 
+// si la formulaire a êtes posté 
+if (isset($_POST['ExecutPhp'])) {
+    // si les formulaires on êtait rempli 
+    if (isset($_POST['Name1']) && isset($_POST['Name2']) && isset($_POST['Name3'])) {
+
+        // je declare mes variable   
+        $sName1 = $_POST['Name1'];
+        $sName2 = $_POST['Name2'];
+        $sName3 = $_POST['Name3'];
+        // je crée la structure html
+        $sStart = '<section class="color-code"><div class="color-result"><p>';
+        $sEnd = '</p></div></section>';
+        //je crée une variable qui contient la structur html 
+        $sOrder =   $sStart . '  Ces noms son classés par ordre alphabetique' . $sEnd;
+        $sNoOrder =   $sStart . ' Ces noms ne son pas classés par ordre alphabetique' . $sEnd;
+        //j'écrie mon resultat 
+        if ($sName1 < $sName2 && $sName2 < $sName3) {
+            echo $sOrder;
+        } else {
+            echo $sNoOrder;
+        }
+    }
+}
+//FIN
+}   
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------Form execute script---------------------- -->
+
+                <div id="form" class="heidden mt-4 ml-5 mr-5">
+                    <form method="POST">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Entrez un nom</label>
+                            <input type="text" class="form-control" name="Name1" id="Name1" aria-describedby="Name1"
+                                placeholder="">
+                            <label for="exampleInputEmail1">Entrez un nom</label>
+                            <input type="text" class="form-control" name="Name2" id="Name2" aria-describedby="Name2"
+                                placeholder="">
+                            <label for="exampleInputEmail1">Entrez un nom</label>
+                            <input type="text" class="form-control" name="Name3" id="Name3" aria-describedby="Name3"
+                                placeholder="">
+                        </div>
+
+                        <!-- ----------------------------btn execute script------------------------- -->
+                        <div class="display btn-display">
+                            <div id="resultjs" class="btnExecut " onclick="Exo_3_3_js()">
+                                <p>JavaScript</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </div>
+                            <div id="resultprompt" class="btnExecut " onclick="Exo_3_3_jsPrompt()">
+                                <p>Js prompt</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </div>
+                            <div id="resultjq" class="btnExecut " onclick="Exo_3_3_jquery()">
+                                <p>Jquery</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </div>
+
+                            <button id="resultphp" class="btnExecut" type="submit" value="ExecutPhp" name="ExecutPhp">
+                                <p>PhP</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </button>
+                    </form>
+                </div>
+        </div>
+
+        <!-- -------------------------------result script--------------------------- -->
+        <div id="execut" class="result pb-5">
+            <?php include './exo_3_3_php.php';?>
+        </div>
+    </div>
+
+
+    </article>
+
+
+    </div>
+    </div>
+    <!-- ---------------------plugin lin Numbers-------------- -->
+
+    <script src="./exo_3_3_js.js"></script>
+    <?php include '../commun/footer.html';?>
+
+</body>
+
+
+</html>

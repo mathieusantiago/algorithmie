@@ -1,0 +1,316 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<?php include '../commun/head.html';?>
+
+<body>
+
+    <!-- --------------btn menu nav------------------------------- -->
+    <?php include '../commun/resp-nav.html';?>
+
+    <!-- --------------btn pause and play backgroung-------------- -->
+    <?php include '../commun/bg-video.html';?>
+
+    <!-- --------------all page------------------------------- -->
+    <div class="allpage">
+
+        <!-- --------------header------------------------------- -->
+        <?php include '../commun/header.html';?>
+
+
+        <!-- ----------------------nav aside left---------------------- -->
+        <div class="display">
+            <?php include '../commun/aside.html';?>
+
+            <!-- -------------------------content page enoncé-------------------- -->
+
+            <article>
+
+                <div class="content-top">
+                    <section class="language-markup">
+                        <pre><code class="language-javascript"><xmp>
+if(a === "enonce" & b === "de l'exercise"){
+alert('aller au travail');
+}
+</xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax enoncé--------------------- -->
+
+                <section class="color-code pl-5 pt-3 text-left enonce language-markup">
+                    <p>
+                        Écrire un algorithme qui permette de connaître ses chances de gagner au tiercé, quarté, quinté et autres impôts <br>
+                        volontaires.<br>
+                        On demande à l’utilisateur le nombre de chevaux partants, et le nombre de chevaux joués. Les deux messages<br>
+                        affichés devront être :<br>
+                        Dans l’ordre : une chance sur X de gagner<br>
+                        Dans le désordre : une chance sur Y de gagner<br>
+                        X et Y nous sont donnés par la formule suivante, si n est le nombre de chevaux partants et p le nombre de chevaux<br>
+                        joués (on rappelle que le signe ! signifie "factorielle", comme dans l'exercice 5.7 ci-dessus) :<br>
+                        X = n ! / (n - p) !<br>
+                        Y = n ! / (p ! * (n – p) !)<br>
+                        NB : cet algorithme peut être écrit d’une manière simple, mais relativement peu performante. Ses performances<br>
+                        peuvent être singulièrement augmentées par une petite astuce. Vous commencerez par écrire la manière la plus<br>
+                        simple, puis vous identifierez le problème, et écrirez une deuxième version permettant de le résoudre. <br>                
+                    </p>
+                </section>
+
+                <!-- ----------------------------color syntax pseudo-code--------------------- -->
+
+                <section class="color-code language-markup">
+                    <pre class="line-numbers"><code><xmp>
+/* --------------------------exercic js--------------------------- */
+// ALGORITHME Exo_5_11.
+function Exo_5_11_js() {
+    VARIABLES iNbPartants, iNbJoues, iFactNbPartants = 1, iFactNbJoues = 1,i,x=0,y=0,iFacNp=1;
+    DEBUT
+        ECRIRE "Nombre de chevaux partants : "
+        LIRE iNbPartants
+        ECRIRE "Nombre de chevaux joués : "
+        LIRE iNbJoues
+
+        Factorielle du nombre de partants :
+        pour i a iNbParants
+            iFactNbPartants+=  iFactNbPartants * i;
+        fin pour
+
+        Factorielle du nombre de joués :
+        pour i a iNbJoues
+            iFactNbJoues+= iFactNbJoues * i;
+        fin pour
+
+        Factorielle du nombre de joués et nombre de partants:
+        pour i a iNbParants - iNbJoues
+            iFacNp+= iFacNp * i;
+        fin pour 
+
+        x= iFactNbPartants/iFacNp;
+        y=x/iFactNbJoues;
+
+        ECRIRE "Dans l'ordre : une chance sur " iChanceOrdre " de gagner"
+        ECRIRE "Dans le désordre : une chance sur " iChanceDésordre " de gagner"
+    Fin
+}           </xmp></code></pre>
+                </section>
+                <!-- ----------------------------btn select language--------------------- -->
+                <div>
+                    <a href="#traductJS" class="btn btn-md btn-dark mt-4 btn-js"
+                        onclick="showcode2('executjs', 'resultjs', 'FormPhp')"><img src="../css/img/icon-js.png"
+                            alt="javascript logo">JavaScript</a>
+              
+                    <a href="#traductJQ" class="btn btn-md btn-dark mt-4 btn-jq"
+                        onclick="showcode2('executjq', 'resultjq', 'FormPhp')"><img src="../css/img/icon-jquery.png"
+                            alt="javascript logo">Jquery</a>
+                    <a href="#traductPhP" class="btn btn-md btn-dark mt-4 pr-4 btn-php"
+                        onclick="showcode2('executphp', 'resultphp', 'form-group')"><img src="../css/img/icon-php.png"
+                            alt="javascript logo ">PhP</a>
+                </div>
+                <!-- ----------------------------color syntax JavaScript--------------------- -->
+                <div id="executjs" class="result">
+                    <section class="color-code language-markup ">
+                        <pre class="line-numbers"><code class="language-javascript"><xmp>
+// ALGORITHME Exo_5_11.
+//variable globlal iCalcPirx = 0 en NUMERIQUE
+    //VARIABLES iNbPartants, iNbJoues, iChanceOrdre, iChanceDésordre
+    var iNbPartants, iNbJoues, iChanceOrdre, iChanceDesordre, iFactNbPartants = 1, iFactNbJoues = 1, iCompteur1, iCompteur2, iFP = 0, iFJ = 0;
+    // DEBUT
+    //ECRIRE "Nombre de chevaux partants : "
+    //LIRE iNbPartants
+    iNbPartants = document.getElementById("iNbPartants").value;
+    //ECRIRE "Nombre de chevaux joués : "
+    //LIRE iNbJoues
+    iNbJoues = document.getElementById("iNbJoues").value;
+    //Factorielle du nombre de partants :
+    for (iCompteur1 = 1; iCompteur1 < iNbPartants; iCompteur1++) {
+        iFactNbPartants = iFactNbPartants * iCompteur1;
+    }
+    iFP = iFactNbPartants * iNbPartants;
+    // Factorielle du nomre de joués :
+    for (iCompteur2 = 1; iCompteur2 < iNbJoues; iCompteur2++) {
+        iFactNbJoues = iFactNbJoues * iCompteur2;
+    }
+    iFJ = iFactNbJoues * iNbJoues;
+    //iChanceOrdre = iNbPartants! / (iNbPartants - iNbJoues)!
+    iChanceOrdre = iFP / (iFP - iFJ);
+    //iChanceDésordre = iNbPartants! / (iNbPartants! * (iNbJoues - iNbPartants)!
+    iChanceDesordre = iFP / (iFP * (iFJ - iFP));
+    //ECRIRE "Dans l'ordre : une chance sur " iChanceOrdre " de gagner"
+    document.getElementById("execut").innerHTML += "Dans l'ordre : une chance sur " + iChanceOrdre + " de gagner" + "<br>";
+    //ECRIRE "Dans le désordre : une chance sur " iChanceDésordre " de gagner"
+    document.getElementById("execut").innerHTML += "Dans le désordre : une chance sur " + iChanceDesordre + " de gagner";
+}    
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax JavaScript prompt--------------------- -->
+
+                <div id="executprompt" class="result">
+                    <section class="color-code language-markup ">
+                        <pre class="line-numbers"><code class="language-javascript"><xmp>
+
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax Jquery--------------------- -->
+
+                <div id="executjq" class="result">
+                    <section class="color-code language-markup">
+                        <pre class="line-numbers"><code class="language-javascript"><xmp>
+// ALGORITHME Exo_5_11
+function Exo_5_11_jquery(){
+    //VARIABLES iNbPartants, iNbJoues, iChanceOrdre, iChanceDésordre
+    var iNbPartants, iNbJoues, iChanceOrdre, iChanceDesordre, iFactNbPartants = 1, iFactNbJoues = 1, iCompteur1, iCompteur2, iFP = 0, iFJ = 0;
+    // DEBUT
+    //ECRIRE "Nombre de chevaux partants : "
+    //LIRE iNbPartants
+    iNbPartants = $("#iNbPartants").val();
+    //ECRIRE "Nombre de chevaux joués : "
+    //LIRE iNbJoues
+    iNbJoues = $("#iNbJoues").val();
+    //Factorielle du nombre de partants :
+    for (iCompteur1 = 1; iCompteur1 < iNbPartants; iCompteur1++) {
+        iFactNbPartants = iFactNbPartants * iCompteur1;
+    }
+    iFP = iFactNbPartants * iNbPartants;
+    // Factorielle du nomre de joués :
+    for (iCompteur2 = 1; iCompteur2 < iNbJoues; iCompteur2++) {
+        iFactNbJoues = iFactNbJoues * iCompteur2;
+    }
+    iFJ = iFactNbJoues * iNbJoues;
+    //iChanceOrdre = iNbPartants! / (iNbPartants - iNbJoues)!
+    iChanceOrdre = iFP / (iFP - iFJ);
+    //iChanceDésordre = iNbPartants! / (iNbPartants! * (iNbJoues - iNbPartants)!
+    iChanceDesordre = iFP / (iFP * (iFJ - iFP));
+    //ECRIRE "Dans l'ordre : une chance sur " iChanceOrdre " de gagner"
+    $("#execut").append( "Dans l'ordre : une chance sur " + iChanceOrdre + " de gagner" + "<br>");
+    //ECRIRE "Dans le désordre : une chance sur " iChanceDésordre " de gagner"
+    $("#execut").append( "Dans le désordre : une chance sur " + iChanceDesordre + " de gagner");
+}
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax php--------------------- -->
+
+                <div id="executphp" class="result">
+                    <section class="color-code language-markup">
+                        <pre class="line-numbers"><code class="language-php"><xmp>
+// ALGORITHME Exo_5_11
+function Exo_5_11_php() {
+    //VARIABLES iNbPartants;
+    $iNbJoues;
+    $iChanceOrdre;
+    $iChanceDésordre;
+    $iNbPartants;
+    $iNbJoues;
+    $iChanceOrdre;
+    $iChanceDesordre;
+    $iFactNbPartants = 1;
+    $iFactNbJoues = 1;
+    $iCompteur1;
+    $iCompteur2;
+    $iFP = 0;
+    $iFJ = 0;
+    // DEBUT
+    //ECRIRE "Nombre de chevaux partants : "
+    //LIRE iNbPartants
+    $iNbPartants = $_POST["iNbPartants"];
+    //ECRIRE "Nombre de chevaux joués : "
+    //LIRE iNbJoues
+    $iNbJoues = $_POST["iNbJoues"];
+    //Factorielle du nombre de partants :
+    for ($iCompteur1 = 1; $iCompteur1 < $iNbPartants; $iCompteur1++) {
+        $iFactNbPartants = $iFactNbPartants * $iCompteur1;
+    }
+    $iFP = $iFactNbPartants * $iNbPartants;
+    // Factorielle du nomre de joués :
+    for ($iCompteur2 = 1; $iCompteur2 < $iNbJoues; $iCompteur2++) {
+        $iFactNbJoues = $iFactNbJoues * $iCompteur2;
+    }
+    $iFJ = $iFactNbJoues * $iNbJoues;
+    //iChanceOrdre = iNbPartants! / (iNbPartants - iNbJoues)!
+    $iChanceOrdre = $iFP / ($iFP - $iFJ);
+    //iChanceDésordre = iNbPartants! / (iNbPartants! * (iNbJoues - iNbPartants)!
+    $iChanceDesordre = $iFP / ($iFP * ($iFJ - $iFP));
+    //ECRIRE "Dans l'ordre : une chance sur " iChanceOrdre " de gagner"
+    $sMessage1 = "Dans l'ordre : une chance sur " . $iChanceOrdre . " de gagner" . "<br>";
+    //ECRIRE "Dans le désordre : une chance sur " iChanceDésordre " de gagner"
+    $sMessage2 = "Dans le désordre : une chance sur " . $iChanceDesordre . " de gagner";
+}   
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------Form execute script---------------------- -->
+
+                <div id="form"  class="heidden mt-4 ml-5 mr-5">
+                    <form method="POST" action="exo_5_11_js.php">
+                        <div class="form-group" id="form-group">
+                            <label for="exampleInputEmail1">Nombre de chevaux partants</label>
+                            <input type="number" class="form-control" name="iNbPartants" id="iNbPartants"
+                             aria-describedby="iNbPartants" placeholder="">
+                             <label for="exampleInputEmail1">Nombre de chevaux joués :</label>
+                             <input type="number" class="form-control" name="iNbJoues" id="iNbJoues"
+                              aria-describedby="iNbJoues" placeholder="">
+                        </div>
+                        <div class="form-group heidden" id="FormPhp">
+                            <label for="exampleInputEmail1">Nombre de chevaux partants</label>
+                            <input type="number" class="form-control" name="iNbPartants" id="iNbPartants"
+                             aria-describedby="iNbPartants" placeholder="">
+                             <label for="exampleInputEmail1">Nombre de chevaux joués :</label>
+                             <input type="number" class="form-control" name="iNbJoues" id="iNbJoues"
+                              aria-describedby="iNbJoues" placeholder="">
+                        </div>
+
+                        <!-- ----------------------------btn execute script------------------------- -->
+                        <div class="display btn-display">
+                            <div id="resultjs" class="btnExecut " onclick="Exo_5_11_js()">
+                                <p>JavaScript</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </div>
+                            <div id="resultprompt" class="btnExecut " onclick="Exo_5_11_jsPrompt()">
+                                <p>Js prompt</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </div>
+                            <div id="resultjq" class="btnExecut " onclick="Exo_5_11_jquery()">
+                                <p>Jquery</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </div>
+
+                            <button id="resultphp" class="btnExecut" type="submit" name="submit">
+                                <p>PhP</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </button>
+                    </form>
+                </div>
+        </div>
+        <!-- -------------------------------result script--------------------------- -->
+       
+        <div id="execut" class="result pb-5">
+            
+            <?= $sMessage;?>
+       
+
+        </div>
+    </div>
+
+
+    </article>
+
+
+    </div>
+    </div>
+    <!-- ---------------------plugin lin Numbers-------------- -->
+
+    <script src="./exo_5_11_js.js"></script>
+
+    <?php include '../commun/footer.html';?>
+
+</body>
+
+
+</html>

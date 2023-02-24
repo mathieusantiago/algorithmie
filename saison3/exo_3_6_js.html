@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<?php include '../commun/head.html';?>
+
+<body>
+
+    <!-- --------------btn menu nav------------------------------- -->
+    <?php include '../commun/resp-nav.html';?>
+
+    <!-- --------------btn pause and play backgroung-------------- -->
+    <?php include '../commun/bg-video.html';?>
+
+    <!-- --------------all page------------------------------- -->
+    <div class="allpage">
+
+        <!-- --------------header------------------------------- -->
+        <?php include '../commun/header.html';?>
+
+
+        <!-- ----------------------nav aside left---------------------- -->
+        <div class="display">
+            <?php include '../commun/aside.html';?>
+
+            <!-- -------------------------content page enoncé-------------------- -->
+
+            <article>
+
+                <div class="content-top">
+                    <section class="language-markup">
+                        <pre><code class="language-javascript"><xmp>
+if(a === "enonce" & b === "de l'exercise"){
+alert('aller au travail');
+}
+</xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax enoncé--------------------- -->
+
+                <section class="color-code pl-5 pt-3 text-left enonce language-markup">
+                    <p>
+                        Ecrire un algorithme qui demande l’âge d’un enfant à l’utilisateur. Ensuite, il l’informe de sa catégorie :<br>
+                        •"Poussin" de 6 à 7 ans<br>
+                        •"Pupille" de 8 à 9 ans<br>
+                        •"Minime" de 10 à 11 ans<br>
+                        •"Cadet" après 12 ans<br>
+                        Peut-on concevoir plusieurs algorithmes équivalents menant à ce résultat ?   
+                    </p>
+                </section>
+
+                <!-- ----------------------------color syntax pseudo-code--------------------- -->
+
+                <section class="color-code language-markup">
+                    <pre class="line-numbers"><code><xmp>
+// ALGORITHME Exo_3_6
+function Exo_3_6(){
+// DEBUT
+  // VARIABLE iNB1, iNB2 en NUMERIQUE 
+    Ecrire "Entrez l'age de l'enfant"
+    Lire age
+    Si age <= 6 
+        Ecrire "l'enfant et de catégorie Poussin"
+    SiNonSi age <= 8 
+        Ecrire "l'enfant et de catégorie Pupille"
+    SiNonSi age <= 10
+        Ecrire "L'enfant et de catégorie Minime"
+    SiNonSi age <= 12
+        Ecrire "L'enfant et de catégorie Cadet"
+//FIN
+}
+          </xmp></code></pre>
+                </section>
+
+                <!-- ----------------------------btn select language--------------------- -->
+
+                <div>
+                    <a href="#traductJS" class="btn btn-md btn-dark mt-4 btn-js"
+                        onclick="showcode('executjs', 'resultjs')"><img src="../css/img/icon-js.png"
+                            alt="javascript logo">JavaScript</a>
+                    <a href="#traductJS" class="btn btn-md btn-dark mt-4 btn-js"
+                        onclick="showcode('executprompt', 'resultprompt')"><img src="../css/img/icon-js.png"
+                            alt="javascript logo">Js Prompt</a>
+                    <a href="#traductJQ" class="btn btn-md btn-dark mt-4 btn-jq"
+                        onclick="showcode('executjq', 'resultjq')"><img src="../css/img/icon-jquery.png"
+                            alt="javascript logo">Jquery</a>
+                    <a href="#traductPhP" class="btn btn-md btn-dark mt-4 pr-4 btn-php"
+                        onclick="showcode('executphp', 'resultphp')"><img src="../css/img/icon-php.png"
+                            alt="javascript logo ">PhP</a>
+                </div>
+
+                <!-- ----------------------------color syntax JavaScript--------------------- -->
+
+                <div id="executjs" class="result">
+                    <section class="color-code language-markup ">
+                        <pre class="line-numbers"><code class="language-javascript"><xmp>
+// ALGORITHME Exo_3_6
+function Exo_3_6_js(){
+// DEBUT
+// VARIABLE Iage, sStart, sEnd, sPoussin, sPupille, sMinime, sCadet  en NUMERIQUE et STRING
+    //je declar mes variable
+    var iAge = document.getElementById('age').value;
+    var select = document.getElementById('execut');
+    //je crée ma structure html
+    var sStart = '<section class="color-code"><div class="color-result"><p>';
+    var sEnd = '</p></div></section>';
+    var sPoussin = sStart + 'l\'enfant est de catégorie Poussin' + sEnd
+    var sPupille = sStart + 'l\'enfant est de catégorie Pupille' + sEnd;
+    var sMinime = sStart + 'l\'enfant est de catégorie Minime' + sEnd;
+    var sCadet = sStart + 'l\'enfant est de catégorie Cadet' + sEnd;
+    if (iAge <= 6) {
+        select.innerHTML = sPoussin;
+    } else if (iAge <= 8) {
+        select.innerHTML = sPupille;
+    } else if (iAge <= 10) {
+        select.innerHTML = sMinime;
+    } else if (iAge <= 12) {
+        select.innerHTML = sCadet;
+    }
+//FIN
+}    
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax JavaScript prompt--------------------- -->
+
+                <div id="executprompt" class="result">
+                    <section class="color-code language-markup ">
+                        <pre class="line-numbers"><code class="language-javascript"><xmp>
+// ALGORITHME Exo_3_6
+function Exo_3_6_jsprompt(){
+// DEBUT
+// VARIABLE Iage, sStart, sEnd, sPoussin, sPupille, sMinime, sCadet  en NUMERIQUE et STRING
+    //je declare mes variable
+    var iAge = prompt('Entrez l\'age de l\'enfant');
+    //je crée ma structure html
+    var sPoussin = 'l\'enfant est de catégorie Poussin';
+    var sPupille = 'l\'enfant est de catégorie Pupille';
+    var sMinime = 'l\'enfant est de catégorie Minime';
+    var sCadet = 'l\'enfant est de catégorie Cadet';
+    //je crée ma condition
+    if (iAge <= 6) {
+        alert(sPoussin);
+    } else if (iAge <= 8) {
+    alert(sPupille);
+    } else if (iAge <= 10) {
+    alert(sMinime);
+    } else if (iAge <= 12) {
+    alert(sCadet);
+    }   
+//FIN
+}
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax Jquery--------------------- -->
+
+                <div id="executjq" class="result">
+                    <section class="color-code language-markup">
+                        <pre class="line-numbers"><code class="language-javascript"><xmp>
+// ALGORITHME Exo_3_6
+function Exo_3_6_jquery() {
+// DEBUT
+// VARIABLE Iage, sStart, sEnd, sPoussin, sPupille, sMinime, sCadet  en NUMERIQUE et STRING
+    //je declare mes variable
+    var iAge = $('#age').val();
+    //je crée ma structure html
+    var sStart = '<section class="color-code"><div class="color-result"><p>';
+    var sEnd = '</p></div></section>';
+    var sPoussin = sStart + 'l\'enfant est de catégorie Poussin' + sEnd
+    var sPupille = sStart + 'l\'enfant est de catégorie Pupille' + sEnd;
+    var sMinime = sStart + 'l\'enfant est de catégorie Minime' + sEnd;
+    var sCadet = sStart + 'l\'enfant est de catégorie Cadet' + sEnd;
+    //je crée ma condition
+    if (iAge <= 6) {
+        $('#execut').html(sPoussin);
+    } else if (iAge <= 8) {
+       $('#execut').html(sPupille);
+    } else if (iAge <= 10) {
+       $('#execut').html(sMinime);
+    } else if (iAge <= 12) {
+       $('#execut').html(sCadet);
+    }
+//FIN
+}
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax php--------------------- -->
+
+                <div id="executphp" class="result">
+                    <section class="color-code language-markup">
+                        <pre class="line-numbers"><code class="language-php"><xmp>
+// ALGORITHME Exo_3_6
+function Exo_3_6_php() {
+// DEBUT
+// VARIABLE Iage, sStart, sEnd, sPoussin, sPupille, sMinime, sCadet  en NUMERIQUE et STRING
+    // si la formulaire a êtes posté 
+    if (isset($_POST['ExecutPhp'])) {
+        // si la formulaire a êtes rempli 
+        if (isset($_POST['age'])) {
+            // je declare mes variable   
+            $iAge = $_POST['age'];
+            // je crée la structure html
+            $sStart = '<section class="color-code"><div class="color-result"><p>';
+            $sEnd = '</p></div></section>';
+            //je crée une variable qui contient la structur html 
+            $sPoussin = $sStart + 'l\'enfant est de catégorie Poussin' + $sEnd;
+            $sPupille = $sStart + 'l\'enfant est de catégorie Pupille' + $sEnd;
+            $sMinime = $sStart + 'l\'enfant est de catégorie Minime' + $sEnd;
+            $sCadet = $sStart + 'l\'enfant est de catégorie Cadet' + $sEnd;
+            //j'écrie mon resultat 
+            if ($iAge <= 6) {
+                echo $sPoussin;
+            } else if ($iAge <= 8) {
+                echo $sPupille;
+            } else if ($iAge <= 10) {
+                echo $sMinime;
+            } else if ($iAge <= 12) {
+                echo $sCadet;
+            }
+        }
+    }
+//FIN
+}   
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------Form execute script---------------------- -->
+
+                <div id="form"  class="heidden mt-4 ml-5 mr-5">
+                    <form method="POST">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Entrez l'age de l'enfant</label>
+                            <input type="text" class="form-control" name="age" id="age"
+                                aria-describedby="age" placeholder="age de l'enfant">
+                        </div>
+
+                        <!-- ----------------------------btn execute script------------------------- -->
+                        <div class="display btn-display">
+                            <div id="resultjs" class="btnExecut " onclick="Exo_3_6_js()">
+                                <p>JavaScript</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </div>
+                            <div id="resultprompt" class="btnExecut " onclick="Exo_3_6_jsPrompt()">
+                                <p>Js prompt</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </div>
+                            <div id="resultjq" class="btnExecut " onclick="Exo_3_6_jquery()">
+                                <p>Jquery</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </div>
+
+                            <button id="resultphp" class="btnExecut" type="submit" value="ExecutPhp" name="ExecutPhp">
+                                <p>PhP</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </button>
+                    </form>
+                </div>
+        </div>
+
+        <!-- -------------------------------result script--------------------------- -->
+        <div id="execut" class="result pb-5">
+            <?php include './exo_3_6_php.php';?>
+        </div>
+    </div>
+
+
+    </article>
+
+
+    </div>
+    </div>
+    <!-- ---------------------plugin lin Numbers-------------- -->
+
+    <script src="./exo_3_6_js.js"></script>
+
+    <?php include '../commun/footer.html';?>
+
+</body>
+
+
+</html>

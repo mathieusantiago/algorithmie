@@ -1,0 +1,301 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+   
+<?php include '../commun/head.html';?>
+
+<body>
+
+    <!-- --------------btn menu nav------------------------------- -->
+    <?php include '../commun/resp-nav.html';?>
+
+    <!-- --------------btn pause and play backgroung-------------- -->
+    <?php include '../commun/bg-video.html';?>
+
+    <!-- --------------all page------------------------------- -->
+    <div class="allpage">
+
+        <!-- --------------header------------------------------- -->
+        <?php include '../commun/header.html';?>
+
+
+        <!-- ----------------------nav aside left---------------------- -->
+        <div class="display">
+            <?php include '../commun/aside.html';?>
+
+            <!-- -------------------------content page enoncé-------------------- -->
+
+            <article>
+
+                <div class="content-top">
+                    <section class="language-markup">
+                        <pre><code class="language-javascript"><xmp>
+if(a === "enonce" & b === "de l'exercise"){
+alert('aller au travail');
+}
+</xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax enoncé--------------------- -->
+
+                <section class="color-code pl-5 pt-3 text-left enonce language-markup">
+                    <p>
+                        Ecrivez l'algorithme qui recherche un mot saisi au clavier dans un dictionnaire. Le dictionnaire est supposé être codé<br>
+                        dans un tableau préalablement rempli et trié. 
+                    </p>
+                </section>
+
+                <!-- ----------------------------color syntax pseudo-code--------------------- -->
+
+                <section class="color-code language-markup">
+                    <pre class="line-numbers"><code><xmp>
+// ALGORITHME Exo_7_5.
+function Exo_7_5_js() {
+    //VARIABLE tDICO In ARRAY
+    //VARIABLE sRecherche,iValMax,iValMin,iCompare,iDifference,iCompteur
+    //iValMax = tDico.Longeur -1
+    //LIRE sRecherche
+    //Pour iCoupteur = 0 a 20 iCompteur++
+        //iDifference = iValMax - iValMin
+        //iCompare = iValMax + Arondi(iDifference / 2)
+        //Si sRecherche >tDico[iCompare]
+            //iValMin = iCompare
+        //SiNonSi sRecherche < tDico[iCompare]    
+            //iValMax = iValMax - arondi(iDifference / 2)
+        //FinSi
+    //FinPour
+    //SI sRcherche == tDico[iCompare]
+        //ECRIRE 
+        //Le mots est dans le dico
+    //SiNon
+        //ECRIRE 
+        //Le mots n'est dans le dico
+
+   
+
+          </xmp></code></pre>
+                </section>
+                <!-- ----------------------------btn select language--------------------- -->
+                <div>
+                    <a href="#traductJS" class="btn btn-md btn-dark mt-4 btn-js"
+                        onclick="showcode('executjs', 'resultjs',)"><img src="../css/img/icon-js.png"
+                            alt="javascript logo">JavaScript</a>
+              
+                    <a href="#traductJQ" class="btn btn-md btn-dark mt-4 btn-jq"
+                        onclick="showcode('executjq', 'resultjq')"><img src="../css/img/icon-jquery.png"
+                            alt="javascript logo">Jquery</a>
+                    <a href="#traductPhP" class="btn btn-md btn-dark mt-4 pr-4 btn-php"
+                        onclick="showcode('executphp', 'resultphp')"><img src="../css/img/icon-php.png"
+                            alt="javascript logo ">PhP</a>
+                </div>
+                <!-- ----------------------------color syntax JavaScript--------------------- -->
+                <div id="executjs" class="result">
+                    <section class="color-code language-markup ">
+                        <pre class="line-numbers"><code class="language-javascript"><xmp>
+// ALGORITHME Exo_7_5.
+function Exo_7_5_js(){
+    //VARIABLE tDICO In ARRAY
+    //VARIABLE sRecherche,iValMax,iValMin,iCompare,iDifference,iCompteur
+    var sRecherche;
+    var iValMax = 0;
+    var iValMin = 0;
+    var iCompare = 0;
+    var iDifference = 0;
+    var iCompteur = 0;
+    //iValMax = tDico.Longeur -1
+    iValMax = tDico.length - 1;
+    //LIRE sRecherche
+    sRecherche = document.getElementById("iVal").value;
+    //Pour iCoupteur = 0 a 20 iCompteur++
+    for (iCompteur = 0; iCompteur < 20; iCompteur++) {
+        //iDifference = iValMax - iValMin
+        iDifference = iValMax - iValMin;
+        //iCompare = iValMax + Arondi(iDifference / 2)
+        iCompare = iValMin + Math.trunc(iDifference / 2);
+        //Si sRecherche >tDico[iCompare]
+        if (sRecherche > tDico[iCompare]) {
+            //iValMin = iCompare
+            iValMin = iCompare;
+        //SiNonSi sRecherche < tDico[iCompare]    
+        } else if (sRecherche < tDico[iCompare]) {
+            //iValMax = iValMax - arondi(iDifference / 2)
+            iValMax = iValMax - Math.trunc(iDifference / 2);
+        }//FinSi
+    }//FinPour
+    //SI sRcherche == tDico[iCompare]
+    if (sRecherche == tDico[iCompare]) {
+        //ECRIRE 
+        document.getElementById("execut").innerHTML += "Le mot " + sRecherche + " est dans le dictionnaire" +" à l'index " +tDico.indexOf(sRecherche) + "<br>";
+    //SiNon
+    } else {
+        //ECRIRE 
+        document.getElementById("execut").innerHTML += "Le mot " + sRecherche + " n'est pas dans le dictionnaire" + "<br>";
+    }                 
+}
+
+
+
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax JavaScript prompt--------------------- -->
+
+                <div id="executprompt" class="result">
+                    <section class="color-code language-markup ">
+                        <pre class="line-numbers"><code class="language-javascript"><xmp>
+
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax Jquery--------------------- -->
+
+                <div id="executjq" class="result">
+                    <section class="color-code language-markup">
+                        <pre class="line-numbers"><code class="language-javascript"><xmp>
+// ALGORITHME Exo_7_5
+function Exo_7_5_jquery() {
+    //VARIABLE sRecherche,iValMax,iValMin,iCompare,iDifference,iCompteur
+    var sRecherche;
+    var iValMax = 0;
+    var iValMin = 0;
+    var iCompare = 0;
+    var iDifference = 0;
+    var iCompteur = 0;
+    console.log("Exo_7_5_jquery ~ iCompteur", iCompteur);
+    //iValMax = tDico.Longeur -1
+    iValMax = tDico.length - 1;
+    //LIRE sRecherche
+    sRecherche = $("#iVal").val();
+    //Pour iCoupteur = 0 a 20 iCompteur++
+    for (iCompteur = 0; iCompteur < 20; iCompteur++) {
+        //iDifference = iValMax - iValMin
+        iDifference = iValMax - iValMin;
+        //iCompare = iValMax + Arondi(iDifference / 2)
+        iCompare = iValMin + Math.trunc(iDifference / 2);
+        //Si sRecherche >tDico[iCompare]
+        if (sRecherche > tDico[iCompare]) {
+            //iValMin = iCompare
+            iValMin = iCompare;
+        //SiNonSi sRecherche < tDico[iCompare]    
+        } else if (sRecherche < tDico[iCompare]) {
+            //iValMax = iValMax - arondi(iDifference / 2)
+            iValMax = iValMax - Math.trunc(iDifference / 2);
+        }//FinSi
+    }//FinPour
+    //SI sRcherche == tDico[iCompare]
+    if (sRecherche == tDico[iCompare]) {
+        //ECRIRE 
+        $("#execut").html("Le mot " + sRecherche + " est dans le dictionnaire" +" à l'index " +tDico.indexOf(sRecherche) + "<br>");
+    //SiNon
+    } else {
+        //ECRIRE 
+        $("#execut").html("Le mot " + sRecherche + " n'est pas dans le dictionnaire" + "<br>");
+    }                                  
+}
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax php--------------------- -->
+
+                <div id="executphp" class="result">
+                    <section class="color-code language-markup">
+                        <pre class="line-numbers"><code class="language-php"><xmp>
+// ALGORITHME Exo_7_5
+function Exo_7_5_php() {
+    if (isset($_POST['iVal'])) {
+        require 'mon_petit_dico.php';
+        $sRecherche = 0;
+        $iValMax = 0;
+        $iValMin = 0;
+        $iCompare = 0;
+        $iDifference = 0;
+        $iCompteur = 0;
+    
+        $iValMax = count($aOfWords) - 1;
+        $sRecherche = $_POST['iVal'];
+        for ($iCompteur = 0; $iCompteur < 20; $iCompteur++) {
+            $iDifference = $iValMax - $iValMin;
+            $iCompare = $iValMin + ($iDifference / 2);
+            if ($sRecherche > $aOfWords[$iCompare]) {
+                $iValMin = $iCompare;
+            } else if ($sRecherche < $aOfWords[$iCompare]) {
+                $iValMax = $iValMax - ($iDifference / 2);
+            }
+        }
+        if ($sRecherche == $aOfWords[$iCompare]) {
+            $sMessage = "Le mot " . $sRecherche . " est dans le dictionnaire" . " à l'index " . array_search($sRecherche, $aOfWords) . "<br>";
+        } else {
+            $sMessage = "Le mot " . $sRecherche . " n'est pas dans le dictionnaire" . "<br>";
+        }
+    }
+}   
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------Form execute script---------------------- -->
+
+                <div id="form"  class="heidden mt-4 ml-5 mr-5">
+                    <form method="POST" action="exo_7_5_js.php">
+                        <div class="form-group" id="form-group">
+                            <label for="exampleInputEmail1">Recherché dans le dico</label>
+                            <input type="text" class="form-control" name="iVal" id="iVal"
+                             aria-describedby="iVal" placeholder="Entre un mots" >
+                        </div>
+                        <div class="form-group" id="form-rand">
+                            
+                        </div>
+
+                        <!-- ----------------------------btn execute script------------------------- -->
+                      
+                        <div class="display btn-display">
+                            <div id="resultjs" class="btnExecut " onclick="Exo_7_5_js()">
+                                <p>JavaScript</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </div>
+                            <div id="resultprompt" class="btnExecut " onclick="Exo_7_5_jsPrompt()">
+                                <p>Js prompt</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </div>
+                            <div id="resultjq" class="btnExecut " onclick="Exo_7_5_jquery()">
+                                <p>Jquery</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </div>
+
+                            <button id="resultphp" class="btnExecut" type="submit" name="submit">
+                                <p>PhP</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </button>
+                    </form>
+                </div>
+        </div>
+        <!-- -------------------------------result script--------------------------- -->
+       
+        <div id="execut" class="result pb-5">
+        </div>
+        <div>
+            <?= $sMessage;?>
+
+        </div>
+    </div>
+
+
+    </article>
+
+
+    </div>
+    </div>
+    <!-- ---------------------plugin lin Numbers-------------- -->
+
+    <script src="./exo_7_5_js.js"></script>
+
+    <?php include '../commun/footer.html';?>
+
+</body>
+
+
+</html>

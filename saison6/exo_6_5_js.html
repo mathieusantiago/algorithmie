@@ -1,0 +1,257 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<?php include '../commun/head.html';?>
+
+<body>
+
+    <!-- --------------btn menu nav------------------------------- -->
+    <?php include '../commun/resp-nav.html';?>
+
+    <!-- --------------btn pause and play backgroung-------------- -->
+    <?php include '../commun/bg-video.html';?>
+
+    <!-- --------------all page------------------------------- -->
+    <div class="allpage">
+
+        <!-- --------------header------------------------------- -->
+        <?php include '../commun/header.html';?>
+
+
+        <!-- ----------------------nav aside left---------------------- -->
+        <div class="display">
+            <?php include '../commun/aside.html';?>
+
+            <!-- -------------------------content page enoncé-------------------- -->
+
+            <article>
+
+                <div class="content-top">
+                    <section class="language-markup">
+                        <pre><code class="language-javascript"><xmp>
+if(a === "enonce" & b === "de l'exercise"){
+alert('aller au travail');
+}
+</xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax enoncé--------------------- -->
+
+                <section class="color-code pl-5 pt-3 text-left enonce language-markup">
+                    <p>
+                        Que produit l’algorithme suivant ?
+                    </p>
+                </section>
+
+                <!-- ----------------------------color syntax pseudo-code--------------------- -->
+
+                <section class="color-code language-markup">
+                    <pre class="line-numbers"><code><xmp>
+// ALGORITHME Exo_6_5.
+Tableau Nb(5) en Entier
+Variable i en Entier
+Début
+Pour i ← 0 à 5
+    Nb(i) ← i * i
+i suivant
+Pour i ← 0 à 5
+    Ecrire Nb(i)
+i suivant
+Fin
+<----- version simple --->
+
+Tableau Nb(5) en Entier
+Variable i en Entier
+Début
+Pour i ← 0 à 5
+    Nb(i) ← i * i
+    Ecrire Nb(i)
+i suivant
+Fin 
+}
+          </xmp></code></pre>
+                </section>
+                <!-- ----------------------------btn select language--------------------- -->
+                <div>
+                    <a href="#traductJS" class="btn btn-md btn-dark mt-4 btn-js"
+                        onclick="showcode('executjs', 'resultjs',)"><img src="../css/img/icon-js.png"
+                            alt="javascript logo">JavaScript</a>
+              
+                    <a href="#traductJQ" class="btn btn-md btn-dark mt-4 btn-jq"
+                        onclick="showcode('executjq', 'resultjq')"><img src="../css/img/icon-jquery.png"
+                            alt="javascript logo">Jquery</a>
+                    <a href="#traductPhP" class="btn btn-md btn-dark mt-4 pr-4 btn-php"
+                        onclick="showcode('executphp', 'resultphp')"><img src="../css/img/icon-php.png"
+                            alt="javascript logo ">PhP</a>
+                </div>
+                <!-- ----------------------------color syntax JavaScript--------------------- -->
+                <div id="executjs" class="result">
+                    <section class="color-code language-markup ">
+                        <pre class="line-numbers"><code class="language-javascript"><xmp>
+// ALGORITHME Exo_6_5.
+function Exo_6_5_js() {
+    var i, k;
+    var N = [6];
+    
+    N[0] = 1;
+    for(k = 1; k <= 6; k++){
+      N[k] = N[k-1]+2; 
+    }
+    for(i =0; i <= 6; i++){
+      document.getElementById('execut').innerHTML += N[i];
+    }
+}
+
+
+<!-- version simple  -->
+
+function Exo_6_5_js() {
+    
+    var N = Array(6);
+    var i = -1, k;
+    for(k = 0; k <= 6; k++){
+      i = i + 2;
+      N[k] = i; 
+       document.getElementById('execut').innerHTML += N[k];
+    }
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax JavaScript prompt--------------------- -->
+
+                <div id="executprompt" class="result">
+                    <section class="color-code language-markup ">
+                        <pre class="line-numbers"><code class="language-javascript"><xmp>
+
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax Jquery--------------------- -->
+
+                <div id="executjq" class="result">
+                    <section class="color-code language-markup">
+                        <pre class="line-numbers"><code class="language-javascript"><xmp>
+// ALGORITHME Exo_6_5
+function Exo_6_5_jquery(){
+    var i, k;
+    var N = [6];
+    
+    N[0] = 1;
+    for(k = 1; k <= 6; k++){
+      N[k] = N[k-1]+2; 
+    }
+    for(i =0; i <= 6; i++){
+      $('#execut').append(N[i]);
+    }
+}
+
+<!-- version simple  -->
+
+function Exo_6_5_jquery(){
+    var N = Array(6);
+    var i = -1, k;
+    for (k = 0; k <= 6; k++) {
+        i = i + 2;
+        N[k] = i;
+        $('#execut').append(N[k]);
+    }
+}
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax php--------------------- -->
+
+                <div id="executphp" class="result">
+                    <section class="color-code language-markup">
+                        <pre class="line-numbers"><code class="language-php"><xmp>
+// ALGORITHME Exo_6_5
+function Exo_6_5_php() {
+
+    if (isset($_POST['submit'])) {
+        $i;
+        $k;
+         $N = [6];
+        
+        $N[0] = 1;
+        for($k = 1; $k <= 6; $k++){
+          $N[$k] = $N[$k-1]+2; 
+        }
+        for($i =0; $i <= 6; $i++){
+          $sMessage = $sMessage . $N[$i];
+        }
+     }
+
+
+<!-- version simple  -->
+
+    if (isset($_POST['submit'])) {
+        $N = Array(6);
+         $i = -1; 
+         $k;
+         for ($k = 0; $k <= 6; $k++) {
+             $i = $i + 2;
+             $N[$k] = $i;
+             $sMessage = $sMessage . $N[$k];
+         }
+     }
+}   
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------Form execute script---------------------- -->
+
+                <div id="form"  class="heidden mt-4 ml-5 mr-5">
+                    <form method="POST" action="exo_6_5_js.php">
+                        
+
+                        <!-- ----------------------------btn execute script------------------------- -->
+                        <div class="display btn-display">
+                            <div id="resultjs" class="btnExecut " onclick="Exo_6_5_js()">
+                                <p>JavaScript</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </div>
+                            <div id="resultprompt" class="btnExecut " onclick="Exo_6_5_jsPrompt()">
+                                <p>Js prompt</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </div>
+                            <div id="resultjq" class="btnExecut " onclick="Exo_6_5_jquery()">
+                                <p>Jquery</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </div>
+
+                            <button id="resultphp" class="btnExecut" type="submit" name="submit">
+                                <p>PhP</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </button>
+                    </form>
+                </div>
+        </div>
+        <!-- -------------------------------result script--------------------------- -->
+       
+        <div id="execut" class="result pb-5">
+            <?= $sMessage;?>
+        </div>
+    </div>
+
+
+    </article>
+
+
+    </div>
+    </div>
+    <!-- ---------------------plugin lin Numbers-------------- -->
+
+    <script src="./exo_6_5_js.js"></script>
+
+    <?php include '../commun/footer.html';?>
+
+</body>
+
+
+</html>

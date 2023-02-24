@@ -1,0 +1,233 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<?php include '../commun/head.html';?>
+
+<body>
+
+    <!-- --------------btn menu nav------------------------------- -->
+    <?php include '../commun/resp-nav.html';?>
+
+    <!-- --------------btn pause and play backgroung-------------- -->
+    <?php include '../commun/bg-video.html';?>
+
+    <!-- --------------all page------------------------------- -->
+    <div class="allpage">
+
+        <!-- --------------header------------------------------- -->
+        <?php include '../commun/header.html';?>
+
+
+        <!-- ----------------------nav aside left---------------------- -->
+        <div class="display">
+            <?php include '../commun/aside.html';?>
+
+            <!-- -------------------------content page enoncé-------------------- -->
+
+            <article>
+
+                <div class="content-top">
+                    <section class="language-markup">
+                        <pre><code class="language-javascript"><xmp>
+if(a === "enonce" & b === "de l'exercise"){
+alert('aller au travail');
+}
+</xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax enoncé--------------------- -->
+
+                <section class="color-code pl-5 pt-3 text-left enonce language-markup">
+                    <p>
+                        Toujours à partir de deux tableaux précédemment saisis, écrivez un algorithme qui calcule le « Toon » des deux <br>
+                        tableaux. Pour calculer le « Toon », il faut multiplier chaque élément du tableau 1 par chaque élément du tableau 2,<br>
+                        et additionner le tout. Par exemple si l'on a :<br>
+                        Tableau 1 :<br>
+                        4 8 7 12<br>
+                        Tableau 2 :<br>
+                        3 6<br>
+                        Le « Toon » sera : <br>
+                        3 * 4 + 3 * 8 + 3 * 7 + 3 * 12 + 6 * 4 + 6 * 8 + 6 * 7 + 6 * 12 = 279
+                    </p>
+                </section>
+
+                <!-- ----------------------------color syntax pseudo-code--------------------- -->
+
+                <section class="color-code language-markup">
+                    <pre class="line-numbers"><code><xmp>
+// ALGORITHME Exo_6_11.
+function Exo_6_11_js() {
+    //Variable aT1,aT2,aT3, in array
+    //variable iLongeurT1, iLongeurT2,i, j, iSomme in Integer
+    //pour i pas de 0 a LongeurT1 
+        //pour i pas de 0 a LongeurT2 
+            //je concatene le calcule de mon tableau aT1 et aT2 dans mon aT3
+            //je concatene le aT3 dans ma variable iSomme 
+        finPour
+    finPour
+    //J'ecrie le resultat dans ma div execut 
+    document.getElementById("execut").innerHTML = (iSomme1);
+                                
+Fin
+}
+          </xmp></code></pre>
+                </section>
+                <!-- ----------------------------btn select language--------------------- -->
+                <div>
+                    <a href="#traductJS" class="btn btn-md btn-dark mt-4 btn-js"
+                        onclick="showcode('executjs', 'resultjs',)"><img src="../css/img/icon-js.png"
+                            alt="javascript logo">JavaScript</a>
+              
+                    <a href="#traductJQ" class="btn btn-md btn-dark mt-4 btn-jq"
+                        onclick="showcode('executjq', 'resultjq')"><img src="../css/img/icon-jquery.png"
+                            alt="javascript logo">Jquery</a>
+                    <a href="#traductPhP" class="btn btn-md btn-dark mt-4 pr-4 btn-php"
+                        onclick="showcode('executphp', 'resultphp')"><img src="../css/img/icon-php.png"
+                            alt="javascript logo ">PhP</a>
+                </div>
+                <!-- ----------------------------color syntax JavaScript--------------------- -->
+                <div id="executjs" class="result">
+                    <section class="color-code language-markup ">
+                        <pre class="line-numbers"><code class="language-javascript"><xmp>
+// ALGORITHME Exo_6_11.
+function Exo_6_11_js() {
+    //Variable aT1,aT2,aT3, in array
+    //variable iLongeurT1, iLongeurT2,i, j, iSomme in Integer
+    var aT1 = [4,8,7,12], aT2 = [3,6], aT3 = Array(), iLongueurT1 = aT1.length - 1, iLongueurT2 = aT2.length - 1, i, j, iSomme1 = 0;
+    //pour i pas de 0 a LongeurT1 
+    for (i = 0; i <= iLongueurT2; i++) {
+        //pour i pas de 0 a LongeurT2 
+        for (j = 0; j <= iLongueurT1; j++) {
+            //je concatene le calcule de mon tableau aT1 et aT2 dans mon aT3
+            aT3[i] = aT2[i] * aT1[j];
+            //je concatene le aT3 dans ma variable iSomme 
+            iSomme1 = iSomme1 + aT3[i];
+        }
+    }
+    //J'ecrie le resultat dans ma div execut 
+    document.getElementById("execut").innerHTML = (iSomme1);                              
+}
+
+
+
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax JavaScript prompt--------------------- -->
+
+                <div id="executprompt" class="result">
+                    <section class="color-code language-markup ">
+                        <pre class="line-numbers"><code class="language-javascript"><xmp>
+
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax Jquery--------------------- -->
+
+                <div id="executjq" class="result">
+                    <section class="color-code language-markup">
+                        <pre class="line-numbers"><code class="language-javascript"><xmp>
+// ALGORITHME Exo_6_11
+function Exo_6_11_jquery() {
+    //Variable aT1,aT2,aT3, in array
+    //variable iLongeurT1, iLongeurT2,i, j, iSomme in Integer
+    var aT1 = [4,8,7,12], aT2 = [3,6], aT3 = Array(), iLongueurT1 = aT1.length - 1, iLongueurT2 = aT2.length - 1, i, j, iSomme1 = 0;
+    //pour i pas de 0 a LongeurT1 
+    for (i = 0; i <= iLongueurT2; i++) {
+        //pour i pas de 0 a LongeurT2 
+        for (j = 0; j <= iLongueurT1; j++) {
+            //je concatene le calcule de mon tableau aT1 et aT2 dans mon aT3
+            aT3[i] = aT2[i] * aT1[j];
+            //je concatene le aT3 dans ma variable iSomme 
+            iSomme1 = iSomme1 + aT3[i];
+        }
+    }
+    //J'ecrie le resultat dans ma div execut 
+    $("#execut").html(iSomme1);                                   
+}
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax php--------------------- -->
+
+                <div id="executphp" class="result">
+                    <section class="color-code language-markup">
+                        <pre class="line-numbers"><code class="language-php"><xmp>
+// ALGORITHME Exo_6_11
+function Exo_6_11_php() {
+    $aT1 = [4,8,7,12]; 
+    $aT2 = [3,6]; 
+    $aT3 = Array(); 
+    $iLongueurT1 = count($aT1)-1; 
+    $iLongueurT2 = count($aT2)-1;
+    $i;
+    $j; 
+    $iSomme1 = 0;
+    for ($i = 0; $i <= $iLongueurT2; $i++) {
+        for ($j = 0; $j <= $iLongueurT1; $j++) {
+            $aT3[$i] = $aT2[$i] * $aT1[$j];
+            $iSomme1 = $iSomme1 + $aT3[$i];
+        }
+    }
+    $sMessage = ($iSomme1);   
+}   
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------Form execute script---------------------- -->
+
+                <div id="form"  class="heidden mt-4 ml-5 mr-5">
+                    <form method="POST" action="exo_6_11_js.php">
+                       
+
+                        <!-- ----------------------------btn execute script------------------------- -->
+                        <div class="display btn-display">
+                            <div id="resultjs" class="btnExecut " onclick="Exo_6_11_js()">
+                                <p>JavaScript</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </div>
+                            <div id="resultprompt" class="btnExecut " onclick="Exo_6_11_jsPrompt()">
+                                <p>Js prompt</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </div>
+                            <div id="resultjq" class="btnExecut " onclick="Exo_6_11_jquery()">
+                                <p>Jquery</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </div>
+
+                            <button id="resultphp" class="btnExecut" type="submit" name="submit">
+                                <p>PhP</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </button>
+                    </form>
+                </div>
+        </div>
+        <!-- -------------------------------result script--------------------------- -->
+       
+        <div id="execut" class="result pb-5">
+            <?= $sMessage;?>
+        </div>
+    </div>
+
+
+    </article>
+
+
+    </div>
+    </div>
+    <!-- ---------------------plugin lin Numbers-------------- -->
+
+    <script src="./exo_6_11_js.js"></script>
+
+    <?php include '../commun/footer.html';?>
+
+</body>
+
+
+</html>

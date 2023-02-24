@@ -1,0 +1,362 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+   
+<?php include '../commun/head.html';?>
+
+<body>
+
+    <!-- --------------btn menu nav------------------------------- -->
+    <?php include '../commun/resp-nav.html';?>
+
+    <!-- --------------btn pause and play backgroung-------------- -->
+    <?php include '../commun/bg-video.html';?>
+
+    <!-- --------------all page------------------------------- -->
+    <div class="allpage">
+
+        <!-- --------------header------------------------------- -->
+        <?php include '../commun/header.html';?>
+
+
+        <!-- ----------------------nav aside left---------------------- -->
+        <div class="display">
+            <?php include '../commun/aside.html';?>
+
+            <!-- -------------------------content page enoncé-------------------- -->
+
+            <article>
+
+                <div class="content-top">
+                    <section class="language-markup">
+                        <pre><code class="language-javascript"><xmp>
+if(a === "enonce" & b === "de l'exercise"){
+alert('aller au travail');
+}
+</xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax enoncé--------------------- -->
+
+                <section class="color-code pl-5 pt-3 text-left enonce language-markup">
+                    <p>
+                        Ecrivez un algorithme qui permette de saisir un nombre quelconque de valeurs, et qui les range au fur et à mesure <br>
+                        dans un tableau. Le programme, une fois la saisie terminée, doit dire si les éléments du tableau sont tous consécutifs <br>
+                        ou non. <br>
+                        Par exemple, si le tableau est : <br>
+                        12 13 14 15 16 17 18 <br>
+                        ses éléments sont tous consécutifs. En revanche, si le tableau est : <br>
+                        9 10 11 15 16 17 18 <br>
+                        ses éléments ne sont pas tous consécutifs. 
+                    </p>
+                </section>
+
+                <!-- ----------------------------color syntax pseudo-code--------------------- -->
+
+                <section class="color-code language-markup">
+                    <pre class="line-numbers"><code><xmp>
+// ALGORITHME Exo_7_1.
+function Exo_7_1_js() {
+    //     Tableau aTableau
+    //     variables iValRand, iCompteur, iCompteur2 , iVal en numerique
+    //DEBUT
+    //  ECRIRE "Combien de valeurs souhaitez-vous saisir ?"
+    //  LIRE iValRand
+    // Redim aTableau(iValRand -)
+    //  POUR iCompteur de 0 à iValRand - 1
+        // LIRE iVal
+        // iCompteur2 = iCompteur
+        // TANTQUE (iVal < aTableau[iCompteur2]) ET (iCompteur2 > 0)
+            // 	aTableau[iCompteur2]= aTableau[iCompteur2 - 1]
+            // 	iCompteur2 = iCompteur2 - 1
+            // FIN TANTQUE
+        // aTableau[iCompteur2] = iVal
+        //iCompteur SUIVANT
+    //  ECRIRE "Tableau rangé = " +aTableau
+    // je boucle de 0 à iValRand
+        // Si la valeur de l'index i+2 - la valeur de l'index i+1 est égale à 1
+            // Si la valeur de l'index i+2 - la valeur de l'index i+1 est suppérieure à 1
+          //Ecrire += iexecut
+}
+          </xmp></code></pre>
+                </section>
+                <!-- ----------------------------btn select language--------------------- -->
+                <div>
+                    <a href="#traductJS" class="btn btn-md btn-dark mt-4 btn-js"
+                        onclick="showcode('executjs', 'resultjs',)"><img src="../css/img/icon-js.png"
+                            alt="javascript logo">JavaScript</a>
+              
+                    <a href="#traductJQ" class="btn btn-md btn-dark mt-4 btn-jq"
+                        onclick="showcode('executjq', 'resultjq')"><img src="../css/img/icon-jquery.png"
+                            alt="javascript logo">Jquery</a>
+                    <a href="#traductPhP" class="btn btn-md btn-dark mt-4 pr-4 btn-php"
+                        onclick="showcode('executphp', 'resultphp')"><img src="../css/img/icon-php.png"
+                            alt="javascript logo ">PhP</a>
+                </div>
+                <!-- ----------------------------color syntax JavaScript--------------------- -->
+                <div id="executjs" class="result">
+                    <section class="color-code language-markup ">
+                        <pre class="line-numbers"><code class="language-javascript"><xmp>
+// ALGORITHME Exo_7_1.
+function Exo_7_1_js(){
+
+    var iInput, execut_form, html = "";
+    iValRand = document.getElementById("iValRand").value;
+    execut_form = document.getElementById('form-rand');
+
+    for (i = 0; i < iValRand; i++) {
+        var iRandom = Math.round(Math.random() * 101) 
+        html += "<input name=\"iVal" + i + "\"id=\"iVal" + i + "\" value=\"" + iRandom + "\">"
+    }
+    execut_form.innerHTML = html;
+}
+
+/* --------------------------exercic js--------------------------- */
+// ALGORITHME Exo_6_15.
+function Exo_7_1_js() {
+   //     Tableau aTableau
+   var aTableau = [];
+   //     variables iValRand, iCompteur, iCompteur2 , iVal en numerique
+   var iValRand
+   var iCompteur;
+   var iCompteur2;
+   var iVal;
+   var iCompteur3;
+   var iexecut;
+
+   //DEBUT
+   //  ECRIRE "Combien de valeurs souhaitez-vous saisir ?"
+   //  LIRE iValRand
+   iValRand = document.getElementById("iValRand").value;
+   console.log("iValRand = " + iValRand);
+   // Redim aTableau(iValRand -)
+   aTableau.length = iValRand - 1;
+   console.log("aTableau.length = " + aTableau.length);
+   aTableau[0] = "";
+   //  POUR iCompteur de 0 à iValRand - 1
+   for (iCompteur = 0; iCompteur <= iValRand - 1; iCompteur++) {
+       // LIRE iVal
+       iVal = document.getElementById("iVal" + (iCompteur)).value;
+       console.log("iVal = " + iVal);
+       // iCompteur2 = iCompteur
+       iCompteur2 = iCompteur;
+       console.log("iCompteur2 = " + iCompteur2);
+       // TANTQUE (iVal < aTableau[iCompteur2]) ET (iCompteur2 > 0)
+       while ((iVal < aTableau[(iCompteur2 - 1)]) && (iCompteur2 > 0)) {
+           // 	aTableau[iCompteur2]= aTableau[iCompteur2 - 1]
+           aTableau[iCompteur2] = aTableau[(iCompteur2 - 1)];
+           // 	iCompteur2 = iCompteur2 - 1
+           iCompteur2--;
+           // FIN TANTQUE
+       }
+       // aTableau[iCompteur2] = iVal
+       aTableau[iCompteur2] = iVal;
+       //iCompteur SUIVANT
+   }
+   console.log("aTableau = " + aTableau);
+   //  ECRIRE "Tableau rangé = " +aTableau
+   document.getElementById("execut").innerHTML += "Tableau rangé = " + aTableau + "<br>";
+   // je boucle de 0 à iValRand
+   for (iCompteur3 = 0; iCompteur3 <= iValRand; iCompteur3++) {
+       console.log("entrée dans boucle FOR OK");
+       // Si la valeur de l'index i+2 - la valeur de l'index i+1 est égale à 1
+       if (((aTableau[iCompteur3 + 2] - aTableau[iCompteur3 + 1]) == 1)) {
+           console.log("entrée dans if condition 1 OK");
+           iexecut = "Les chiffres sont consécutifs";
+           // Si la valeur de l'index i+2 - la valeur de l'index i+1 est suppérieure à 1
+       } else if ((aTableau[iCompteur3 + 2] - aTableau[iCompteur3 + 1]) > 1) {
+           console.log("entrée dans if condition 2 OK");
+           iexecut = "Les chiffres ne sont pas consécutifs";
+       }
+   }
+   document.getElementById("execut").innerHTML += iexecut;                  
+}
+
+
+
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax JavaScript prompt--------------------- -->
+
+                <div id="executprompt" class="result">
+                    <section class="color-code language-markup ">
+                        <pre class="line-numbers"><code class="language-javascript"><xmp>
+
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax Jquery--------------------- -->
+
+                <div id="executjq" class="result">
+                    <section class="color-code language-markup">
+                        <pre class="line-numbers"><code class="language-javascript"><xmp>
+// ALGORITHME Exo_7_1
+function Exo_7_1_jquery() {
+    //     Tableau aTableau
+    var aTableau = [];
+    //     variables iValRand, iCompteur, iCompteur2 , iVal en numerique
+    var iValRand
+    var iCompteur;
+    var iCompteur2;
+    var iVal;
+    var iCompteur3;
+    var iexecut;
+ 
+    //DEBUT
+    //  ECRIRE "Combien de valeurs souhaitez-vous saisir ?"
+    //  LIRE iValRand
+    iValRand = $("#iValRand").val();
+    // Redim aTableau(iValRand -)
+    aTableau.length = iValRand - 1;
+    aTableau[0] = "";
+    //  POUR iCompteur de 0 à iValRand - 1
+    for (iCompteur = 0; iCompteur <= iValRand - 1; iCompteur++) {
+        // LIRE iVal
+        iVal = $("#iVal" + (iCompteur)).val();
+        // iCompteur2 = iCompteur
+        iCompteur2 = iCompteur;
+        // TANTQUE (iVal < aTableau[iCompteur2]) ET (iCompteur2 > 0)
+        while ((iVal < aTableau[(iCompteur2 - 1)]) && (iCompteur2 > 0)) {
+            // 	aTableau[iCompteur2]= aTableau[iCompteur2 - 1]
+            aTableau[iCompteur2] = aTableau[(iCompteur2 - 1)];
+            // 	iCompteur2 = iCompteur2 - 1
+            iCompteur2--;
+            // FIN TANTQUE
+        }
+        // aTableau[iCompteur2] = iVal
+        aTableau[iCompteur2] = iVal;
+        //iCompteur SUIVANT
+    }
+    //  ECRIRE "Tableau rangé = " +aTableau
+    $("#execut").append("Tableau rangé = " + aTableau + "<br>");
+    // je boucle de 0 à iValRand
+    for (iCompteur3 = 0; iCompteur3 <= iValRand; iCompteur3++) {
+        // Si la valeur de l'index i+2 - la valeur de l'index i+1 est égale à 1
+        if (((aTableau[iCompteur3 + 2] - aTableau[iCompteur3 + 1]) == 1)) {
+            iexecut = "Les chiffres sont consécutifs";
+            // Si la valeur de l'index i+2 - la valeur de l'index i+1 est suppérieure à 1
+        } else if ((aTableau[iCompteur3 + 2] - aTableau[iCompteur3 + 1]) > 1) {
+            iexecut = "Les chiffres ne sont pas consécutifs";
+        }
+    }
+    $("#execut").append(iexecut);                             
+}
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax php--------------------- -->
+
+                <div id="executphp" class="result">
+                    <section class="color-code language-markup">
+                        <pre class="line-numbers"><code class="language-php"><xmp>
+// ALGORITHME Exo_7_1
+function Exo_7_1_php() {
+    if (isset($_POST['iValRand'])) {
+        $aTableau = Array();
+        $iNbValPHP;
+        $iCompteur = 0;
+        $iCompteur2 = 0;
+        $iVal = 0;
+        $iCompteur3;
+        $iresult;
+        
+        $iNbValPHP = $_POST['iValRand'];
+        $aTableau[0] = "";
+        for ($iCompteur = 0; $iCompteur <= $iNbValPHP - 1; $iCompteur++) {
+            $iVal = $_POST['iVal'.($iCompteur)];
+            $iCompteur2 = $iCompteur + 1;
+            while (($iVal < $aTableau[($iCompteur2 - 1)]) AND ($iCompteur2 > 0)) {
+                $aTableau[$iCompteur2] = $aTableau[($iCompteur2 - 1)];
+                $iCompteur2--;
+            }
+            $aTableau[$iCompteur2] = $iVal;
+        }
+        foreach ($aTableau as $iCompteur2) {
+            $sMessage .= $iCompteur2 ." ";
+        }
+        for ($iCompteur3 = 0; $iCompteur3 <= $iNbValPHP - 2; $iCompteur3++) {
+            if ((($aTableau[$iCompteur3 + 2] - $aTableau[$iCompteur3 + 1]) == 1)) {
+                $iResult = "Les chiffres sont consécutifs" . "<br>";
+            } else if (($aTableau[$iCompteur3 + 2] - $aTableau[$iCompteur3 + 1]) > 1) {
+                $iResult = "Les chiffres ne sont pas consécutifs" . "<br>";
+            }
+        }
+        $sMessage .= $iResult;
+        
+                                    
+      }
+}   
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------Form execute script---------------------- -->
+
+                <div id="form"  class="heidden mt-4 ml-5 mr-5">
+                    <form method="POST" action="exo_7_1_js.php">
+                        <div class="form-group" id="form-group">
+                            <label for="exampleInputEmail1">Entrez une Note</label>
+                            <input type="number" class="form-control" name="iValRand" id="iValRand"
+                             aria-describedby="iVal" placeholder="Entre une note" value="10">
+                        </div>
+                        <div class="form-group" id="form-rand">
+                            
+                        </div>
+
+                        <!-- ----------------------------btn execute script------------------------- -->
+                        <div class='btn btn-lg btn-info' onclick="InputMax7_1()">afficher les formulaire</div>
+                        <div class="display btn-display">
+                            <div id="resultjs" class="btnExecut " onclick="Exo_7_1_js()">
+                                <p>JavaScript</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </div>
+                            <div id="resultprompt" class="btnExecut " onclick="Exo_7_1_jsPrompt()">
+                                <p>Js prompt</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </div>
+                            <div id="resultjq" class="btnExecut " onclick="Exo_7_1_jquery()">
+                                <p>Jquery</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </div>
+
+                            <button id="resultphp" class="btnExecut" type="submit" name="submit">
+                                <p>PhP</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </button>
+                    </form>
+                </div>
+        </div>
+        <!-- -------------------------------result script--------------------------- -->
+       
+        <div id="execut" class="result pb-5" style="
+        display: block;
+        width: 1000px;
+        margin-left: auto;
+        margin-right: auto;
+        word-break: break-all;
+    ">
+            <?= $sMessage;?>
+        </div>
+    </div>
+
+
+    </article>
+
+
+    </div>
+    </div>
+    <!-- ---------------------plugin lin Numbers-------------- -->
+
+    <script src="./exo_7_1_js.js"></script>
+
+    <?php include '../commun/footer.html';?>
+
+</body>
+
+
+</html>

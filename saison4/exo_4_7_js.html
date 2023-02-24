@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<?php include '../commun/head.html';?>
+
+<body>
+
+    <!-- --------------btn menu nav------------------------------- -->
+    <?php include '../commun/resp-nav.html';?>
+
+    <!-- --------------btn pause and play backgroung-------------- -->
+    <?php include '../commun/bg-video.html';?>
+
+    <!-- --------------all page------------------------------- -->
+    <div class="allpage">
+
+        <!-- --------------header------------------------------- -->
+        <?php include '../commun/header.html';?>
+
+
+        <!-- ----------------------nav aside left---------------------- -->
+        <div class="display">
+            <?php include '../commun/aside.html';?>
+
+            <!-- -------------------------content page enoncé-------------------- -->
+
+            <article>
+
+                <div class="content-top">
+                    <section class="language-markup">
+                        <pre><code class="language-javascript"><xmp>
+if(a === "enonce" & b === "de l'exercise"){
+alert('aller au travail');
+}
+</xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax enoncé--------------------- -->
+
+                <section class="color-code pl-5 pt-3 text-left enonce language-markup">
+                    <p>
+                        Une compagnie d'assurance automobile propose à ses clients quatre familles de tarifs identifiables par une couleur, <br>
+                        du moins au plus onéreux : tarifs bleu, vert, orange et rouge. Le tarif dépend de la situation du conducteur :<br>
+                         un conducteur de moins de 25 ans et titulaire du permis depuis moins de deux ans, se voit attribuer<br>
+                        le tarif rouge, si toutefois il n'a jamais été responsable d'accident. Sinon, la compagnie refuse de l'assurer.<br>
+                         un conducteur de moins de 25 ans et titulaire du permis depuis plus de deux ans, ou de plus de 25<br>
+                        ans mais titulaire du permis depuis moins de deux ans a le droit au tarif orange s'il n'a jamais provoqué<br>
+                        d'accident, au tarif rouge pour un accident, sinon il est refusé.<br>
+                         un conducteur de plus de 25 ans titulaire du permis depuis plus de deux ans bénéficie du tarif vert s'il<br>
+                        n'est à l'origine d'aucun accident et du tarif orange pour un accident, du tarif rouge pour deux accidents, et<br>
+                        refusé au-delà<br>
+                         De plus, pour encourager la fidélité des clients acceptés, la compagnie propose un contrat de la<br>
+                        couleur immédiatement la plus avantageuse s'il est entré dans la maison depuis plus de cinq ans. Ainsi, s'il<br>
+                        satisfait à cette exigence, un client normalement "vert" devient "bleu", un client normalement "orange"<br>
+                        devient "vert", et le "rouge" devient orange.<br>
+                        Ecrire l'algorithme permettant de saisir les données nécessaires (sans contrôle de saisie) et de traiter ce problème.<br>
+                        Avant de se lancer à corps perdu dans cet exercice, on pourra réfléchir un peu et s'apercevoir qu'il est plus simple<br>
+                        qu'il n'en a l'air (cela s'appelle faire une analyse !)<br>            
+                    </p>
+                </section>
+
+                <!-- ----------------------------color syntax pseudo-code--------------------- -->
+
+                <section class="color-code language-markup">
+                    <pre class="line-numbers"><code><xmp>
+// ALGORITHME Exo_4_7
+function Exo_4_7(){
+// DEBUT
+//VARIABLE iAge, iPermis, iSinistre, iAssurance en NUMERIQUE 
+Ecrire 'age du conducteur'
+Lire iAge
+Ecrire 'Nombre d'années de permis'
+Lire iPermis
+Ecrire 'avez vous déjà êtai responsable d'un sinistre'
+Lire iSinistre
+Ecrire 'Entrez le nombre d'années d'assurance'
+Lire iAssurance
+
+Si iAge <= 25 && iPermis <= 2 Alors 
+    Si sSinistre === '1' Alors
+        Ecrire "Nous ne pouvont pas vous assuré au vue des information saisie"
+    SiNon
+        Ecrire "Au vue des information saisie nous vous accordon le tarif rouge" 
+SiNonSi iAge <= 25 && iPermis >= 2  
+    Si sSinistre === '1' Alors
+        Si iAssurance === '5' Alors
+            Ecrire "Au vue des information saisie nous vous accordon le tarif orange"
+        SiNon
+            Ecrire "Au vue des information saisie nous vous accordon le tarif rouge"
+    SiNonSi sSinistre === '0' Alors
+        Ecrire "Au vue des information saisie nous vous accordon le tarif orange"
+    SiNon 
+        Ecrire "Nous ne pouvont pas vous assuré au vue des information saisie"
+SiNonSi iAge >= 25 && iPermis <= 2 Alors
+        Si sSinistre === '1' Alors
+        Ecrire "Au vue des information saisie nous vous accordon le tarif rouge"
+    SiNonSi sSinistre === '0' Alors
+        Ecrire "Au vue des information saisie nous vous accordon le tarif orange"
+    SiNon 
+        Ecrire "Nous ne pouvont pas vous assuré au vue des information saisie"
+SiNonSi iAge >= 25 && iPermis >= 2 Alors
+    Si sSinistre === '2' Alors
+        Si iAssurance === '5' Alors
+        Ecrire "Au vue des information saisie nous vous accordon le tarif orange"
+        SiNon
+        Ecrire "Au vue des information saisie nous vous accordon le tarif rouge"
+    SiNonSi sSinistre === '1' Alors
+        Si iAssurance === '5' Alors
+        Ecrire "Au vue des information saisie nous vous accordon le tarif vert"
+        SiNon
+        Ecrire "Au vue des information saisie nous vous accordon le tarif orange"
+    SiNonSi sSinistre === '0' Alors
+        Si iAssurance === '5' Alors
+        Ecrire "Au vue des information saisie nous vous accordon le tarif bleu"
+        SiNon
+        Ecrire "Au vue des information saisie nous vous accordon le tarif vert"
+    SiNon 
+        Ecrire "Nous ne pouvont pas vous assuré au vue des information saisie"
+    
+//FIN
+}
+          </xmp></code></pre>
+                </section>
+
+                <!-- ----------------------------btn select language--------------------- -->
+
+                <div>
+                    <a href="#traductJS" class="btn btn-md btn-dark mt-4 btn-js"
+                        onclick="showcode('executjs', 'resultjs')"><img src="../css/img/icon-js.png"
+                            alt="javascript logo">JavaScript</a>
+              
+                    <a href="#traductJQ" class="btn btn-md btn-dark mt-4 btn-jq"
+                        onclick="showcode('executjq', 'resultjq')"><img src="../css/img/icon-jquery.png"
+                            alt="javascript logo">Jquery</a>
+                    <a href="#traductPhP" class="btn btn-md btn-dark mt-4 pr-4 btn-php"
+                        onclick="showcode('executphp', 'resultphp')"><img src="../css/img/icon-php.png"
+                            alt="javascript logo ">PhP</a>
+                </div>
+
+                <!-- ----------------------------color syntax JavaScript--------------------- -->
+
+                <div id="executjs" class="result">
+                    <section class="color-code language-markup ">
+                        <pre class="line-numbers"><code class="language-javascript"><xmp>
+// ALGORITHME Exo_4_7
+function Exo_4_7_js(){
+// DEBUT
+// VARIABLE iScore1, iScore2, iScore3, iScore4 en NUMERIQUE
+//je declar mes variable
+var iAge, iPermis, iSinistre, iAssurance;
+iAge = document.getElementById('age').value;
+iPermis = document.getElementById('permis').value;
+iSinistre = document.getElementById("sinistre").value;
+iAssurance = document.getElementById("assurance").value;
+sResult = document.getElementById('execut');
+//je declar mes conditions
+if (iAge <= 25 && iPermis <= 2){
+    if (iSinistre == 1) {
+        sResult.innerHTML = "Nous ne pouvons pas vous assurer au vu des informations saisies.";
+    } else {
+        sResult.innerHTML = "Au vu des informations saisies, nous vous accordons le tarif rouge.";
+    }
+} else if (iAge <= 25 && iPermis >= 2) {
+    if (iSinistre === '1') {
+        if (iAssurance == '5') {
+            sResult.innerHTML = "Au vu des informations saisies, nous vous accordons le tarif orange.";
+        } else {
+            sResult.innerHTML = "Au vu des informations saisies, nous vous accordons le tarif rouge.";
+        }
+    } else if (iSinistre == '0') {
+        sResult.innerHTML = "Au vu des informations saisies, nous vous accordons le tarif orange.";
+    } else {
+        sResult.innerHTML = "Nous ne pouvons pas vous assurer au vu des informations saisies.";
+    }
+} else if (iAge >= 25 && iPermis <= 2) {
+    if (iSinistre == '1') {
+        sResult.innerHTML = "Au vu des informations saisies, nous vous accordons le tarif rouge.";
+    } else if (iSinistre == '0') {
+        sResult.innerHTML = "Au vu des informations saisies, nous vous accordons le tarif orange.";
+    } else {
+        sResult.innerHTML = "Nous ne pouvons pas vous assurer au vu des informations saisies.";
+    }
+} else if (iAge >= 25 && iPermis >= 2) {
+    if (iSinistre == '2') {
+        if (iAssurance == '5') {
+            sResult.innerHTML = "Au vu des informations saisies, nous vous accordons le tarif orange.";
+        } else {
+            sResult.innerHTML = "Au vu des informations saisies, nous vous accordons le tarif rouge.";
+        }
+    } else if (iSinistre == '1') {
+        if (iAssurance == '5') {
+            sResult.innerHTML = "Au vu des informations saisies, nous vous accordons le tarif vert.";
+        } else {
+            sResult.innerHTML = "Au vu des informations saisies, nous vous accordons le tarif orange.";
+        }
+    } else if (iSinistre == '0') {
+        if (iAssurance == '5') {
+            sResult.innerHTML = "Au vu des informations saisies, nous vous accordons le tarif bleu.";
+        } else {
+            sResult.innerHTML = "Au vu des informations saisies, nous vous accordons le tarif vert.";
+        }
+    } else {
+        sResult.innerHTML = "Nous ne pouvons pas vous assurer au vu des informations saisies.";
+    }
+}
+//FIN
+}    
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax JavaScript prompt--------------------- -->
+
+                <div id="executprompt" class="result">
+                    <section class="color-code language-markup ">
+                        <pre class="line-numbers"><code class="language-javascript"><xmp>
+// ALGORITHME Exo_4_7
+function Exo_4_7_jsprompt(){
+// DEBUT
+// VARIABLE iScore1, iScore2, iScore3, iScore4 en NUMERIQUE
+
+//FIN
+}
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax Jquery--------------------- -->
+
+                <div id="executjq" class="result">
+                    <section class="color-code language-markup">
+                        <pre class="line-numbers"><code class="language-javascript"><xmp>
+// ALGORITHME Exo_4_7
+function Exo_4_7_jquery() {
+// DEBUT
+// VARIABLE iScore1, iScore2, iScore3, iScore4 en NUMERIQUE
+//je declar mes variable
+var iAge, iPermis, iSinistre, iAssurance;
+iAge = $('#age').val();
+iPermis = $('#permis').val();
+iSinistre = $("#sinistre").val();-
+iAssurance = $("#assurance").val();
+sResult = $('#execut');
+//je declar mes conditions
+if (iAge <= 25 && iPermis <= 2){
+    if (iSinistre == 1) {
+        sResult.html("Nous ne pouvons pas vous assurer au vu des informations saisies.");
+    } else {
+        sResult.html("Au vu des informations saisies, nous vous accordons le tarif rouge.");
+    }
+} else if (iAge <= 25 && iPermis >= 2) {
+    if (iSinistre === '1') {
+        if (iAssurance == '5') {
+            sResult.html("Au vu des informations saisies, nous vous accordons le tarif orange.");
+        } else {
+            sResult.html("Au vu des informations saisies, nous vous accordons le tarif rouge.");
+        }
+    } else if (iSinistre == '0') {
+        sResult.html("Au vu des informations saisies, nous vous accordons le tarif orange.");
+    } else {
+        sResult.html("Nous ne pouvons pas vous assurer au vu des informations saisies.");
+    }
+} else if (iAge >= 25 && iPermis <= 2) {
+    if (iSinistre == '1') {
+        sResult.html("Au vu des informations saisies, nous vous accordons le tarif rouge.");
+    } else if (iSinistre == '0') {
+        sResult.html("Au vu des informations saisies, nous vous accordons le tarif orange.");
+    } else {
+        sResult.html("Nous ne pouvons pas vous assurer au vu des informations saisies.");
+    }
+} else if (iAge >= 25 && iPermis >= 2) {
+    if (iSinistre == '2') {
+        if (iAssurance == '5') {
+            sResult.html("Au vu des informations saisies, nous vous accordons le tarif orange.");
+        } else {
+            sResult.html("Au vu des informations saisies, nous vous accordons le tarif rouge.");
+        }
+    } else if (iSinistre == '1') {
+        if (iAssurance == '5') {
+            sResult.html("Au vu des informations saisies, nous vous accordons le tarif vert.");
+        } else {
+            sResult.html("Au vu des informations saisies, nous vous accordons le tarif orange.");
+        }
+    } else if (iSinistre == '0') {
+        if (iAssurance == '5') {
+            sResult.html("Au vu des informations saisies, nous vous accordons le tarif bleu.");
+        } else {
+            sResult.html("Au vu des informations saisies, nous vous accordons le tarif vert.");
+        }
+    } else {
+        sResult.html("Nous ne pouvons pas vous assurer au vu des informations saisies.");
+    }
+}
+//FIN
+}
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax php--------------------- -->
+
+                <div id="executphp" class="result">
+                    <section class="color-code language-markup">
+                        <pre class="line-numbers"><code class="language-php"><xmp>
+// ALGORITHME Exo_4_7
+function Exo_4_7_php() {
+// DEBUT
+// VARIABLE iScore1, iScore2, iScore3, iScore4 en NUMERIQUE
+// si la formulaire a êtes posté 
+if (isset($_POST['ExecutPhp'])) {
+    // si la formulaire a êtes rempli 
+    if (isset($_POST['age']) && isset($_POST['permis']) && isset($_POST['sinistre'])  && isset($_POST['assurance'])) {
+        // je declare mes variable   
+        $iAge = $_POST['age'];
+        $iPermis = $_POST['permis'];
+        $iSinistre = $_POST['sinistre'];
+        $iAssurance = $_POST['assurance'];
+        // je crée la structure html
+        $sStart = '<section class="color-code"><div class="color-result"><p>';
+        $sEnd = '</p></div></section>';
+
+        // je crée la condition
+        if ($iAge <= 25 && $iPermis <= 2){
+            if ($iSinistre == 1) {
+                echo $sStart .  "Nous ne pouvons pas vous assurer au vu des informations saisies.".$sEnd;
+            } else {
+                echo $sStart .  "Au vu des informations saisies, nous vous accordons le tarif rouge.".$sEnd;
+            }
+        } else if ($iAge <= 25 && $iPermis >= 2) {
+            if ($iSinistre === '1') {
+                if ($iAssurance == '5') {
+                    echo $sStart .  "Au vu des informations saisies, nous vous accordons le tarif orange.".$sEnd;
+                } else {
+                    echo $sStart .  "Au vu des informations saisies, nous vous accordons le tarif rouge.".$sEnd;
+                }
+            } else if ($iSinistre == '0') {
+                echo $sStart .  "Au vu des informations saisies, nous vous accordons le tarif orange.".$sEnd;
+            } else {
+                echo $sStart .  "Nous ne pouvons pas vous assurer au vu des informations saisies.".$sEnd;
+            }
+        } else if ($iAge >= 25 && $iPermis <= 2) {
+            if ($iSinistre == '1') {
+                echo $sStart .  "Au vu des informations saisies, nous vous accordons le tarif rouge.".$sEnd;
+            } else if ($iSinistre == '0') {
+                echo $sStart .  "Au vu des informations saisies, nous vous accordons le tarif orange.".$sEnd;
+            } else {
+                echo $sStart .  "Nous ne pouvons pas vous assurer au vu des informations saisies.".$sEnd;
+            }
+        } else if ($iAge >= 25 && $iPermis >= 2) {
+            if ($iSinistre == '2') {
+                if ($iAssurance == '5') {
+                    echo $sStart .  "Au vu des informations saisies, nous vous accordons le tarif orange.".$sEnd;
+                } else {
+                    echo $sStart .  "Au vu des informations saisies, nous vous accordons le tarif rouge.".$sEnd;
+                }
+            } else if ($iSinistre == '1') {
+                if ($iAssurance == '5') {
+                    echo $sStart .  "Au vu des informations saisies, nous vous accordons le tarif vert.".$sEnd;
+                } else {
+                    echo $sStart .  "Au vu des informations saisies, nous vous accordons le tarif orange.".$sEnd;
+                }
+            } else if ($iSinistre == '0') {
+                if ($iAssurance == '5') {
+                    echo $sStart .  "Au vu des informations saisies, nous vous accordons le tarif bleu.".$sEnd;
+                } else {
+                    echo $sStart .  "Au vu des informations saisies, nous vous accordons le tarif vert.".$sEnd;
+                }
+            } else {
+                echo $sStart .  "Nous ne pouvons pas vous assurer au vu des informations saisies.".$sEnd;
+            }
+        }
+    }
+}
+//FIN
+}   
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------Form execute script---------------------- -->
+
+                <div id="form"  class="heidden mt-4 ml-5 mr-5">
+                    <form method="POST" action="exo_4_7_php.php">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Votre age</label>
+                            <input type="number" class="form-control" name="age" id="age"
+                            min="0" max="100" aria-describedby="age" placeholder="Age de l'assuré">
+                            <label for="exampleInputEmail1">N° d'année de permis</label>
+                            <input type="number" class="form-control" name="permis" id="permis"
+                            min="0" max="100" aria-describedby="permis" placeholder="années de permis">
+                            <label for="exampleInputEmail1">N° de sinistre responsable</label>
+                            <input type="number" class="form-control" name="sinistre" id="sinistre"
+                            min="0" max="100" aria-describedby="sinistre" placeholder="N° de sinistre">
+                            <label for="exampleInputEmail1">Depuis combien d'années êtes vous assurez chez nous</label>
+                            <input type="number" class="form-control" name="assurance" id="assurance"
+                            min="0" max="100" aria-describedby="assurance" placeholder="n° d'années">
+                        </div>
+
+                        <!-- ----------------------------btn execute script------------------------- -->
+                        <div class="display btn-display">
+                            <div id="resultjs" class="btnExecut " onclick="Exo_4_7_js()">
+                                <p>JavaScript</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </div>
+                            <div id="resultprompt" class="btnExecut " onclick="Exo_4_7_jsPrompt()">
+                                <p>Js prompt</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </div>
+                            <div id="resultjq" class="btnExecut " onclick="Exo_4_7_jquery()">
+                                <p>Jquery</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </div>
+
+                            <button id="resultphp" name="resultphp" class="btnExecut" type="submit">
+                                <p>PhP</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </button>
+                    </form>
+                </div>
+        </div>
+
+        <!-- -------------------------------result script--------------------------- -->
+        <div id="execut" class="result pb-5">
+            <?php echo $sMessage;?>
+        </div>
+    </div>
+
+
+    </article>
+
+
+    </div>
+    </div>
+    <!-- ---------------------plugin lin Numbers-------------- -->
+
+    <script src="./exo_4_7_js.js"></script>
+
+    <?php include '../commun/footer.html';?>
+
+</body>
+
+
+</html>

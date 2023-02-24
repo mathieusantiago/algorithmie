@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<?php include '../commun/head.html';?>
+
+<body>
+
+    <!-- --------------btn menu nav------------------------------- -->
+    <?php include '../commun/resp-nav.html';?>
+
+    <!-- --------------btn pause and play backgroung-------------- -->
+    <?php include '../commun/bg-video.html';?>
+
+    <!-- --------------all page------------------------------- -->
+    <div class="allpage">
+
+        <!-- --------------header------------------------------- -->
+        <?php include '../commun/header.html';?>
+
+
+        <!-- ----------------------nav aside left---------------------- -->
+        <div class="display">
+            <?php include '../commun/aside.html';?>
+
+            <!-- -------------------------content page enoncé-------------------- -->
+
+            <article>
+
+                <div class="content-top">
+                    <section class="language-markup">
+                        <pre><code class="language-javascript"><xmp>
+if(a === "enonce" & b === "de l'exercise"){
+alert('aller au travail');
+}
+</xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax enoncé--------------------- -->
+
+                <section class="color-code pl-5 pt-3 text-left enonce language-markup">
+                    <p>
+                        Ecrire un algorithme qui demande un nombre de départ, et qui ensuite écrit la table de multiplication de ce nombre, <br>
+                        présentée comme suit (cas où l'utilisateur entre le nombre 7) :
+                        Table de 7 :<br>
+                        7 x 1 = 7<br>
+                        7 x 2 = 14<br>
+                        7 x 3 = 21<br>
+                        …<br>
+                        7 x 10 = 70<br>
+                    </p>
+                </section>
+
+                <!-- ----------------------------color syntax pseudo-code--------------------- -->
+
+                <section class="color-code language-markup">
+                    <pre class="line-numbers"><code><xmp>
+// ALGORITHME Exo_5_5
+function Exo_5_5(){
+    //VARIABLE iNb, iI, sStr, bCalc
+    //Debut
+    //Ecrire "Entrez un nombre"
+    //lire iNb
+    //sStr = " "
+    //Pour iI = 1; iI < 11; iI++
+        //sStr = iI
+        //bCalc = iNb * sStr
+        //Ecrire iNb + "X" + "sStr" + "=" + bCalc
+     //FinPour
+Fin       
+}
+          </xmp></code></pre>
+                </section>
+
+                <!-- ----------------------------btn select language--------------------- -->
+
+                <div>
+                    <a href="#traductJS" class="btn btn-md btn-dark mt-4 btn-js"
+                        onclick="showcode('executjs', 'resultjs')"><img src="../css/img/icon-js.png"
+                            alt="javascript logo">JavaScript</a>
+              
+                    <a href="#traductJQ" class="btn btn-md btn-dark mt-4 btn-jq"
+                        onclick="showcode('executjq', 'resultjq')"><img src="../css/img/icon-jquery.png"
+                            alt="javascript logo">Jquery</a>
+                    <a href="#traductPhP" class="btn btn-md btn-dark mt-4 pr-4 btn-php"
+                        onclick="showcode('executphp', 'resultphp')"><img src="../css/img/icon-php.png"
+                            alt="javascript logo ">PhP</a>
+                </div>
+
+                <!-- ----------------------------color syntax JavaScript--------------------- -->
+
+                <div id="executjs" class="result">
+                    <section class="color-code language-markup ">
+                        <pre class="line-numbers"><code class="language-javascript"><xmp>
+// ALGORITHME Exo_5_5
+function Exo_5_5_js(){
+    //VARIABLE iNb, iI, sStr, bCalc
+    var iNb, bCalc, iI, sStr;
+    //Ecrire "Entrez un nombre"
+    //lire iNb
+    iNb = document.getElementById('Nb').value;
+    //sStr = " "
+    sStr = " ";
+    //Pour iI = 1; iI < 11; iI++
+    for (iI = 1; iI < 11; iI++) {
+        //bCalc = iNb * sStr
+        bCalc = iNb * iI;
+        //sStr = sStr + iNb + 'X' + iI + '=' + bCalc + '<br>'
+        sStr = sStr + iNb + ' X ' + iI + ' = ' + bCalc + "<br>";
+        //Ecrire iNb + "X" + "sStr" + "=" + bCalc
+        document.getElementById("execut").innerHTML = sStr + "<br>";
+      }
+}    
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax JavaScript prompt--------------------- -->
+
+                <div id="executprompt" class="result">
+                    <section class="color-code language-markup ">
+                        <pre class="line-numbers"><code class="language-javascript"><xmp>
+
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax Jquery--------------------- -->
+
+                <div id="executjq" class="result">
+                    <section class="color-code language-markup">
+                        <pre class="line-numbers"><code class="language-javascript"><xmp>
+// ALGORITHME Exo_5_5
+function Exo_5_5_jquery(){
+    //VARIABLE iNb, iI, sStr, bCalc
+    var iNb, bCalc, iI, sStr;
+    //Ecrire "Entrez un nombre"
+    //lire iNb
+    iNb = $('#Nb').val();
+    //sStr = " "
+    sStr = " ";
+    //Pour iI = 1; iI < 11; iI++
+    for (iI = 1; iI < 11; iI++) {
+        //bCalc = iNb * sStr
+        bCalc = iNb * iI;
+        //sStr = sStr + iNb + 'X' + iI + '=' + bCalc + '<br>'
+        sStr = sStr + iNb + ' X ' + iI + ' = ' + bCalc + "<br>";
+        //Ecrire iNb + "X" + "sStr" + "=" + bCalc
+        $("#execut").html(sStr + "<br>");
+      }
+}
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax php--------------------- -->
+
+                <div id="executphp" class="result">
+                    <section class="color-code language-markup">
+                        <pre class="line-numbers"><code class="language-php"><xmp>
+// ALGORITHME Exo_5_5
+function Exo_5_5_php() {
+    //Si le formulaire et envoyer 
+    if (isset($_POST['Nb'])) {
+        //VARIABLE iNb, iI, sStr, bCalc
+        
+        //Ecrire "Entrez un nombre"
+        //lire iNb
+        $iNb = $_POST['Nb'];
+        //sStr = " "
+        $sStr = " ";
+        //Pour iI = 1; iI < 11; iI++
+        for ($iI = 1; $iI < 11; $iI++) {
+            //bCalc = iNb * sStr
+            $bCalc = $iNb * $iI;
+            //sStr = sStr + iNb + 'X' + iI + '=' + bCalc + '<br>'
+            $sStr = $sStr . $iNb . ' X ' . $iI . ' = ' . $bCalc . "<br>";
+            //Ecrire iNb + "X" + "sStr" + "=" + bCalc
+            $sMessage =  $sStr . "<br>";
+          }
+    }
+}   
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------Form execute script---------------------- -->
+
+                <div id="form"  class="heidden mt-4 ml-5 mr-5">
+                    <form method="POST" action="exo_5_5_js.php">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Entrez un nombre</label>
+                            <input type="number" class="form-control" name="Nb" id="Nb"
+                             aria-describedby="Nb" placeholder="Entre 1 et 3">
+                        </div>
+
+                        <!-- ----------------------------btn execute script------------------------- -->
+                        <div class="display btn-display">
+                            <div id="resultjs" class="btnExecut " onclick="Exo_5_5_js()">
+                                <p>JavaScript</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </div>
+                            <div id="resultprompt" class="btnExecut " onclick="Exo_5_5_jsPrompt()">
+                                <p>Js prompt</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </div>
+                            <div id="resultjq" class="btnExecut " onclick="Exo_5_5_jquery()">
+                                <p>Jquery</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </div>
+
+                            <button id="resultphp" class="btnExecut" type="submit" name="submit">
+                                <p>PhP</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </button>
+                    </form>
+                </div>
+        </div>
+        <!-- -------------------------------result script--------------------------- -->
+        <div id="execut" class="result pb-5">
+            <?php echo $sMessage; ?>
+        </div>
+    </div>
+
+
+    </article>
+
+
+    </div>
+    </div>
+    <!-- ---------------------plugin lin Numbers-------------- -->
+
+    <script src="./exo_5_5_js.js"></script>
+
+    <?php include '../commun/footer.html';?>
+
+</body>
+
+
+</html>

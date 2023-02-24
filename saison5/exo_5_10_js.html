@@ -1,0 +1,403 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<?php include '../commun/head.html';?>
+
+<body>
+
+    <!-- --------------btn menu nav------------------------------- -->
+    <?php include '../commun/resp-nav.html';?>
+
+    <!-- --------------btn pause and play backgroung-------------- -->
+    <?php include '../commun/bg-video.html';?>
+
+    <!-- --------------all page------------------------------- -->
+    <div class="allpage">
+
+        <!-- --------------header------------------------------- -->
+        <?php include '../commun/header.html';?>
+
+
+        <!-- ----------------------nav aside left---------------------- -->
+        <div class="display">
+            <?php include '../commun/aside.html';?>
+
+            <!-- -------------------------content page enoncé-------------------- -->
+
+            <article>
+
+                <div class="content-top">
+                    <section class="language-markup">
+                        <pre><code class="language-javascript"><xmp>
+if(a === "enonce" & b === "de l'exercise"){
+alert('aller au travail');
+}
+</xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax enoncé--------------------- -->
+
+                <section class="color-code pl-5 pt-3 text-left enonce language-markup">
+                    <p>
+                        Lire la suite des prix (en euros entiers et terminée par zéro) des achats d’un client. Calculer la somme qu’il doit, lire la
+                        somme qu’il paye, et simuler la remise de la monnaie en affichant les textes "10 Euros", "5 Euros" et "1 Euro" autant
+                        de fois qu’il y a de coupures de chaque sorte à rendre.                        
+                    </p>
+                </section>
+
+                <!-- ----------------------------color syntax pseudo-code--------------------- -->
+
+                <section class="color-code language-markup">
+                    <pre class="line-numbers"><code><xmp>
+// ALGORITHME Exo_5_10.
+//variable globlal iCalcPirx = 0 en NUMERIQUE
+
+    //variable iPrix,iCalcPrix = 0 NUMERIQUE
+    //variable sBtn, STRING
+    //Ecrire 'entrez le prix de vos article'
+    //lire iPrix
+    //TanQue iPrix <>0
+        //iCalcPrix = iCaclPrix + iPrix
+        //Ecrire 'entrez le prix de vos article'
+        //Lire iPrix
+    
+    //ecrire 'Total a pyer' + iCalcPrix + '€"
+
+    //Variable iRendu, iPaiment, iBiller10 =0, iBiller5 =0, iPiece1 =0 
+    //Ecrire " vous devez "
+    //Lire iPaiment
+    //iRendu = iPaiment -iCalcPrix
+    //Ecrire 'total a rendre' + iRendu + '€'
+    //Tanque iRendu <>
+        //Si iRendu >= 10
+            //iRendu = iRendu -10
+            //iBiller10 = iBiller10 +1;          
+        //SiNonSi iRendu >= 5    
+            //iRendu = iRendu - 5;
+            //iBiller5 = iBiller5 +1
+        //SiNon    
+            //iRendu = iRendu -1;
+            //iPiece1 =iPiece1 +1
+        FinSi
+    Fintanque
+    //Ecrire 'rendre" + iBiller10 + billets de 10€
+    //Ecrire 'rendre" + iBiller5 + billets de 5€
+    //Ecrire 'rendre" + iPiece1 + piece1 de 1€
+}
+          </xmp></code></pre>
+                </section>
+                <!-- ----------------------------btn select language--------------------- -->
+                <div>
+                    <a href="#traductJS" class="btn btn-md btn-dark mt-4 btn-js"
+                        onclick="showcode2('executjs', 'resultjs', 'FormPhp')"><img src="../css/img/icon-js.png"
+                            alt="javascript logo">JavaScript</a>
+              
+                    <a href="#traductJQ" class="btn btn-md btn-dark mt-4 btn-jq"
+                        onclick="showcode2('executjq', 'resultjq', 'FormPhp')"><img src="../css/img/icon-jquery.png"
+                            alt="javascript logo">Jquery</a>
+                    <a href="#traductPhP" class="btn btn-md btn-dark mt-4 pr-4 btn-php"
+                        onclick="showcode2('executphp', 'resultphp', 'form-group')"><img src="../css/img/icon-php.png"
+                            alt="javascript logo ">PhP</a>
+                </div>
+                <!-- ----------------------------color syntax JavaScript--------------------- -->
+                <div id="executjs" class="result">
+                    <section class="color-code language-markup ">
+                        <pre class="line-numbers"><code class="language-javascript"><xmp>
+// ALGORITHME Exo_5_10.
+//variable globlal iCalcPirx = 0 en NUMERIQUE
+let iCalcPrix = 0
+function Exo_5_10_js() {
+    //variable iPrix, NUMERIQUE
+    //variable sBtn, STRING
+    var iPrix, sBtn;
+    sBtn = '<button id="Monais" onClick="Exo_5_10_jsRendu()" class="btnExecut btn btn-info" name="Monais"><p>Rendu monais</p></button>'
+    //Ecrire 'entrez le prix de vos article'
+    //lire iPrix
+    iPrix = prompt('Entrez le prix de vos article');
+    //TanQue iPrix <>0
+    while (iPrix != 0) {
+        //iCalcPrix = iCaclPrix + iPrix
+        iCalcPrix = parseInt(iCalcPrix) + parseInt(iPrix);
+        //Ecrire 'entrez le prix de vos article'
+        //Lire iPrix
+        iPrix = prompt('Entrez le prix de vos article')
+    }
+    //ecrire 'Total a pyer' + iCalcPrix + '€"
+    document.getElementById('execut').innerHTML = 'Total a payer ' + iCalcPrix + '€ <br>' + sBtn;
+}
+function Exo_5_10_jsRendu() {
+    //Variable iRendu, iPaiment, iBiller10 =0, iBiller5 =0, iPiece1 =0 
+    var iRendu, iPaiment = 0, iBiller5 =0, iBiller10=0, iPiece1=0;
+    //Ecrire " vous devez "
+    //Lire iPaiment
+    iPaiment = document.getElementById('Nb').value;
+    //iRendu = iPaiment -iCalcPrix
+    iRendu = iPaiment - iCalcPrix;
+    //Ecrire 'total a rendre' + iRendu + '€'
+    document.getElementById('execut').innerHTML = 'Total a rendre : '+ iRendu + '€ <br>';
+    //Tanque iRendu <>
+    while (iRendu !=0 ) {
+        //Si iRendu >= 10
+        if (iRendu >= 10) {
+            //iRendu = iRendu -10
+            iRendu = iRendu -10;
+            //iBiller10 = iBiller10 +1;          
+            iBiller10 = iBiller10 +1;
+        //SiNonSi iRendu >= 5    
+        }else if (iRendu >= 5) {
+            //iRendu = iRendu - 5;
+            iRendu = iRendu - 5;
+            //iBiller5 = iBiller5 +1
+            iBiller5 = iBiller5 +1
+        //SiNon    
+        }else{
+            //iRendu = iRendu -1;
+            iRendu = iRendu -1;
+            //iPiece1 =iPiece1 +1
+            iPiece1 =iPiece1 +1
+        }
+    }
+    //Ecrire 'rendre" + iBiller10 + billets de 10€
+    //Ecrire 'rendre" + iBiller5 + billets de 5€
+    //Ecrire 'rendre" + iPiece1 + piece1 de 1€
+    document.getElementById("execut").innerHTML += "Rendre " +iBiller10 +" billets de 10€" +"<br>";
+    document.getElementById("execut").innerHTML += "Rendre " +iBiller5 +" billets de 5€" +"<br>";
+    document.getElementById("execut").innerHTML += "Rendre " +iPiece1 +" pièces de 1€" +"<br>";
+}    
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax JavaScript prompt--------------------- -->
+
+                <div id="executprompt" class="result">
+                    <section class="color-code language-markup ">
+                        <pre class="line-numbers"><code class="language-javascript"><xmp>
+
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax Jquery--------------------- -->
+
+                <div id="executjq" class="result">
+                    <section class="color-code language-markup">
+                        <pre class="line-numbers"><code class="language-javascript"><xmp>
+// ALGORITHME Exo_5_10
+function Exo_5_10_jquery(){
+    //variable globlal iCalcPirx = 0 en NUMERIQUE
+    function Exo_5_10_jquery() {
+        //variable iPrix, NUMERIQUE
+        //variable sBtn, STRING
+        var iPrix, sBtn;
+        sBtn = '<button id="Monais" onClick="Exo_5_10_jsRendu()" class="btnExecut btn btn-info" name="Monais"><p>Rendu monais</p></button>'
+        //Ecrire 'entrez le prix de vos article'
+        //lire iPrix
+        iPrix = prompt('Entrez le prix de vos article');
+        //TanQue iPrix <>0
+        while (iPrix != 0) {
+            //iCalcPrix = iCaclPrix + iPrix
+            iCalcPrix = parseInt(iCalcPrix) + parseInt(iPrix);
+            //Ecrire 'entrez le prix de vos article'
+            //Lire iPrix
+            iPrix = prompt('Entrez le prix de vos article')
+        }
+        //ecrire 'Total a pyer' + iCalcPrix + '€"
+        $('#execut').html('Total a payer ' + iCalcPrix + '€ <br>' + sBtn);
+    }
+    function Exo_5_10_jsRendu() {
+        //Variable iRendu, iPaiment, iBiller10 =0, iBiller5 =0, iPiece1 =0 
+        var iRendu, iPaiment = 0, iBiller5 =0, iBiller10=0, iPiece1=0;
+        //Ecrire " vous devez "
+        //Lire iPaiment
+        iPaiment = $('#Nb').val();
+        //iRendu = iPaiment -iCalcPrix
+        iRendu = iPaiment - iCalcPrix;
+        //Ecrire 'total a rendre' + iRendu + '€'
+        $('#execut').html('Total a rendre : '+ iRendu + '€ <br>');
+        //Tanque iRendu <>
+        while (iRendu !=0 ) {
+            //Si iRendu >= 10
+            if (iRendu >= 10) {
+                //iRendu = iRendu -10
+                iRendu = iRendu -10;
+                //iBiller10 = iBiller10 +1;          
+                iBiller10 = iBiller10 +1;
+            //SiNonSi iRendu >= 5    
+            }else if (iRendu >= 5) {
+                //iRendu = iRendu - 5;
+                iRendu = iRendu - 5;
+                //iBiller5 = iBiller5 +1
+                iBiller5 = iBiller5 +1
+            //SiNon    
+            }else{
+                //iRendu = iRendu -1;
+                iRendu = iRendu -1;
+                //iPiece1 =iPiece1 +1
+                iPiece1 =iPiece1 +1
+            }
+        }
+        //Ecrire 'rendre" + iBiller10 + billets de 10€
+        //Ecrire 'rendre" + iBiller5 + billets de 5€
+        //Ecrire 'rendre" + iPiece1 + piece1 de 1€
+        $("#execut").append( "Rendre " +iBiller10 +" billets de 10€" +"<br>");
+        $("#execut").append( "Rendre " +iBiller5 +" billets de 5€" +"<br>");
+        $("#execut").append( "Rendre " +iPiece1 +" pièces de 1€" +"<br>");
+    }
+}
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax php--------------------- -->
+
+                <div id="executphp" class="result">
+                    <section class="color-code language-markup">
+                        <pre class="line-numbers"><code class="language-php"><xmp>
+// ALGORITHME Exo_5_10
+function Exo_5_10_php() {
+
+    // ALGORITHME Exo_5_9.
+    //variable isPHP, iPrix1, iPrix2, iPrix3, iPrixTotal, iPaiement, iRendu, iBillet10, iBillet5, iPiece1, sMessageTotal sMessagePaiement $sMessagePaiemesMessageARendr sMessageBillet sMessageBillet sMessagePiece1  ;
+    $iPrix1;
+    $iPrix2;
+    $iPrix3;
+    $iPrixTotal;
+    $iPaiement;
+    $iRendu;
+    $iBillet10 = 0;
+    $iBillet5 = 0;
+    $iPiece1 = 0;
+    $sMessageTotal = "";
+    $sMessagePaiement = "";
+    $sMessageARendre = "";
+    $sMessageBillet10 = "";
+    $sMessageBillet5 = "";
+    $sMessagePiece1 = "";
+    
+    //Si le formulaire et envoyer 
+    if (isset($_POST['iPrix1'])) {
+        //Ecrire "Entrez un PRIX"
+        //Lire iPrix
+        $iPrix1 = $_POST['iPrix1'];
+        $iPrix2 = $_POST['iPrix2'];
+        $iPrix3 = $_POST['iPrix3'];
+        $iPaiement = $_POST['iPaiement'];
+        $iPrixTotal = $iPrix1 + $iPrix2 + $iPrix3;
+        $iRendu = $iPaiement - $iPrixTotal;
+        $iARendre = $iRendu;
+    
+        while ($iRendu != 0) {
+            if ($iRendu >= 10) {
+                $iRendu = $iRendu -10;
+                $iBillet10 = $iBillet10 + 1;
+            }  
+            else if ($iRendu >= 5) {
+                $iRendu = $iRendu - 5;
+                $iBillet5 = $iBillet5 + 1;
+                
+            }
+            else {
+                $iRendu = $iRendu - 1;
+                $iPiece1 = $iPiece1 + 1;
+            }
+        }
+    
+        $sMessageTotal = "Prix Total à payer : " .$iPrixTotal ." €" ."<br>";
+        $sMessagePaiement = "Paiement client : " .$iPaiement ." €" ."<br>";
+        $sMessageARendre = "Total à rendre : " .$iARendre ." €" ."<br>";
+        $sMessageBillet10 = "Nombre de billets de 10€ : " .$iBillet10 ."<br>";
+        $sMessageBillet5 = "Nombre de billets de 5€ : " .$iBillet5 ."<br>";
+        $sMessagePiece1 = "Nombre de pièces de 1€ : " .$iPiece1 ."<br>";
+    
+    
+    
+    } else {
+        $sMessage = 'Pas de variable envoyée';
+    }
+    
+    require 'exo_5_10_js.html';
+}   
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------Form execute script---------------------- -->
+
+                <div id="form"  class="heidden mt-4 ml-5 mr-5">
+                    <form method="POST" action="exo_5_10_js.php">
+                        <div class="form-group" id="form-group">
+                            <label for="exampleInputEmail1">Entrez un nombre</label>
+                            <input type="number" class="form-control" name="Nb" id="Nb"
+                             aria-describedby="Nb" placeholder="Entre 1 et 3">
+                        </div>
+                        <div class="form-group heidden" id="FormPhp">
+                            <label for="exampleInputEmail1">Entrez le prix</label>
+                            <input type="number" class="form-control" name="iPrix1" id="iPrix1"
+                             aria-describedby="iPrix1" placeholder="Entrez le prix">
+                             <label for="exampleInputEmail1">Entrez le prix</label>
+                             <input type="number" class="form-control" name="iPrix2" id="iPrix2"
+                             aria-describedby="iPrix2" placeholder="Entrez le prix">
+                             <label for="exampleInputEmail1">Entrez le prix</label>
+                             <input type="number" class="form-control" name="iPrix3" id="iPrix3"
+                             aria-describedby="iPrix3" placeholder="Entrez le prix">
+                             <label for="exampleInputEmail1">Entrez le paiement du client : </label>
+                             <input type="number" class="form-control" name="iPaiement" id="iPaiement"
+                             aria-describedby="iPaiement" placeholder="Entrez le prix">
+                        </div>
+
+                        <!-- ----------------------------btn execute script------------------------- -->
+                        <div class="display btn-display">
+                            <div id="resultjs" class="btnExecut " onclick="Exo_5_10_js()">
+                                <p>JavaScript</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </div>
+                            <div id="resultprompt" class="btnExecut " onclick="Exo_5_10_jsPrompt()">
+                                <p>Js prompt</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </div>
+                            <div id="resultjq" class="btnExecut " onclick="Exo_5_10_jquery()">
+                                <p>Jquery</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </div>
+
+                            <button id="resultphp" class="btnExecut" type="submit" name="submit">
+                                <p>PhP</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </button>
+                    </form>
+                </div>
+        </div>
+        <!-- -------------------------------result script--------------------------- -->
+       
+        <div id="execut" class="result pb-5">
+            
+            <?php  
+            echo $sMessageTotal;
+            echo $sMessagePaiement;
+            echo $sMessageARendre;
+            echo $sMessageBillet10;
+            echo $sMessageBillet5;
+            echo $sMessagePiece1;
+            ?>
+        </div>
+    </div>
+
+
+    </article>
+
+
+    </div>
+    </div>
+    <!-- ---------------------plugin lin Numbers-------------- -->
+
+    <script src="./exo_5_10_js.js"></script>
+
+    <?php include '../commun/footer.html';?>
+
+</body>
+
+
+</html>

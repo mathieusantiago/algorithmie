@@ -1,0 +1,248 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<?php include '../commun/head.html';?>
+
+<body>
+
+    <!-- --------------btn menu nav------------------------------- -->
+    <?php include '../commun/resp-nav.html';?>
+
+    <!-- --------------btn pause and play backgroung-------------- -->
+    <?php include '../commun/bg-video.html';?>
+
+    <!-- --------------all page------------------------------- -->
+    <div class="allpage">
+
+        <!-- --------------header------------------------------- -->
+        <?php include '../commun/header.html';?>
+
+
+        <!-- ----------------------nav aside left---------------------- -->
+        <div class="display">
+            <?php include '../commun/aside.html';?>
+
+            <!-- -------------------------content page enoncé-------------------- -->
+
+            <article>
+
+                <div class="content-top">
+                    <section class="language-markup">
+                        <pre><code class="language-javascript"><xmp>
+if(a === "enonce" & b === "de l'exercise"){
+alert('aller au travail');
+}
+</xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax enoncé--------------------- -->
+
+                <section class="color-code pl-5 pt-3 text-left enonce language-markup">
+                    <p>
+                        Que produit l’algorithme suivant ?
+                    </p>
+                </section>
+
+                <!-- ----------------------------color syntax pseudo-code--------------------- -->
+
+                <section class="color-code language-markup">
+                    <pre class="line-numbers"><code><xmp>
+// ALGORITHME Exo_6_9.
+Tableau Suite(7) en Entier
+Variable i en Entier
+Début
+    Suite(0) ← 1
+    Suite(1) ← 1
+    Pour i ← 2 à 7
+        Suite(i) ← Suite(i-1) + Suite(i-2)
+    i suivant
+    Pour i ← 0 à 7
+        Ecrire Suite(i)
+    i suivant
+Fin
+}
+          </xmp></code></pre>
+                </section>
+                <!-- ----------------------------btn select language--------------------- -->
+                <div>
+                    <a href="#traductJS" class="btn btn-md btn-dark mt-4 btn-js"
+                        onclick="showcode('executjs', 'resultjs',)"><img src="../css/img/icon-js.png"
+                            alt="javascript logo">JavaScript</a>
+              
+                    <a href="#traductJQ" class="btn btn-md btn-dark mt-4 btn-jq"
+                        onclick="showcode('executjq', 'resultjq')"><img src="../css/img/icon-jquery.png"
+                            alt="javascript logo">Jquery</a>
+                    <a href="#traductPhP" class="btn btn-md btn-dark mt-4 pr-4 btn-php"
+                        onclick="showcode('executphp', 'resultphp')"><img src="../css/img/icon-php.png"
+                            alt="javascript logo ">PhP</a>
+                </div>
+                <!-- ----------------------------color syntax JavaScript--------------------- -->
+                <div id="executjs" class="result">
+                    <section class="color-code language-markup ">
+                        <pre class="line-numbers"><code class="language-javascript"><xmp>
+// ALGORITHME Exo_6_9.
+function Exo_6_9_js() {
+    //     Tableau iTableau(9)
+    var iTableau = Array(9);
+    var iI, iCalc = 0, iMoyenne;
+
+    // DEBUT
+    // Je boucle et je récupère iN que je stocke dans le tableau
+    for (iI = 0; iI < 9; iI++) {
+        iTableau[iI] = parseInt(document.getElementById("iN" + (iI)).value);
+        // J'ajoute les valeurs  iCalc
+        iCalc = iCalc + parseInt(document.getElementById("iN" + (iI)).value);
+        // j'affiche le résultat 
+        document.getElementById("execut").innerHTML += "index " + iI + " valeur : " + document.getElementById("iN" + (iI)).value + "<br>";
+    }
+    // je calcule la moyenne
+    iMoyenne = iCalc / iTableau.length;
+    // j'affiche la moyenne 
+    document.getElementById("execut").innerHTML += "Moyenne : " + iMoyenne.toFixed(2);
+}
+
+
+
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax JavaScript prompt--------------------- -->
+
+                <div id="executprompt" class="result">
+                    <section class="color-code language-markup ">
+                        <pre class="line-numbers"><code class="language-javascript"><xmp>
+
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax Jquery--------------------- -->
+
+                <div id="executjq" class="result">
+                    <section class="color-code language-markup">
+                        <pre class="line-numbers"><code class="language-javascript"><xmp>
+// ALGORITHME Exo_6_9
+//     Tableau iTableau(9)
+iTableau = Array(9);
+var index,iCalc = 0,iMoyenne;
+// DEBUT
+// Je boucle et je récupère iN que je stocke dans le tableau
+for(iI = 0; iI < 9; iI++){ 
+   iTableau[iI] = $("#iVal"+(iI)).val();
+   // J'ajoute les valeurs  iCalc
+   iCalc = iCalc + parseInt($("#iVal"+(iI)).val());
+   // j'affiche le résultat 
+
+   $("#div_result_jq_6_3").append("index " +iI +" valeur : " +$("#iVal"+iI).val() +"<br>");
+}
+// je calcule la moyenne
+iMoyenne = iCalc / iTableau.length;
+// j'affiche la moyenne 
+$("#div_result_jq_6_9").append("Moyenne : " +iMoyenne.toFixed(2));    
+
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax php--------------------- -->
+
+                <div id="executphp" class="result">
+                    <section class="color-code language-markup">
+                        <pre class="line-numbers"><code class="language-php"><xmp>
+// ALGORITHME Exo_6_9
+function Exo_6_9_php() {
+    if (isset($_POST['submit'])) {
+        $iTableau = Array(9);
+        $iN;
+        $iCalc = 0;
+        $iMoyenne;
+        
+        for($iI = 0; $iI < 9; $iI++){
+            $iTableau[] = $_POST["iN".$iI];
+            $iCalc = $iCalc + $_POST["iN".$iI];
+            $sMessage .= "index " .$iI ." valeur : " .$_POST["iN".$iI] ."<br>";
+        }
+        $sMessage .= "Total : " .$iCalc ."<br>";
+        $iMoyenne = $iCalc / (count($iTableau) - 1);
+        $sMessage .= "Moyenne : " .round($iMoyenne, 2) ."<br>";                                
+    }
+}   
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------Form execute script---------------------- -->
+
+                <div id="form"  class="heidden mt-4 ml-5 mr-5">
+                    <form method="POST" action="exo_6_9_js.php">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Entrez une Note</label>
+                            <input type="number" class="form-control" name="iN0" id="iN0"
+                             aria-describedby="iN0" placeholder="Entre une note" value="10">
+                             <input type="number" class="form-control" name="iN1" id="iN1"
+                             aria-describedby="iN1" placeholder="Entre une note" value="20">
+                             <input type="number" class="form-control" name="iN2" id="iN2"
+                             aria-describedby="iN2" placeholder="Entre une note" value="15">
+                             <input type="number" class="form-control" name="iN3" id="iN3"
+                             aria-describedby="iN3" placeholder="Entre une note" value="18">
+                             <input type="number" class="form-control" name="iN4" id="iN4"
+                             aria-describedby="iN4" placeholder="Entre une note"value="5">
+                             <input type="number" class="form-control" name="iN5" id="iN5"
+                             aria-describedby="iN5" placeholder="Entre une note"value="12">
+                             <input type="number" class="form-control" name="iN6" id="iN6"
+                             aria-describedby="iN6" placeholder="Entre une note" value="16">
+                             <input type="number" class="form-control" name="iN7" id="iN7"
+                             aria-describedby="iN7" placeholder="Entre une note" value="11">
+                             <input type="number" class="form-control" name="iN8" id="iN8"
+                             aria-describedby="iN8" placeholder="Entre une note" value="8">
+                
+                        </div>
+
+                        <!-- ----------------------------btn execute script------------------------- -->
+                        <div class="display btn-display">
+                            <div id="resultjs" class="btnExecut " onclick="Exo_6_9_js()">
+                                <p>JavaScript</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </div>
+                            <div id="resultprompt" class="btnExecut " onclick="Exo_6_9_jsPrompt()">
+                                <p>Js prompt</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </div>
+                            <div id="resultjq" class="btnExecut " onclick="Exo_6_9_jquery()">
+                                <p>Jquery</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </div>
+
+                            <button id="resultphp" class="btnExecut" type="submit" name="submit">
+                                <p>PhP</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </button>
+                    </form>
+                </div>
+        </div>
+        <!-- -------------------------------result script--------------------------- -->
+       
+        <div id="execut" class="result pb-5">
+            <?= $sMessage;?>
+        </div>
+    </div>
+
+
+    </article>
+
+
+    </div>
+    </div>
+    <!-- ---------------------plugin lin Numbers-------------- -->
+
+    <script src="./exo_6_9_js.js"></script>
+
+    <?php include '../commun/footer.html';?>
+
+</body>
+
+
+</html>

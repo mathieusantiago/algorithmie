@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<?php include '../commun/head.html';?>
+
+<body>
+
+  <!-- --------------btn menu nav------------------------------- -->
+  <?php include '../commun/resp-nav.html';?>
+
+  <!-- --------------btn pause and play backgroung-------------- -->
+  <?php include '../commun/bg-video.html';?>
+
+  <!-- --------------all page------------------------------- -->
+  <div class="allpage">
+
+    <!-- --------------header------------------------------- -->
+    <?php include '../commun/header.html';?>
+
+
+    <!-- ----------------------nav aside left---------------------- -->
+    <div class="display">
+      <?php include '../commun/aside.html';?>
+
+      <!-- -------------------------content page enoncé-------------------- -->
+
+      <article>
+
+        <div class="content-top">
+          <section class="language-markup">
+            <pre><code class="language-javascript"><xmp>
+if(a === "enonce" & b === "de l'exercise"){
+alert('aller au travail');
+}
+</xmp></code></pre>
+          </section>
+        </div>
+
+        <!-- ----------------------------color syntax enoncé--------------------- -->
+
+        <section class="color-code pl-5 pt-3 text-left enonce language-markup">
+          <p>Ecrire un algorithme qui demande un nombre à l’utilisateur, et l’informe ensuite si ce nombre est positif ou négatif
+            (on laisse de côté le cas où le nombre vaut zéro).
+            </p>
+        </section>
+
+        <!-- ----------------------------color syntax pseudo-code--------------------- -->
+
+        <section class="color-code language-markup">
+          <pre class="line-numbers"><code><xmp>
+// ALGORITHME Exo_3_1
+function Exo_3_1(){
+// DEBUT
+  // VARIABLE iNB en NUMERIQUE 
+  Ecrire "Merci de rentré un Nombres" ;
+	Lire "iNB" ;
+	Si (iNB > 0){
+	Ecrire "Votre nombre en positif" ;
+	Sinon 
+	Ecrire " votre nombre et negatif" ;
+}
+//FIN
+}
+          </xmp></code></pre>
+        </section>
+
+        <!-- ----------------------------btn select language--------------------- -->
+
+        <div>
+          <a href="#traductJS" class="btn btn-md btn-dark mt-4 btn-js" onclick="showcode('executjs', 'resultjs')"><img
+              src="../css/img/icon-js.png" alt="javascript logo">JavaScript</a>
+          <a href="#traductJS" class="btn btn-md btn-dark mt-4 btn-js"
+            onclick="showcode('executprompt', 'resultprompt')"><img src="../css/img/icon-js.png"
+              alt="javascript logo">Js Prompt</a>
+          <a href="#traductJQ" class="btn btn-md btn-dark mt-4 btn-jq" onclick="showcode('executjq', 'resultjq')"><img
+              src="../css/img/icon-jquery.png" alt="javascript logo">Jquery</a>
+          <a href="#traductPhP" class="btn btn-md btn-dark mt-4 pr-4 btn-php"
+            onclick="showcode('executphp', 'resultphp')"><img src="../css/img/icon-php.png"
+              alt="javascript logo ">PhP</a>
+        </div>
+
+        <!-- ----------------------------color syntax JavaScript--------------------- -->
+
+        <div id="executjs" class="result">
+          <section class="color-code language-markup ">
+            <pre class="line-numbers"><code class="language-javascript"><xmp>
+// ALGORITHME Exo_3_1
+function Exo_3_1_js()
+// DEBUT
+{
+  // VARIABLE iNB, sSelect, sStart, sEnd, sPositif, sNegatif en NUMERIQUE et STRING
+  //je declar mes variable
+  var iNB = document.getElementById('InputNB').value;
+  var select = document.getElementById('execut');
+//je crée ma structure html
+  var sStart = '<section class="color-code"><div class="color-result"><p>';
+  var sEnd= '</p></div></section>';
+  var sPositif = sStart + iNB + 'est un nombre positif'  + sEnd
+  var sNegatif = sStart + iNB + 'est un nombre negatif' + sEnd;
+//je crée ma condition
+  if(iNB > 0){
+    select.innerHTML = sPositif;
+  }else{
+    select.innerHTML = sNegatif;
+  }
+//FIN
+}    
+      </xmp></code></pre>
+          </section>
+        </div>
+
+        <!-- ----------------------------color syntax JavaScript prompt--------------------- -->
+
+        <div id="executprompt" class="result">
+          <section class="color-code language-markup ">
+            <pre class="line-numbers"><code class="language-javascript"><xmp>
+// ALGORITHME Exo_3_1
+function Exo_3_1_jsprompt(){
+// DEBUT
+// VARIABLE iNB, sPositif, sNegatif en NUMERIQUE et STRING
+  var iNB = prompt('Entrez un nombre');
+  //je crée ma structure html
+  var sPositif = iNB + ' est un nombre positif';
+  var sNegatif = iNB + ' est un nombre negatif';
+  if (iNB > 0) {
+    alert(sPositif);
+  } else {
+    alert(sNegatif);
+  }
+//FIN
+}
+      </xmp></code></pre>
+          </section>
+        </div>
+
+        <!-- ----------------------------color syntax Jquery--------------------- -->
+
+        <div id="executjq" class="result">
+          <section class="color-code language-markup">
+            <pre class="line-numbers"><code class="language-javascript"><xmp>
+// ALGORITHME Exo_3_1
+function Exo_3_1_jquery() {
+// DEBUT
+// VARIABLE iNB, sSelect, sStart, sEnd, sPositif, sNegatif en NUMERIQUE et STRING
+  var iNB = $('#InputNB').val();
+  var sSelect = $('#execut');
+  //je crée ma structure html
+  var sStart = '<section class="color-code"><div class="color-result"><p>';
+  var sEnd = '</p></div></section>';
+  var sPositif = sStart + iNB + ' est un nombre positif' + sEnd;
+  var sNegatif = sStart + iNB + ' est un nombre negatif' + sEnd;
+  //je crée ma condition
+  if (iNB > 0) {
+    $('#execut').html(sPositif);
+  } else {
+    $('#execut').html(sNegatif);
+  }
+  
+//FIN
+}
+      </xmp></code></pre>
+          </section>
+        </div>
+
+        <!-- ----------------------------color syntax php--------------------- -->
+
+        <div id="executphp" class="result">
+          <section class="color-code language-markup">
+            <pre class="line-numbers"><code class="language-php"><xmp>
+// ALGORITHME Exo_3_1
+function Exo_3_1_php() {
+// DEBUT
+  // VARIABLE iNB, sStart, sEnd, sPositif, sNegatif en NUMERIQUE et STRING
+  // si la formulaire a êtes posté 
+  if (isset($_POST['ExecutPhp'])) {
+      // si la formulaire a êtes rempli 
+      if (isset($_POST['InputNB'])) {
+          // je declare mes variable   
+          $iNB = $_POST['InputNB'];
+          // je crée la structure html
+          $sStart = '<section class="color-code"><div class="color-result"><p>';
+          $sEnd = '</p></div></section>';
+          //je crée une variable qui contient le résultat avec la structur html 
+          $sPositif =  $iNB .' Est un nombre positif'. $sEnd;
+          $sNegatif =  $iNB .' Est un nombre negatif'. $sEnd;
+          //j'écrie mon resultat 
+          if ($iNB > 0) {
+              echo $sPositif;
+          }else{
+              echo $sNegatif;
+          }
+      }
+  }
+//FIN
+}   
+      </xmp></code></pre>
+          </section>
+        </div>
+
+        <!-- ----------------------------Form execute script---------------------- -->
+
+        <div id="form"  class="heidden mt-4 ml-5 mr-5">
+          <form action="exo_3_1_php.php" method="POST">
+          <div class="form-group">
+            <label for="exampleInputEmail1">Entrez vos information</label>
+            <input type="text" class="form-control" name="InputNB" id="InputNB" aria-describedby="emailHelp" placeholder="">
+          </div>
+
+          <!-- ----------------------------btn execute script------------------------- -->
+          <div class="display btn-display">
+            <div id="resultjs" class="btnExecut " onclick="Exo_3_1_js()">
+              <p>JavaScript</p>
+              <img src="../css/img/btnrun.png" alt="bouton executer">
+            </div>
+            <div id="resultprompt" class="btnExecut " onclick="Exo_3_1_jsPrompt()">
+              <p>Js prompt</p>
+              <img src="../css/img/btnrun.png" alt="bouton executer">
+            </div>
+            <div id="resultjq" class="btnExecut " onclick="Exo_3_1_jquery()">
+              <p>Jquery</p>
+              <img src="../css/img/btnrun.png" alt="bouton executer">
+            </div>
+          
+              <button id="resultphp" class="btnExecut" type="submit">
+                <p>PhP</p>
+                <img src="../css/img/btnrun.png" alt="bouton executer">
+              </button>
+            </form>
+          </div>
+
+        </div>
+
+        <!-- -------------------------------result script--------------------------- -->
+        <div id="execut" class="result pb-5">
+          <?php echo $sMessage; ?>    
+        </div>
+    </div>
+
+
+    </article>
+
+
+  </div>
+  </div>
+  <!-- ---------------------plugin lin Numbers-------------- -->
+
+  <script src="./exo_3_1_js.js"></script>
+  <?php include '../commun/footer.html';?>
+
+</body>
+
+
+</html>

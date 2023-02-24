@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<?php include '../commun/head.html';?>
+
+<body>
+
+    <!-- --------------btn menu nav------------------------------- -->
+    <?php include '../commun/resp-nav.html';?>
+
+    <!-- --------------btn pause and play backgroung-------------- -->
+    <?php include '../commun/bg-video.html';?>
+
+    <!-- --------------all page------------------------------- -->
+    <div class="allpage">
+
+        <!-- --------------header------------------------------- -->
+        <?php include '../commun/header.html';?>
+
+
+        <!-- ----------------------nav aside left---------------------- -->
+        <div class="display">
+            <?php include '../commun/aside.html';?>
+
+            <!-- -------------------------content page enoncé-------------------- -->
+
+            <article>
+
+                <div class="content-top">
+                    <section class="language-markup">
+                        <pre><code class="language-javascript"><xmp>
+if(a === "enonce" & b === "de l'exercise"){
+alert('aller au travail');
+}
+</xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax enoncé--------------------- -->
+
+                <section class="color-code pl-5 pt-3 text-left enonce language-markup">
+                    <p>
+                        Cet algorithme est destiné à prédire l'avenir, et il doit être infaillible ! <br>
+                        Il lira au clavier l’heure et les minutes, et il affichera l’heure qu’il sera une minute plus tard. Par exemple, si <br>
+                        l'utilisateur tape 21 puis 32, l'algorithme doit répondre : <br>
+                        "Dans une minute, il sera 21 heure(s) 33". <br>
+                        NB : on suppose que l'utilisateur entre une heure valide. Pas besoin donc de la vérifier. <br>
+
+                    </p>
+                </section>
+
+                <!-- ----------------------------color syntax pseudo-code--------------------- -->
+
+                <section class="color-code language-markup">
+                    <pre class="line-numbers"><code><xmp>
+// ALGORITHME Exo_4_2
+function Exo_4_2(){
+// DEBUT
+  // VARIABLE en NUMERIQUE 
+  Ecrire 'entre une heur puis les minuts au format 24h'
+  Lire Heurs, minutes
+  Minutes ← Minutes +1
+  Si Minutes = 60
+    Minute ← 0
+    Heurs ← Heurs +1
+  Si heurs = 24
+    Heurs ← 0  
+
+//FIN
+}
+          </xmp></code></pre>
+                </section>
+
+                <!-- ----------------------------btn select language--------------------- -->
+
+                <div>
+                    <a href="#traductJS" class="btn btn-md btn-dark mt-4 btn-js"
+                        onclick="showcode('executjs', 'resultjs')"><img src="../css/img/icon-js.png"
+                            alt="javascript logo">JavaScript</a>
+                    <a href="#traductJS" class="btn btn-md btn-dark mt-4 btn-js"
+                        onclick="showcode('executprompt', 'resultprompt')"><img src="../css/img/icon-js.png"
+                            alt="javascript logo">Js Prompt</a>
+                    <a href="#traductJQ" class="btn btn-md btn-dark mt-4 btn-jq"
+                        onclick="showcode('executjq', 'resultjq')"><img src="../css/img/icon-jquery.png"
+                            alt="javascript logo">Jquery</a>
+                    <a href="#traductPhP" class="btn btn-md btn-dark mt-4 pr-4 btn-php"
+                        onclick="showcode('executphp', 'resultphp')"><img src="../css/img/icon-php.png"
+                            alt="javascript logo ">PhP</a>
+                </div>
+
+                <!-- ----------------------------color syntax JavaScript--------------------- -->
+
+                <div id="executjs" class="result">
+                    <section class="color-code language-markup ">
+                        <pre class="line-numbers"><code class="language-javascript"><xmp>
+// ALGORITHME Exo_4_2
+function Exo_4_2_js(){
+// DEBUT
+// VARIABLE iHeurs, iMin, sStart, sEnd en NUMERIQUE et STRING
+    //je declar mes variable
+    var iHeurs = parseInt(document.getElementById('heurs').value);
+    var iMin = parseInt(document.getElementById('min').value);
+    var iMin = parseInt(iMin + 1);
+    var select = document.getElementById('execut');
+    //je crée ma condition
+    if (iMin === 60) {
+    iMin = 0;
+    iHeurs = iHeurs + 1;
+    }
+    if (iHeurs === 24) {
+    iHeurs = 0;
+    }
+    //je crée ma structure html
+    var sStart = '<section class="color-code"><div class="color-result"><p>';
+    var sEnd = '</p></div></section>';
+    select.innerHTML = sStart + ' Dans un minute il sera <br>' + iHeurs + ' Heurs ' + iMin + ' Minutes ' + sEnd;
+//FIN
+}    
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax JavaScript prompt--------------------- -->
+
+                <div id="executprompt" class="result">
+                    <section class="color-code language-markup ">
+                        <pre class="line-numbers"><code class="language-javascript"><xmp>
+// ALGORITHME Exo_4_2
+function Exo_4_2_jsprompt(){
+// DEBUT
+// VARIABLE  en NUMERIQUE et STRING
+    //je declar mes variable
+    var iHeurs = parseInt(prompt('Entrez une heur au format 24/'));
+    var iMin = parseInt(prompt('Entrez une minutes'));
+    var iMin = parseInt(iMin + 1);
+    //je crée ma condition
+    if (iMin === 60) {
+    iMin = 0;
+    iHeurs = iHeurs + 1;
+    }
+    if (iHeurs === 24) {
+    iHeurs = 0;
+    }
+    //je crée ma structure html
+    alert(' Dans un minute il sera \n' + iHeurs + ' Heurs ' + iMin + ' Minutes ');
+//FIN
+}
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax Jquery--------------------- -->
+
+                <div id="executjq" class="result">
+                    <section class="color-code language-markup">
+                        <pre class="line-numbers"><code class="language-javascript"><xmp>
+// ALGORITHME Exo_4_2
+function Exo_4_2_jquery() {
+// DEBUT
+// VARIABLE  en NUMERIQUE et STRING
+    //je declar mes variable
+    var iHeurs = parseInt($('#heurs').val());
+    var iMin = parseInt($('#min').val());
+    var iMin = parseInt(iMin + 1);
+    var select = $('#execut');
+    //je crée ma condition
+    if (iMin === 60) {
+    iMin = 0;
+    iHeurs = iHeurs + 1;
+    }
+    if (iHeurs === 24) {
+    iHeurs = 0;
+    }
+    //je crée ma structure html
+    var sStart = '<section class="color-code"><div class="color-result"><p>';
+    var sEnd = '</p></div></section>';
+    select.html(sStart + ' Dans un minute il sera <br>' + iHeurs + ' Heurs ' + iMin + ' Minutes ' + sEnd); 
+//FIN
+}
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax php--------------------- -->
+
+                <div id="executphp" class="result">
+                    <section class="color-code language-markup">
+                        <pre class="line-numbers"><code class="language-php"><xmp>
+// ALGORITHME Exo_4_2
+function Exo_4_2_php() {
+// DEBUT
+// VARIABLE en NUMERIQUE et STRING
+    // si la formulaire a êtes posté 
+    if (isset($_POST['ExecutPhp'])) {
+        // si la formulaire a êtes rempli 
+        if (isset($_POST['heurs']) && isset($_POST['min'])) {
+            // je declare mes variable   
+            $iHeurs = intval($_POST['heurs']);
+            $iMin = intval($_POST['min']);
+            $iMin = intval($iMin + 1);
+            //j'écrie ma condition
+            if ($iMin === 60) {
+                $iMin = 0;
+                $iHeurs = $iHeurs + 1;
+            }
+            if ($iHeurs === 24) {
+                $iHeurs = 0;
+            }
+            // je crée la structure html
+            $sStart = '<section class="color-code"><div class="color-result"><p>';
+            $sEnd = '</p></div></section>';
+            // je ecrie le resultat 
+            echo $sStart .' Dans un minute il sera <br>' . $iHeurs . ' Heurs ' . $iMin . ' Minutes ' . $sEnd;
+        }
+    }
+//FIN
+}   
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------Form execute script---------------------- -->
+
+                <div id="form"  class="heidden mt-4 ml-5 mr-5">
+                    <form method="POST" action="exo_4_2_php.php">
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">Je vais te prédire l'avenir <br>Entrez une heurs au format 24/</label>
+                            <input type="number" class="form-control" name="heurs" id="heurs"
+                            min="1" max="24" aria-describedby="heurs" required='required' placeholder="Heurs 24/">
+                            <span class="validity"></span> <br>
+                            <label for="exampleInputEmail1">Et minutes</label>
+                            <input type="number" class="form-control" name="min" id="min"
+                            min="1" max="60" aria-describedby="min" required='required' placeholder="Minute">
+                            <span class="validity"></span>   
+                        </div>
+
+                        <!-- ----------------------------btn execute script------------------------- -->
+                        <div class="display btn-display">
+                            <div id="resultjs" class="btnExecut " onclick="Exo_4_2_js()">
+                                <p>JavaScript</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </div>
+                            <div id="resultprompt" class="btnExecut " onclick="Exo_4_2_jsPrompt()">
+                                <p>Js prompt</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </div>
+                            <div id="resultjq" class="btnExecut " onclick="Exo_4_2_jquery()">
+                                <p>Jquery</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </div>
+
+                            <button id="resultphp" class="btnExecut" type="submit">
+                                <p>PhP</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </button>
+                    </form>
+                </div>
+        </div>
+
+        <!-- -------------------------------result script--------------------------- -->
+        <div id="execut" class="result pb-5">
+            <?php echo $sMessage;?>
+        </div>
+    </div>
+
+
+    </article>
+
+
+    </div>
+    </div>
+    <!-- ---------------------plugin lin Numbers-------------- -->
+
+    <script src="./exo_4_2_js.js"></script>
+
+    <?php include '../commun/footer.html';?>
+
+</body>
+
+
+</html>

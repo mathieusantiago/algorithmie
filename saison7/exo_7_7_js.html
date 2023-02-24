@@ -1,0 +1,391 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+   
+<?php include '../commun/head.html';?>
+
+<body>
+
+    <!-- --------------btn menu nav------------------------------- -->
+    <?php include '../commun/resp-nav.html';?>
+
+    <!-- --------------btn pause and play backgroung-------------- -->
+    <?php include '../commun/bg-video.html';?>
+
+    <!-- --------------all page------------------------------- -->
+    <div class="allpage">
+
+        <!-- --------------header------------------------------- -->
+        <?php include '../commun/header.html';?>
+
+
+        <!-- ----------------------nav aside left---------------------- -->
+        <div class="display">
+            <?php include '../commun/aside.html';?>
+
+            <!-- -------------------------content page enoncé-------------------- -->
+
+            <article>
+
+                <div class="content-top">
+                    <section class="language-markup">
+                        <pre><code class="language-javascript"><xmp>
+if(a === "enonce" & b === "de l'exercise"){
+alert('aller au travail');
+}
+</xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax enoncé--------------------- -->
+
+                <section class="color-code pl-5 pt-3 text-left enonce language-markup">
+                    <p>
+                        Écrivez un algorithme qui fusionne deux tableaux (déjà existants) dans un troisième, qui devra être trié. <br>
+                        Attention ! On présume que les deux tableaux de départ sont préalablement triés : il est donc irrationnel de faire <br>
+                        une simple concaténation des deux tableaux de départ, puis d'opérer un tri : comme quand on se trouve face à deux <br>
+                        tas de papiers déjà triés et qu'on veut les réunir, il existe une méthode bien plus économique (et donc, bien plus <br>
+                        rationnelle...) 
+                    </p>
+                </section>
+
+                <!-- ----------------------------color syntax pseudo-code--------------------- -->
+
+                <section class="color-code language-markup">
+                    <pre class="line-numbers"><code><xmp>
+// ALGORITHME Exo_7_7.
+function Exo_7_7_js() {
+    //var tableau1 <- [xxxxxx] 
+    //var tableau2 <- [xxxxxx] 
+    //var tableau3 <- [] 
+    //var bloolean 1 <- faux
+    //var bloolean 2 <- faux
+    //var iCompteur 1 <- 0
+    //var iCompteur 2 <- 0
+    //var iCompteur 3 <- -1
+    //var iNbA <- Longueur Tableau1
+    //var iNbA <- Longueur Tableau2
+    //var iNbGlob <- Longueur des deux tableaux
+    //DEBUT
+    //Tanque iCompteur 3 < Longueur des deux tableaux
+        //iCompteur3 + 1
+        //Si tableau1[iCompteur1] < tableau2[iCompteur2] 
+            //tableau3[iCompteur1] <- tableau1[iCompteur1]
+            //iCompteur + 1
+            //Si Compteur1 > Longueur Tableau1
+                //boolean1 <- vrai
+                //SiNon
+                //bloolean1 <- faut
+            //FinSi
+            //SiNonSi
+            //tableau3[iCompteur3] <- tableau2[icompteur2]
+            //iCompteur2 <- +1
+            //Si iCompteur2 > Longueur Tableau2
+                //bloolean2 <- vrais
+                //bloolean2 <- faut
+            //FinSi
+        //FinSi
+    //FinTanQue
+}
+          </xmp></code></pre>
+                </section>
+                <!-- ----------------------------btn select language--------------------- -->
+                <div>
+                    <a href="#traductJS" class="btn btn-md btn-dark mt-4 btn-js"
+                        onclick="showcode('executjs', 'resultjs',)"><img src="../css/img/icon-js.png"
+                            alt="javascript logo">JavaScript</a>
+              
+                    <a href="#traductJQ" class="btn btn-md btn-dark mt-4 btn-jq"
+                        onclick="showcode('executjq', 'resultjq')"><img src="../css/img/icon-jquery.png"
+                            alt="javascript logo">Jquery</a>
+                    <a href="#traductPhP" class="btn btn-md btn-dark mt-4 pr-4 btn-php"
+                        onclick="showcode('executphp', 'resultphp')"><img src="../css/img/icon-php.png"
+                            alt="javascript logo ">PhP</a>
+                </div>
+                <!-- ----------------------------color syntax JavaScript--------------------- -->
+                <div id="executjs" class="result">
+                    <section class="color-code language-markup ">
+                        <pre class="line-numbers"><code class="language-javascript"><xmp>
+// ALGORITHME Exo_7_7.
+function Exo_7_7_js(){
+    //var tableau1 <- [xxxxxx] 
+    var tA = ['1', '2', '3', '4', '5'];
+    //var tableau2 <- [xxxxxx] 
+    var tB = ['6', '7', '8', '9', '10'];
+    //var tableau3 <- [] 
+    var tC = [];
+    //var bloolean 1 <- faut
+    var bFinA = false;
+    //var bloolean 2 <- faut
+    var bFinB = false;
+    //var iCompteur 1 <- 0
+    var iComptA = 0;
+    //var iCompteur 2 <- 0
+    var iComptB = 0;
+    //var iCompteur 3 <- 0
+    var iCompt = -1;
+    //var iNbA <- Longueur Tableau1
+    var iNbA = tA.length;
+    //var iNbA <- Longueur Tableau2
+    var iNbB = tB.length;
+    //var iNbGlob <- Longeur des deux tableau
+    var iNbGlob = iNbA + iNbB;
+    //DEBUT
+    //Tanque iCompteur 3 < Longeur des deux tableau
+    while (iCompt < iNbGlob) {
+        //iCompteur3 + 1
+        iCompt++;
+        //Si tableau1[iCompteur1] < tableau2[iCompteur2] 
+        if (tA[iComptA] < tB[iComptB]) {
+            //tableau3[compteur1] <- tableau1[compteur1]
+            tC[iComptA] = tA[iComptA]
+            //iCompteur + 1
+            iComptA++;
+            //Si Compteur1 > Longueur Tableau1
+            if (iComptA > iNbA) {
+                //boolean1 <- vrai
+                bFinA = true;
+                //SiNon
+            } else {
+                //bloolean1 <- faut
+                bFinA = false;
+            }//FinSi
+            //SiNonSi
+        } else {
+            //tableau3[iCompteur3] <- tableau2[icompteur2]
+            tC[iCompt] = tB[iComptB];
+            //iCompteur2 <- +1
+            iComptB++;
+            //Si iCompteur2 > Longueur Tableau2
+            if (iComptB > iNbB) {
+                //bloolean2 <- vrais
+                bFinB = true;
+            } else {
+                //bloolean2 <- faut
+                bFinB = true;
+            }//FinSi
+        }//FinSi
+    }//FinTanQue
+    document.getElementById('execut').innerHTML = 'Mon Tableau 1 est: ' + tA + "<br>" + 'Mon Tableau 2 est: ' + tB + '<br>' + 'Mes Tableaus trier sont: ' + tC;                   
+}
+
+
+
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax JavaScript prompt--------------------- -->
+
+                <div id="executprompt" class="result">
+                    <section class="color-code language-markup ">
+                        <pre class="line-numbers"><code class="language-javascript"><xmp>
+
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax Jquery--------------------- -->
+
+                <div id="executjq" class="result">
+                    <section class="color-code language-markup">
+                        <pre class="line-numbers"><code class="language-javascript"><xmp>
+// ALGORITHME Exo_7_7
+function Exo_7_7_jquery() {
+    //var tableau1 <- [xxxxxx] 
+    var tA = ['1', '2', '3', '4', '5'];
+    //var tableau2 <- [xxxxxx] 
+    var tB = ['6', '7', '8', '9', '10'];
+    //var tableau3 <- [] 
+    var tC = [];
+    //var bloolean 1 <- faut
+    var bFinA = false;
+    //var bloolean 2 <- faut
+    var bFinB = false;
+    //var iCompteur 1 <- 0
+    var iComptA = 0;
+    //var iCompteur 2 <- 0
+    var iComptB = 0;
+    //var iCompteur 3 <- 0
+    var iCompt = -1;
+    //var iNbA <- Longueur Tableau1
+    var iNbA = tA.length;
+    //var iNbA <- Longueur Tableau2
+    var iNbB = tB.length;
+    //var iNbGlob <- Longeur des deux tableau
+    var iNbGlob = iNbA + iNbB;
+    //DEBUT
+    //Tanque iCompteur 3 < Longeur des deux tableau
+    while (iCompt < iNbGlob) {
+        //iCompteur3 + 1
+        iCompt++;
+        //Si tableau1[iCompteur1] < tableau2[iCompteur2] 
+        if (tA[iComptA] < tB[iComptB]) {
+            //tableau3[compteur1] <- tableau1[compteur1]
+            tC[iComptA] = tA[iComptA]
+            //iCompteur + 1
+            iComptA++;
+            //Si Compteur1 > Longueur Tableau1
+            if (iComptA > iNbA) {
+                //boolean1 <- vrai
+                bFinA = true;
+                //SiNon
+            } else {
+                //bloolean1 <- faut
+                bFinA = false;
+            }//FinSi
+            //SiNonSi
+        } else {
+            //tableau3[iCompteur3] <- tableau2[icompteur2]
+            tC[iCompt] = tB[iComptB];
+            //iCompteur2 <- +1
+            iComptB++;
+            //Si iCompteur2 > Longueur Tableau2
+            if (iComptB > iNbB) {
+                //bloolean2 <- vrais
+                bFinB = true;
+            } else {
+                //bloolean2 <- faut
+                bFinB = true;
+            }//FinSi
+        }//FinSi
+    }//FinTanQue
+    $('#execut').html('Mon Tableau 1 est: ' + tA + "<br>" + 'Mon Tableau 2 est: ' + tB + '<br>' + 'Mes Tableaus trier sont: ' + tC);                                    
+}
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax php--------------------- -->
+
+                <div id="executphp" class="result">
+                    <section class="color-code language-markup">
+                        <pre class="line-numbers"><code class="language-php"><xmp>
+// ALGORITHME Exo_7_7
+function Exo_7_7_php() {
+    //var tableau1 <- [xxxxxx] 
+    $tA = ['1', '2', '3', '4', '5'];
+    //var tableau2 <- [xxxxxx] 
+    $tB = ['6', '7', '8', '9', '10'];
+    //var tableau3 <- [] 
+    $tC = [];
+    //var bloolean 1 <- faut
+    $bFinA = false;
+    //var bloolean 2 <- faut
+    $bFinB = false;
+    //var iCompteur 1 <- 0
+    $iComptA = 0;
+    //var iCompteur 2 <- 0
+    $iComptB = 0;
+    //var iCompteur 3 <- 0
+    $iCompt = -1;
+    //var iNbA <- Longueur Tableau1
+    $iNbA = count($tA);
+    //var iNbA <- Longueur Tableau2
+    $iNbB = count($tB);
+    //var iNbGlob <- Longeur des deux tableau
+    $iNbGlob = $iNbA + $iNbB;
+    //DEBUT
+    //Tanque iCompteur 3 < Longeur des deux tableau
+    while ($iCompt < $iNbGlob) {
+        //iCompteur3 + 1
+        $iCompt++;
+        //Si tableau1[iCompteur1] < tableau2[iCompteur2] 
+        if ($tA[$iComptA] < $tB[$iComptB]) {
+            //tableau3[compteur1] <- tableau1[compteur1]
+            $tC[$iComptA] = $tA[$iComptA];
+            //iCompteur + 1
+            $iComptA++;
+            //Si Compteur1 > Longueur Tableau1
+            if ($iComptA > $iNbA) {
+                //boolean1 <- vrai
+                $bFinA = true;
+                //SiNon
+            } else {
+                //bloolean1 <- faut
+                $bFinA = false;
+            } //FinSi
+            //SiNonSi
+        } else {
+            //tableau3[iCompteur3] <- tableau2[icompteur2]
+            $tC[$iCompt] = $tB[$iComptB];
+            //iCompteur2 <- +1
+            $iComptB++;
+            //Si iCompteur2 > Longueur Tableau2
+            if ($iComptB > $iNbB) {
+                //bloolean2 <- vrais
+                $bFinB = true;
+            } else {
+                //bloolean2 <- faut
+                $bFinB = true;
+            } //FinSi
+        } //FinSi
+    } //FinTanQue
+    $sMessage = 'Mon Tableau 1 est: ' . implode($tA) . "<br>" . 'Mon Tableau 2 est: ' . implode($tB) . '<br>' . 'Mes Tableaus trier sont: ' . implode($tC);
+}   
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------Form execute script---------------------- -->
+
+                <div id="form"  class="heidden mt-4 ml-5 mr-5">
+                    <form method="POST" action="exo_7_7_js.php">
+                        <div class="form-group" id="form-group">
+                            <label for="exampleInputEmail1">Recherché dans le dico</label>
+                            <input type="text" class="form-control" name="iVal" id="iVal"
+                             aria-describedby="iVal" placeholder="Entre un mots" >
+                        </div>
+                        <div class="form-group" id="form-rand">
+                            
+                        </div>
+
+                        <!-- ----------------------------btn execute script------------------------- -->
+                      
+                        <div class="display btn-display">
+                            <div id="resultjs" class="btnExecut " onclick="Exo_7_7_js()">
+                                <p>JavaScript</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </div>
+                            <div id="resultprompt" class="btnExecut " onclick="Exo_7_7_jsPrompt()">
+                                <p>Js prompt</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </div>
+                            <div id="resultjq" class="btnExecut " onclick="Exo_7_7_jquery()">
+                                <p>Jquery</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </div>
+
+                            <button id="resultphp" class="btnExecut" type="submit" name="submit">
+                                <p>PhP</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </button>
+                    </form>
+                </div>
+        </div>
+        <!-- -------------------------------result script--------------------------- -->
+       
+        <div id="execut" class="result pb-5">
+        </div>
+        <div>
+            <?= $sMessage;?>
+
+        </div>
+    </div>
+
+
+    </article>
+
+
+    </div>
+    </div>
+    <!-- ---------------------plugin lin Numbers-------------- -->
+
+    <script src="./exo_7_7_js.js"></script>
+
+    <?php include '../commun/footer.html';?>
+
+</body>
+
+
+</html>

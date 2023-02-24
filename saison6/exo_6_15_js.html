@@ -1,0 +1,236 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+
+<?php include '../commun/head.html';?>
+
+<body>
+
+    <!-- --------------btn menu nav------------------------------- -->
+    <?php include '../commun/resp-nav.html';?>
+
+    <!-- --------------btn pause and play backgroung-------------- -->
+    <?php include '../commun/bg-video.html';?>
+
+    <!-- --------------all page------------------------------- -->
+    <div class="allpage">
+
+        <!-- --------------header------------------------------- -->
+        <?php include '../commun/header.html';?>
+
+
+        <!-- ----------------------nav aside left---------------------- -->
+        <div class="display">
+            <?php include '../commun/aside.html';?>
+
+            <!-- -------------------------content page enoncé-------------------- -->
+
+            <article>
+
+                <div class="content-top">
+                    <section class="language-markup">
+                        <pre><code class="language-javascript"><xmp>
+if(a === "enonce" & b === "de l'exercise"){
+alert('aller au travail');
+}
+</xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax enoncé--------------------- -->
+
+                <section class="color-code pl-5 pt-3 text-left enonce language-markup">
+                    <p>
+                        Pour sa naissance, la grand-mère de TITI place une somme de 1000 Euros sur son compte épargne rémunéré <br>
+                        au taux de 2.75% (chaque année le compte est augmenté de 2.75%). Développer un algorithme permettant<br>
+                        de stocker dans un tableau sur 20 ans associant à chaque anniversaire de TITI la somme acquise sur son compte.<br>
+                        Puis, la grand-mère de TITI aura la possibilité de saisir un âge (compris entre 1 et 20 ans) et l'algorithme affichera la<br>
+                        somme correspondante qu'il y'aura alors sur le compte.  <br>                      
+                    </p>
+                </section>
+
+                <!-- ----------------------------color syntax pseudo-code--------------------- -->
+
+                <section class="color-code language-markup">
+                    <pre class="line-numbers"><code><xmp>
+// ALGORITHME Exo_6_15.
+function Exo_6_15_js() {
+    //VARIABLE iTableau[] in ARRAY
+    //VARIABLE iSomme, iAnnees in INTEGER
+    //POUR i de 1 a 20
+        //iSomme = iSomme +(2.27 * somme/100)
+        //iTabl[i] = iSomme
+    //FinPour
+        Ecrire "entrez une années"
+        lire "age"
+        Ecrire'La somme et de' iTabl[iage]
+Fin
+}
+          </xmp></code></pre>
+                </section>
+                <!-- ----------------------------btn select language--------------------- -->
+                <div>
+                    <a href="#traductJS" class="btn btn-md btn-dark mt-4 btn-js"
+                        onclick="showcode('executjs', 'resultjs',)"><img src="../css/img/icon-js.png"
+                            alt="javascript logo">JavaScript</a>
+              
+                    <a href="#traductJQ" class="btn btn-md btn-dark mt-4 btn-jq"
+                        onclick="showcode('executjq', 'resultjq')"><img src="../css/img/icon-jquery.png"
+                            alt="javascript logo">Jquery</a>
+                    <a href="#traductPhP" class="btn btn-md btn-dark mt-4 pr-4 btn-php"
+                        onclick="showcode('executphp', 'resultphp')"><img src="../css/img/icon-php.png"
+                            alt="javascript logo ">PhP</a>
+                </div>
+                <!-- ----------------------------color syntax JavaScript--------------------- -->
+                <div id="executjs" class="result">
+                    <section class="color-code language-markup ">
+                        <pre class="line-numbers"><code class="language-javascript"><xmp>
+// ALGORITHME Exo_6_15.
+function Exo_6_15_js() {
+    //VARIABLE iTableau[] in ARRAY
+    //VARIABLE iSomme, iAnnees in INTEGER
+    var iTabl = [];
+    var iSomme= 1000, iAnnees =0;
+    //POUR i de 1 a 20
+    for(i=1;i<20;i++){
+        //iSomme = iSomme +(2.27 * somme/100)
+        iSomme+= (2.75 * iSomme/100);
+        //iTabl[i] = iSomme
+        iTabl[i] = iSomme
+    //FinPour
+    }
+        //Ecrire
+        iAnnees = document.getElementById('iAnnees').value;
+        document.getElementById('execut').innerHTML = 'Dans ' + iAnnees + ' vous aurez  ' + iTabl[iAnnees].toFixed(2) + '€';                    
+}
+
+
+
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax JavaScript prompt--------------------- -->
+
+                <div id="executprompt" class="result">
+                    <section class="color-code language-markup ">
+                        <pre class="line-numbers"><code class="language-javascript"><xmp>
+
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax Jquery--------------------- -->
+
+                <div id="executjq" class="result">
+                    <section class="color-code language-markup">
+                        <pre class="line-numbers"><code class="language-javascript"><xmp>
+// ALGORITHME Exo_6_15
+function Exo_6_15_jquery() {
+    //VARIABLE iTableau[] in ARRAY
+    //VARIABLE iSomme, iAnnees in INTEGER
+    var iTabl = [];
+    var iSomme = 1000, iAnnees = 0;
+    //POUR i de 1 a 20
+    for (i = 1; i < 20; i++) {
+        //iSomme = iSomme +(2.27 * somme/100)
+        iSomme += (2.75 * iSomme / 100);
+        //iTabl[i] = iSomme
+        iTabl[i] = iSomme
+        //FinPour
+    }
+    //Ecrire
+    iAnnees = $('#iAnnees').val();
+    $('#execut').html('Dans ' + iAnnees + ' vous aurez  ' + iTabl[iAnnees].toFixed(2) + '€');                                
+}
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax php--------------------- -->
+
+                <div id="executphp" class="result">
+                    <section class="color-code language-markup">
+                        <pre class="line-numbers"><code class="language-php"><xmp>
+// ALGORITHME Exo_6_15
+function Exo_6_15_php() {
+    if (isset($_POST['iAnnees'])) {
+        //VARIABLE iTableau[] in ARRAY
+        //VARIABLE iSomme, iAnnees in INTEGER
+        $iTabl = [];
+        $iSomme = 1000;
+        $iAnnees = 0;
+        //POUR i de 1 a 20
+        for ($i = 1; $i < 20; $i++) {
+            //iSomme = iSomme +(2.27 * somme/100)
+            $iSomme += (2.75 * $iSomme / 100);
+            //iTabl[i] = iSomme
+            $iTabl[$i] = $iSomme;
+            //FinPour
+        }
+        //Ecrire
+        $iAnnees = $_POST['iAnnees'];
+        $sMessage = 'Dans ' . $iAnnees . ' vous aurez  ' . round($iTabl[$iAnnees], 2) . '€';                  
+    }
+}   
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------Form execute script---------------------- -->
+
+                <div id="form"  class="heidden mt-4 ml-5 mr-5">
+                    <form method="POST" action="exo_6_15_js.php">
+                        <div class="form-group" id="form-group">
+                            <label for="exampleInputEmail1">Entrez une Années</label>
+                            <input type="number" class="form-control" name="iAnnees" id="iAnnees"
+                             aria-describedby="iAnnees" placeholder="Entre une note" >
+                        </div>
+                       
+
+                        <!-- ----------------------------btn execute script------------------------- -->
+                        
+                        <div class="display btn-display">
+                            <div id="resultjs" class="btnExecut " onclick="Exo_6_15_js()">
+                                <p>JavaScript</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </div>
+                            <div id="resultprompt" class="btnExecut " onclick="Exo_6_15_jsPrompt()">
+                                <p>Js prompt</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </div>
+                            <div id="resultjq" class="btnExecut " onclick="Exo_6_15_jquery()">
+                                <p>Jquery</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </div>
+
+                            <button id="resultphp" class="btnExecut" type="submit" name="submit">
+                                <p>PhP</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </button>
+                    </form>
+                </div>
+        </div>
+        <!-- -------------------------------result script--------------------------- -->
+       
+        <div id="execut" class="result pb-5">
+            <?= $sMessage;?>
+        </div>
+    </div>
+
+
+    </article>
+
+
+    </div>
+    </div>
+    <!-- ---------------------plugin lin Numbers-------------- -->
+
+    <script src="./exo_6_15_js.js"></script>
+
+    <?php include '../commun/footer.html';?>
+
+</body>
+
+
+</html>

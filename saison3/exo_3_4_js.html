@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<?php include '../commun/head.html';?>
+
+<body>
+
+    <!-- --------------btn menu nav------------------------------- -->
+    <?php include '../commun/resp-nav.html';?>
+
+    <!-- --------------btn pause and play backgroung-------------- -->
+    <?php include '../commun/bg-video.html';?>
+
+    <!-- --------------all page------------------------------- -->
+    <div class="allpage">
+
+        <!-- --------------header------------------------------- -->
+        <?php include '../commun/header.html';?>
+
+
+        <!-- ----------------------nav aside left---------------------- -->
+        <div class="display">
+            <?php include '../commun/aside.html';?>
+
+            <!-- -------------------------content page enoncé-------------------- -->
+
+            <article>
+
+                <div class="content-top">
+                    <section class="language-markup">
+                        <pre><code class="language-javascript"><xmp>
+if(a === "enonce" & b === "de l'exercise"){
+alert('aller au travail');
+}
+</xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax enoncé--------------------- -->
+
+                <section class="color-code pl-5 pt-3 text-left enonce language-markup">
+                    <p>
+                        Ecrire un algorithme qui demande trois noms à l’utilisateur et l’informe ensuite s’ils sont rangés ou non dans l’ordre alphabétique.
+                    </p>
+                </section>
+
+                <!-- ----------------------------color syntax pseudo-code--------------------- -->
+
+                <section class="color-code language-markup">
+                    <pre class="line-numbers"><code><xmp>
+// ALGORITHME Exo_3_4
+function Exo_3_4(){
+// DEBUT
+    // VARIABLE iNB1, en NUMERIQUE 
+    Ecrire "Merci de rentré un Nombres" ;
+    Lire "iNB1";
+    Si (iNB1 < 0){
+        Ecrire "Votre nombre en negatif" ;
+    }SinonSi(iNB1 = 0){
+         " votre nombre et null" ;
+    }SiNon{
+        Ecrire " votre nombre et null" ;
+    }
+//FIN
+}
+          </xmp></code></pre>
+                </section>
+
+                <!-- ----------------------------btn select language--------------------- -->
+
+                <div>
+                    <a href="#traductJS" class="btn btn-md btn-dark mt-4 btn-js"
+                        onclick="showcode('executjs', 'resultjs')"><img src="../css/img/icon-js.png"
+                            alt="javascript logo">JavaScript</a>
+                    <a href="#traductJS" class="btn btn-md btn-dark mt-4 btn-js"
+                        onclick="showcode('executprompt', 'resultprompt')"><img src="../css/img/icon-js.png"
+                            alt="javascript logo">Js Prompt</a>
+                    <a href="#traductJQ" class="btn btn-md btn-dark mt-4 btn-jq"
+                        onclick="showcode('executjq', 'resultjq')"><img src="../css/img/icon-jquery.png"
+                            alt="javascript logo">Jquery</a>
+                    <a href="#traductPhP" class="btn btn-md btn-dark mt-4 pr-4 btn-php"
+                        onclick="showcode('executphp', 'resultphp')"><img src="../css/img/icon-php.png"
+                            alt="javascript logo ">PhP</a>
+                </div>
+
+                <!-- ----------------------------color syntax JavaScript--------------------- -->
+
+                <div id="executjs" class="result">
+                    <section class="color-code language-markup ">
+                        <pre class="line-numbers"><code class="language-javascript"><xmp>
+// ALGORITHME Exo_3_4
+function Exo_3_4_js(){
+// DEBUT
+    // VARIABLE iNB1, sPositif, sNegatif, sNull en NUMERIQUE et STRING
+    //je declar mes variable
+    var iNB = document.getElementById('InputNB').value;
+    var select = document.getElementById('execut');
+    //je crée ma structure html
+    var sStart = '<section class="color-code"><div class="color-result"><p>';
+    var sEnd = '</p></div></section>';
+    var sPositif = sStart + iNB + ' est un nombre positif' + sEnd
+    var sNegatif = sStart + iNB + '   est un nombre negatif' + sEnd;
+    var sNull = sStart + iNB + '   est un nombre null' + sEnd;
+
+    //je crée ma condition
+    if (iNB < 0) {
+      select.innerHTML = sNegatif;
+    } else if(iNB == 0) {
+      select.innerHTML = sNull;
+    }else{
+      select.innerHTML = sPositif;
+    }
+//FIN
+}    
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax JavaScript prompt--------------------- -->
+
+                <div id="executprompt" class="result">
+                    <section class="color-code language-markup ">
+                        <pre class="line-numbers"><code class="language-javascript"><xmp>
+// ALGORITHME Exo_3_4
+function Exo_3_4_jsprompt(){
+// DEBUT
+    // VARIABLE iNB1, sPositif, sNegatif, sNull en NUMERIQUE et STRING
+    var iNB = prompt('Entrez un nombre');
+    //je crée ma structure html
+    var sPositif = iNB + ' est un nombre positif';
+    var sNegatif = iNB + ' est un nombre negatif';
+    var sNull = iNB + ' est un nombre null';
+    if (iNB < 0) {
+      alert(sNegatif);
+    } else if(iNB == 0) {
+      alert(sNull);
+    }else{
+      alert(sPositif);
+    }
+//FIN
+}
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax Jquery--------------------- -->
+
+                <div id="executjq" class="result">
+                    <section class="color-code language-markup">
+                        <pre class="line-numbers"><code class="language-javascript"><xmp>
+// ALGORITHME Exo_3_4
+function Exo_3_4_jquery() {
+// DEBUT
+    // VARIABLE iNB1, sPositif, sNegatif, sNull en NUMERIQUE et STRING
+    var iNB = $('#InputNB').val();
+    //je crée ma structure html
+    var sStart   = '<section class="color-code"><div class="color-result"><p>';
+    var sEnd     = '</p></div></section>';
+    var sPositif = sStart + iNB + ' est un nombre positif' + sEnd;
+    var sNegatif = sStart + iNB + ' est un nombre negatif' + sEnd;
+    var sNull    = sStart + iNB + ' est un nombre null' + sEnd;
+    //je crée ma condition
+    if (iNB < 0) {
+      $('#execut').html(sNegatif);
+    } else if(iNB == 0) {
+      $('#execut').html(sNull);
+    }else{
+      $('#execut').html(sPositif);
+    }    
+//FIN
+}
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------color syntax php--------------------- -->
+
+                <div id="executphp" class="result">
+                    <section class="color-code language-markup">
+                        <pre class="line-numbers"><code class="language-php"><xmp>
+// ALGORITHME Exo_3_4
+function Exo_3_4_php() {
+// DEBUT
+  // VARIABLE iNB1, sPositif, sNegatif, sNull en NUMERIQUE et STRING
+  // si la formulaire a êtes posté 
+  if (isset($_POST['ExecutPhp'])) {
+      // si la formulaire a êtes rempli 
+      if (isset($_POST['InputNB'])) {
+          // je declare mes variable   
+          $iNB = $_POST['InputNB'];
+          // je crée la structure html
+          $sStart = '<section class="color-code"><div class="color-result"><p>';
+          $sEnd = '</p></div></section>';
+          //je crée une variable qui contient le résultat avec la structur html 
+          $sPositif =  $iNB . ' Est un nombre positif' . $sEnd;
+          $sNegatif =  $iNB . ' Est un nombre negatif' . $sEnd;
+          $sNull =  $iNB . ' Est un nombre null' . $sEnd;
+          //je crée ma condition
+          if ($iNB < 0) {
+              echo $sNegatif;
+          } else if ($iNB == 0) {
+              echo $sNull;
+          } else {
+              echo $sPositif;
+          }
+      }
+  }
+//FIN
+}   
+      </xmp></code></pre>
+                    </section>
+                </div>
+
+                <!-- ----------------------------Form execute script---------------------- -->
+
+                <div id="form" class="heidden mt-4 ml-5 mr-5">
+                    <form method="POST">
+                        <div class="form-group">
+                            <label for="InputNB">Entrez un nom</label>
+                            <input type="text" class="form-control" name="InputNB" id="InputNB"
+                                aria-describedby="InputNB" placeholder="">
+                        </div>
+
+                        <!-- ----------------------------btn execute script------------------------- -->
+                        <div class="display btn-display">
+                            <div id="resultjs" class="btnExecut " onclick="Exo_3_4_js()">
+                                <p>JavaScript</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </div>
+                            <div id="resultprompt" class="btnExecut " onclick="Exo_3_4_jsPrompt()">
+                                <p>Js prompt</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </div>
+                            <div id="resultjq" class="btnExecut " onclick="Exo_3_4_jquery()">
+                                <p>Jquery</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </div>
+
+                            <button id="resultphp" class="btnExecut" type="submit" value="ExecutPhp" name="ExecutPhp">
+                                <p>PhP</p>
+                                <img src="../css/img/btnrun.png" alt="bouton executer">
+                            </button>
+                    </form>
+                </div>
+        </div>
+
+        <!-- -------------------------------result script--------------------------- -->
+        <div id="execut" class="result pb-5">
+            <?php include './exo_3_4_php.php';?>
+        </div>
+    </div>
+
+
+    </article>
+
+
+    </div>
+    </div>
+    <!-- ---------------------plugin lin Numbers-------------- -->
+
+    <script src="./exo_3_4_js.js"></script>
+
+    <?php include '../commun/footer.html';?>
+
+</body>
+
+
+</html>
